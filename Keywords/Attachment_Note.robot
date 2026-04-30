@@ -1,8 +1,39 @@
 *** Settings ***
 Resource      ../Configs/setting.robot
 Resource      ../Locators/locators.robot
+Resource      ../Keywords/Task.robot
+Resource      ../Keywords/CurrentTask.robot
 
 *** Keywords ***
+Capture Activity ID
+    [Documentation]    Extracts the ID even if "Activity Id" text comes first
+    Wait Until Element Is Visible    ${activity_id_element}    timeout=30s
+    ${full_text}=    Get Element Attribute    ${activity_id_element}    content-desc
+    
+    Log    Raw Text Captured: ${full_text}
+
+    # Use a more robust Regex that finds A- followed by any number of digits
+    # This ignores "Activity Id" and the newline character automatically
+    ${match}=    Evaluate    re.search(r'A-\d+', """${full_text}""")    re
+
+    IF    ${match} is not None
+        ${id}=    Set Variable    ${match.group(0)}
+        Set Suite Variable    ${CAPTURED_ACTIVITY_ID}    ${id}
+        Log    Successfully Extracted Activity ID: ${CAPTURED_ACTIVITY_ID}    console=True
+    ELSE
+        # Secondary fallback using split if Regex fails
+        ${lines}=    Evaluate    """${full_text}""".split()
+        ${id}=       Set Variable    ${lines[-1]}    # Takes the last word in the string
+        Set Suite Variable    ${CAPTURED_ACTIVITY_ID}    ${id}
+    END
+    
+    # Optional: double check the result starts with A-
+    IF    not '${CAPTURED_ACTIVITY_ID}'.startswith('A-')
+        Fail    Failed to extract a valid ID. Result was: ${CAPTURED_ACTIVITY_ID}
+    END
+
+    RETURN    ${CAPTURED_ACTIVITY_ID}
+
 Upload Notes 
     #Wait Until Element Is Visible     ${Notes_Button}     10s
     #Click Element    ${Notes_Button}
@@ -42,6 +73,178 @@ Upload Notes
     Input Text    ${filterNotes_input}    Advise Mr Annuar
     Sleep    5
 
+View Attachment
+    Tap With Positions    ${TAP_DURATION}    ${{ (${PendingAccept_Dropdown_HEADER_X}, ${PendingAccept_Dropdown_HEADER_Y}) }}
+    Sleep    5
+
+    Task.Search by Source System
+
+    Wait Until Element Is Visible     ${Click_CurrentTask}     timeout=30s
+    Click Element    ${Click_CurrentTask} 
+
+    Click Element    ${Activity_Tab}
+    Sleep    5s
+    
+    Capture Activity ID
+    Sleep    5s
+
+    Wait Until Element Is Visible    ${Action_button}      30s
+    Click Element    ${Action_button}
+    Sleep    5s
+
+    Wait Until Element Is Visible    ${Attachments_button}      30s
+    Click Element    ${Attachments_button}
+    Sleep    20s
+
+Tap Add Attachment Button
+    ${newAttachments_button}=    Get WebElement   xpath=(//android.widget.Button)[last()]
+    Wait Until Element Is Visible    ${newAttachments_button}    timeout=120s
+    Click Element    ${newAttachments_button}
+    Wait Until Element Is Visible    ${uploadAttachment_list}    timeout=60s
+    Sleep    2s
+
+Upload Attachment - Camera Photo
+    Tap Add Attachment Button
+
+    Wait Until Element Is Visible    ${uploadAttachment_list}    timeout=30s
+    Click Element    ${camera_button}
+    Sleep    5s
+
+    Wait Until Element Is Visible    ${Capture_button}    timeout=30s
+    Click Element    ${Capture_button}
+    Sleep    5s
+
+    Wait Until Element Is Visible    ${cameraCapture_button}    timeout=30s
+    Click Element    ${cameraCapture_button}
+    Sleep    5s
+
+    Wait Until Element Is Visible    ${Yes_cameraCapture_button}    timeout=30s
+    Click Element    ${Yes_cameraCapture_button}
+    Sleep    10s
+
+    Swipe By Percent    50    80    50    30    500
+
+    Wait Until Element Is Visible     ${nameCaptured_input}     timeout=30s
+    Click Element    ${nameCaptured_input}
+    Clear Text       ${nameCaptured_input}
+    Input Text       ${nameCaptured_input}    Test Camera Photo
+    Sleep    1
+    Hide Keyboard
+    Sleep    1
+
+    Wait Until Element Is Visible     ${remarksCaptured_input}     timeout=30s
+    Click Element    ${remarksCaptured_input} 
+    Input Text       ${remarksCaptured_input}    Test Remarks
+    Sleep    1
+    Hide Keyboard
+    Sleep    1
+
+    Swipe By Percent    50    80    50    30    500
+
+    Wait Until Element Is Visible    ${upload_button}    timeout=30s
+    Click Element    ${upload_button}
+    Sleep    10s
+
+Upload Attachment - Gallery Photo
+    Tap Add Attachment Button
+
+    Wait Until Element Is Visible    ${uploadAttachment_list}    timeout=30s
+    Click Element    ${gallery_button}
+    Sleep    5s
+
+    Wait Until Element Is Visible    ${photoGallery_button}    timeout=30s
+    Click Element    ${photoGallery_button}
+    Sleep    5s
+
+    Tap With Positions    ${TAP_DURATION}    ${{ (${photoPickerFirstItem_X}, ${photoPickerFirstItem_Y}) }}
+    Sleep    5s
+
+    Wait Until Element Is Visible    ${photoPickerAdd_Button_Done}    timeout=30s
+    Click Element    ${photoPickerAdd_Button_Done}
+    Sleep    5s
+
+    Swipe By Percent    50    80    50    30    500
+
+    Wait Until Element Is Visible     ${nameCaptured_input}     timeout=30s
+    Click Element    ${nameCaptured_input}
+    Clear Text       ${nameCaptured_input}
+    Input Text       ${nameCaptured_input}    Test Gallery Photo
+    Sleep    1
+    Hide Keyboard
+    Sleep    1
+
+    Wait Until Element Is Visible     ${remarksCaptured_input}     timeout=30s
+    Click Element    ${remarksCaptured_input} 
+    Input Text       ${remarksCaptured_input}    Test Remarks
+    Sleep    1
+    Hide Keyboard
+    Sleep    1
+
+    Swipe By Percent    50    80    50    30    500
+
+    Wait Until Element Is Visible    ${upload_button}    timeout=30s
+    Click Element    ${upload_button}
+    Sleep    10s
+
+Upload Attachment - File Document
+    Tap Add Attachment Button
+
+    Wait Until Element Is Visible    ${uploadAttachment_list}    timeout=30s
+    Click Element    ${files_button}
+    Sleep    5s
+
+    Wait Until Element Is Visible    ${documentFiles_button}    timeout=30s
+    Click Element    ${documentFiles_button}
+    Sleep    5s
+
+    Wait Until Element Is Visible    xpath=//android.widget.LinearLayout[@package="com.google.android.documentsui"]    timeout=30s
+    Tap With Positions    ${TAP_DURATION}    ${{ (${documentsUI_FileItem_X}, ${documentsUI_FileItem_Y}) }}
+    Sleep    5s
+
+    Wait Until Element Is Visible    ${documentsUI_Select_Button}    timeout=30s
+    Click Element    ${documentsUI_Select_Button}
+    Sleep    5s
+
+    Swipe By Percent    50    80    50    30    500
+
+    Wait Until Element Is Visible     ${nameCaptured_input}     timeout=30s
+    Click Element    ${nameCaptured_input}
+    Clear Text       ${nameCaptured_input}
+    Input Text       ${nameCaptured_input}    Test File Document
+    Sleep    1
+    Hide Keyboard
+    Sleep    1
+
+    Wait Until Element Is Visible     ${remarksCaptured_input}     timeout=30s
+    Click Element    ${remarksCaptured_input} 
+    Input Text       ${remarksCaptured_input}    Test Remarks
+    Sleep    1
+    Hide Keyboard
+    Sleep    1
+
+    Swipe By Percent    50    80    50    30    500
+
+    Wait Until Element Is Visible    ${upload_button}    timeout=30s
+    Click Element    ${upload_button}
+    Sleep    10s
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -73,74 +276,6 @@ View Task - Notes List
 
     # Click Element    ${backNotes_button}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-Action Attachment
-    # Wait Until Element Is Visible     ${assignedTaskContent}     timeout=60s
-    Sleep    10
-    
-    ${element}=    Run Keyword And Ignore Error    Get Webelement    ${attachment_button}
-    FOR    ${i}    IN RANGE    5
-        Run Keyword If    '${element[0]}' != 'FAIL'    Exit For Loop
-        Swipe By Percent    50    80    50    30    500
-        Sleep    1
-        ${element}=    Run Keyword And Ignore Error    Get Webelement    ${attachment_button}
-    END
-    Run Keyword If    '${element[0]}' == 'FAIL'    Fail    Update button not found after scrolling
-    Click Element    ${attachment_button}
-    ${newAttachments_button}=    Get WebElement   xpath=(//android.widget.Button)[last()]
-    Wait Until Element Is Visible    ${newAttachments_button}    timeout=120s
-    Click Element    ${newAttachments_button}
-    Wait Until Element Is Visible    ${uploadAttachment_list}    timeout=60s
-
-Tap Add Attachment Button
-    Sleep    50
-    
-    ${newAttachments_button}=    Get WebElement   xpath=(//android.widget.Button)[last()]
-    Wait Until Element Is Visible    ${newAttachments_button}    timeout=120s
-    Click Element    ${newAttachments_button}
-    Wait Until Element Is Visible    ${uploadAttachment_list}    timeout=60s
-    Sleep    2
-    # [Arguments]    ${x}    ${y}
-    # Sleep    20
-    # ${x_in}=    Evaluate    ${x} > 890 and ${x} < 1040
-    # ${y_in}=    Evaluate    ${y} > 2080 and ${y} < 2190
-    # Run Keyword If    '${x_in}' == 'True' and '${y_in}' == 'True'    Click A Point   ${x}    ${y}
-    # Click A Point    966    2162
-    # Sleep    10
-
 View Ticket Details
     Sleep    10
     Wait Until Element Is Visible    ${searchFilter_button}    timeout=10s
@@ -150,59 +285,6 @@ View Ticket Details
     Sleep    2
     Hide Keyboard
     Sleep    2    
-
-Upload Attachment - Camera Photo
-    # Click Element    ${newAttachments_button}
-    # Wait Until Element Is Visible    ${uploadAttachment_list}    timeout=60s
-    Sleep    5s
-    Click Element    ${camera_button}
-    Wait Until Element Is Visible    ${cameraCapture_button}    timeout=60s
-    Click Element    ${cameraCapture_button}
-    
-    #AINI'S PHONE
-    Click A Point    883    2020     # Flip camera
-    Click A Point    540    2026    # Shutter button
-    # Click Element    ${shutter_button}
-    Sleep    5
-    Click A Point    205    2007    # Tap Retry (x)
-    Sleep    5
-    Click A Point    540    2026    # Shutter button
-    # Click Element    ${shutter_button}
-    Sleep    2
-    Click A Point    882    2018    # Tap OK
-    Sleep    2
-    Wait Until Element Is Visible    ${sizeCaptured_text}    timeout=180s
-    Click Element    ${nameCaptured_input}
-    Sleep    1
-    ${nameCaptured_input}=    Get WebElement    xpath=//android.widget.EditText[@class='android.widget.EditText']
-    Clear Text    ${nameCaptured_input}
-    Input Text    ${nameCaptured_input}    testNamePhoto
-    Sleep    1
-    Hide Keyboard
-    Click Element    ${remarksCaptured_input} 
-    Input Text    ${remarksCaptured_input}    testRemarksPhoto
-    Sleep    1
-    Hide Keyboard
-    Click Element    ${uploadCaptured_button}
-    Sleep    5
-
-    #ADIBAH'S PHONE
-    # Click A Point    540    2015    # Shutter button
-    # Click A Point    875    2015    # Yes button
-    # Wait Until Element Is Visible    ${sizeCaptured_text}    timeout=20s
-    # Click Element    ${nameCaptured_input_Adibah}
-    # Sleep    1
-    # ${nameCaptured_input_Adibah}=    Get WebElement    xpath=//android.widget.EditText[@class='android.widget.EditText']
-    # Clear Text    ${nameCaptured_input_Adibah}
-    # Input Text    ${nameCaptured_input_Adibah}    testNamePhoto
-    # Sleep    1
-    # Hide Keyboard
-    # Click Element    ${remarksCaptured_input} 
-    # Input Text    ${remarksCaptured_input}    testRemarksPhoto
-    # Sleep    1
-    # Hide Keyboard
-    # Click Element    ${uploadCaptured_button}
-    # Sleep    5
 
 Upload Attachment - Camera Video
     Sleep    10
@@ -240,33 +322,6 @@ Upload Attachment - Camera Video
     Hide Keyboard
     Click Element    ${remarksCaptured_input} 
     Input Text    ${remarksCaptured_input}    testRemarksVideo
-    Sleep    1
-    Hide Keyboard
-    Click Element    ${uploadCaptured_button}
-    Sleep    5
-
-Upload Attachment - Gallery Photo
-    Sleep    10
-    # Wait Until Element Is Visible    ${newAttachments_button}    timeout=60s
-    # Click Element    ${newAttachments_button}
-    # Wait Until Element Is Visible    ${uploadAttachment_list}    timeout=60s
-    Click Element    ${gallery_button}
-    Wait Until Element Is Visible    ${photoGallery_button}    timeout=60s
-    Click Element    ${photoGallery_button}
-    Sleep    3
-    Wait Until Element Is Visible    ${Photo_From_Gallery_button}    timeout=60s
-    Click Element    ${Photo_From_Gallery_button}
-    Sleep    2
-    Wait Until Element Is Visible    ${sizeCaptured_text}    timeout=180s
-    Click Element    ${nameCaptured_input}
-    Sleep    1
-    ${nameCaptured_input}=    Get WebElement    xpath=//android.widget.EditText[@class='android.widget.EditText']
-    Clear Text    ${nameCaptured_input}
-    Input Text    ${nameCaptured_input}    testNameGalleryPhoto
-    Sleep    1
-    Hide Keyboard
-    Click Element    ${remarksCaptured_input} 
-    Input Text    ${remarksCaptured_input}    testRemarksGalleryPhoto
     Sleep    1
     Hide Keyboard
     Click Element    ${uploadCaptured_button}
@@ -313,37 +368,6 @@ Upload Attachment - Gallery Video
     Sleep    1
     Hide Keyboard
     Click Element    ${uploadCaptured_button}
-
-Upload Attachment - Files Document
-    Sleep    20
-    # Wait Until Element Is Visible    ${newAttachments_button}    timeout=60s
-    # Click Element    ${newAttachments_button}
-    Wait Until Element Is Visible    ${files_button}    timeout=60s
-    Click Element    ${files_button}
-    Wait Until Element Is Visible    ${documentFiles_button}    timeout=60s
-    Click Element    ${documentFiles_button}
-    Sleep    2
-    Click Element    xpath=//android.widget.Button[@content-desc="Search"]    #search doc
-    
-    Input Text    xpath=//android.widget.EditText[@resource-id="com.google.android.documentsui:id/search_src_text"]    1152
-    Sleep    1
-   
-    Click Element    xpath=//android.widget.TextView[@resource-id="android:id/title" and @text="PageSpeed Insights - 1152.pdf"]    #DOCUMENT PAGE INSIGHT 1152
-    Sleep    1
-    Wait Until Element Is Visible    ${sizeCaptured_text}    timeout=180s
-    Click Element    ${nameCaptured_input}
-    Sleep    1
-    ${nameCaptured_input}=    Get WebElement    xpath=//android.widget.EditText[@class='android.widget.EditText']
-    Clear Text    ${nameCaptured_input}
-    Input Text    ${nameCaptured_input}    testNameFiles
-    Sleep    1
-    Hide Keyboard
-    Click Element    ${remarksCaptured_input} 
-    Input Text    ${remarksCaptured_input}    testRemarksFiles
-    Sleep    1
-    Hide Keyboard
-    Click Element    ${uploadCaptured_button}
-    Sleep    5
 
 Upload Attachment - Text Document
     Sleep    20

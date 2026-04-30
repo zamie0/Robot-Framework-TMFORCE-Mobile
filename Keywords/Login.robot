@@ -56,28 +56,35 @@ Login app - positive scenario
     Click Element                       ${login_btn}
     Sleep    5
 
-Late Login    
-    # Wait Until Page Contains          ${lateLogin_popup}    timeout=10s
-    # Wait Until Element Is Visible     ${lateLoginSelect_button}    timeout=10s
-    Sleep    10
+Late Login   
+    Click Element                       ${username_input}
+    Wait Until Page Contains Element    ${username_input}    timeout=10
+    Input Text                          ${username_input}    H14331
+    Sleep    5
+    Hide Keyboard
+
+    Click Element                       ${password_input}
+    Wait Until Page Contains Element    ${password_input}    timeout=10
+    Input Password                      ${password_input}    H14331
+    Hide Keyboard
+    Reveal Password
+    Sleep    5
+
+    Click Element                       ${login_btn}
+    Sleep    5
+
+    Wait Until Page Contains          ${lateLogin_popup}    timeout=10s
+    Wait Until Element Is Visible       ${lateLoginSelect_button}    timeout=30s
     Click Element                       ${lateLoginSelect_button}
-    # Wait Until Page Contains          ${lateLoginReasonOption}    timeout=10s
-    Sleep    5    
+    Sleep    5
+    
+    Tap With Positions    ${TAP_DURATION}    ${{ (${lateLoginSelect_Dropdown_HEADER_X}, ${lateLoginSelect_Dropdown_HEADER_Y}) }}
+    
+    Wait Until Element Is Visible       ${badWeatherReason}    timeout=30s
     Click Element                       ${badWeatherReason}
     Sleep    5
-    Click Element                       ${selectBadWeather}    
-    Sleep    5
-    Click Element                       ${searchReason_button}
-    Input Text                          ${searchReason_button}    Traffic
-    Sleep    3
-    # Click Element                     ${clearSearchReason_button} --button takleh tekan, most of the time akan dpt error
-    Clear Text                          ${searchReason_button}
-    Sleep    3
-    # Click Element                     ${searchReason_button}
-    Input Text                          ${searchReason_button}    Over
-    Wait Until Element Is Visible       ${oversleepingReason}    timeout=10s
-    Click Element                       ${oversleepingReason}
-    Wait Until Element Is Visible       ${submit_button}    timeout=10s
+
+    Wait Until Element Is Visible       ${submit_button}    timeout=30s
     Click Element                       ${submit_button}
     Sleep    5
 

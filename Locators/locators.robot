@@ -28,6 +28,9 @@ ${fpOkay_button}                    xpath=    //android.widget.Button[@content-d
 
 ${lateLogin_popup}                  xpath=    ///android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View
 ${lateLoginSelect_button}           xpath=    //android.view.View[@content-desc="Select"]
+${lateLoginSelect_Dropdown_HEADER_X}              830
+${lateLoginSelect_Dropdown_HEADER_Y}              1255
+
 ${lateLoginReasonOption}            xpath=    //android.widget.ScrollView
 ${badWeatherReason}                 xpath=    //android.widget.Button[@content-desc="Bad weather"]
 ${selectBadWeather}                 xpath=    //android.view.View[@content-desc="Bad weather"]
@@ -94,10 +97,10 @@ ${OnHold_Dropdown_HEADER_Y}                   1234
 ${OnHold_Dropdown_Open}             xpath=    //android.view.View[@bounds="[21,1148][1059,1321]"]
 
 ${TaskHistory_Dropdown_HEADER_X}              540
-${TaskHistory_Dropdown_HEADER_Y}              1407
+${TaskHistory_Dropdown_HEADER_Y}    1407
 ${TaskHistory_Dropdown_Open}        xpath=    //android.view.View[@bounds="[21,1321][1059,1495]"]
 
-${TAP_DURATION}                               500
+${TAP_DURATION}                     500
 
 ${Click_PendingAccept}              xpath=    //android.view.View[@content-desc="Pending Accept"]
 ${Click_CurrentTask}                android=new UiSelector().descriptionContains("Current Task")
@@ -184,9 +187,8 @@ ${TMCPE_Replaced_Button}            xpath=   //android.widget.Button[@content-de
 
 #Resolved Status page
 #${Add_Attachment_Button}            xpath=   //android.view.View[contains(@content-desc, "Attachments")]//android.widget.ImageView
-${Add_Attachment_Button_X}          975
-${Add_Attachment_Button_Y}          1182
-
+${Add_Attachment_Button_X}                   975
+${Add_Attachment_Button_Y}                   1182
 
 ${newAttachments_button}            xpath=   //android.widget.Button[@bounds='[891,2085][1038,2186]']
 ${uploadAttachment_list}            xpath=   //android.view.View[@content-desc="Upload Attachment"]
@@ -273,12 +275,59 @@ ${noNotes_button}                   xpath=    //android.widget.Button[@content-d
 #-----------------------------------CAMERA-----------------------------------------------------
 
 ${camera_button}                    xpath=    //android.widget.Button[@content-desc="Camera"]
+${Capture_button}                   xpath=    //android.widget.Button[@content-desc="Capture"]
 ${cameraCapture_button}             xpath=    //android.widget.ImageView[@resource-id="com.nothing.camera:id/photo_shutter_button_photo"]
 ${Yes_cameraCapture_button}         xpath=    //android.widget.ImageView[@resource-id="com.nothing.camera:id/switch_camera_facing"]
 ${Photo_button}                     xpath=    //android.widget.Button[@content-desc="Photo"]
 ${Photo_From_Gallery_button}        xpath=    (//android.widget.ImageView[@resource-id="com.google.android.providers.media.module:id/icon_thumbnail"])[2]
 ${Cancel_Attachment_button}         xpath=    //android.view.View[@content-desc="* Attachments"]/android.widget.Button
-${sizeCaptured_text}                xpath=   //android.view.View[@content-desc="Size"]
-${Attachment_type}                  xpath=   //android.view.View[@text="jpg"]
-${nameCaptured_input}               xpath=   //android.widget.EditText
-${remarksCaptured_input}            xpath=   //android.widget.EditText[2]
+${sizeCaptured_text}                xpath=    //android.view.View[@content-desc="Size"]
+${Attachment_type}                  xpath=    //android.view.View[@text="jpg"]
+${nameCaptured_input}               xpath=    //android.widget.EditText
+${remarksCaptured_input}            xpath=    //android.widget.EditText[2]
+${shutter_button}                   xpath=    //android.widget.ImageView[@resource-id="com.sec.android.app.camera:id/normal_center_button"]
+${stop_button}                      xpath=    //android.widget.ImageView[@resource-id="com.sec.android.app.camera:id/stop_button_icon"]
+${camera_button}                    xpath=    //android.widget.Button[@content-desc="Camera"]
+${cameraCapture_button}             xpath=    //android.widget.Button[@content-desc="Capture"]
+${sizeCaptured_text}                xpath=    //android.view.View[@content-desc="Size"]
+#${nameCaptured_input}               xpath=    //android.widget.EditText[@bounds='[11,1782][1070,1929]']                # old bounds  (coordinate 500 1460)
+#${nameCaptured_input}               xpath=    //android.widget.EditText[@bounds='[26,1755][1054,1902]']                    # new bounds
+${nameCaptured_input}               xpath=    //android.widget.EditText[@clickable='true' and @enabled='true']
+#${nameCaptured_input_Adibah}        xpath=    //android.widget.EditText[@bounds='[12,1867][1068,2023]']
+${remarksCaptured_input}            xpath=    //android.widget.ScrollView/android.widget.EditText[2]
+${uploadCaptured_button}            xpath=    //android.widget.Button[@content-desc="Upload"]
+${recordCapture_button}             xpath=    //android.widget.Button[@content-desc="Record"]
+${gallery_button}                   xpath=    //android.widget.Button[@content-desc="Gallery"]
+${photoGallery_button}              xpath=    //android.widget.Button[@content-desc="Photo"]
+${videoGallery_button}              xpath=    //android.widget.Button[@content-desc="Video"]
+${retryFileName}                    xpath=    //android.widget.Button[@content-desc="Retry"]
+${cancelFileName}                   xpath=    //android.widget.Button[@content-desc="Cancel"]
+${upload_button}                    xpath=    //android.widget.Button[@content-desc="Upload"]
+${photoPickerFirstItem_X}                     179
+${photoPickerFirstItem_Y}                     1702
+${photoPickerAdd_Button_Done_X}               904
+${photoPickerAdd_Button_Done_Y}               2191
+${photoPickerAdd_Button_Done}       xpath=    //android.widget.TextView[@text="Done"] 
+
+#-----------------------------------FILES/DOCUMENT-----------------------------------------------
+
+${files_button}                     xpath=    //android.widget.Button[@content-desc="Files"]
+${documentFiles_button}             xpath=    //android.widget.Button[@content-desc="Document"]
+${textFiles_button}                 xpath=    //android.widget.Button[@content-desc="Text"]
+
+${searchPhone_button}               xpath=    //android.widget.Button[@content-desc="Search"]
+${searchPhone_input}                xpath=    //android.widget.AutoCompleteTextView[@resource-id="com.google.android.documentsui:id/search_src_text"]
+
+${documentsUI_FileItem_X}                     519
+${documentsUI_FileItem_Y}                     960
+${documentsUI_Select_Button}        xpath=    //android.widget.Button[@text="Select"]
+
+#-----------------------------------SERVICE VERIFCATION PAGE------------------------------------------
+
+${Service_Verification_Button}      xpath=    //android.widget.Button[@content-desc="Service Verification"]
+${Verify_Button}                    xpath=    //android.widget.Button[@content-desc="Verify"]
+${Done_Button}                      xpath=    //android.widget.Button[@content-desc="Done"]
+${IVR_Pin_Code_Button}              xpath=    //android.widget.EditText
+${Update_SPANMS_Button}             xpath=    //android.widget.Button[@content-desc=" Update Via SPANMS"]
+${Update_Manually_Button}           xpath=    //android.widget.Button[@content-desc="Update Manually"]
+${Reverify_Inventory_Button}        xpath=    //android.widget.Button[@content-desc="Reverify Inventory"]

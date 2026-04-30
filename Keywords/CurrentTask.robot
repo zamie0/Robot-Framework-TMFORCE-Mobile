@@ -163,11 +163,11 @@ Change Status to In Progress
     Search by Activity ID
 
 Change Status to Resolved
-    #Tap With Positions    ${TAP_DURATION}    ${{ (${PendingAccept_Dropdown_HEADER_X}, ${PendingAccept_Dropdown_HEADER_Y}) }}
-    #Sleep    5
-    #Tap With Positions    ${TAP_DURATION}    ${{ (${CurrentTask_Dropdown_HEADER_X}, ${CurrentTask_Dropdown_HEADER_Y}) }}
-    #Sleep    5
-    #Task.Search by Source System
+    Tap With Positions    ${TAP_DURATION}    ${{ (${PendingAccept_Dropdown_HEADER_X}, ${PendingAccept_Dropdown_HEADER_Y}) }}
+    Sleep    5
+    Tap With Positions    ${TAP_DURATION}    ${{ (${CurrentTask_Dropdown_HEADER_X}, ${CurrentTask_Dropdown_HEADER_Y}) }}
+    Sleep    5
+    Task.Search by Source System
 
     Wait Until Element Is Visible    ${Click_CurrentTask}      30s
     Click Element    ${Click_CurrentTask}
@@ -198,19 +198,19 @@ Change Status to Resolved
     Wait Until Element Is Visible     ${Cause_Category}     timeout=30s
     Click Element    ${Cause_Category}
     Sleep    5s
-    Click Element    xpath=//android.widget.Button[@content-desc="BTU"]
+    Click Element    xpath=//android.widget.Button[@content-desc="UE Consultancy"]
     Sleep    5s
 
     Wait Until Element Is Visible     ${Cause_Code}     timeout=30s
     Click Element    ${Cause_Code}
     Sleep    5s
-    Click Element    xpath=//android.widget.Button[@content-desc="VDSL Modem Faulty"]
+    Click Element    xpath=//android.widget.Button[@content-desc="Customer_Not Reachable"]
     Sleep    5s
     
     Wait Until Element Is Visible     ${Resolution_Code}     timeout=30s
     Click Element    ${Resolution_Code}
     Sleep    5s
-    Click Element    xpath=//android.widget.Button[@content-desc="TMCPE Replaced"]
+    Click Element    xpath=//android.widget.Button[@content-desc="Need Reappointment"]
     Sleep    5s
 
     Scroll until Submit button
@@ -316,7 +316,6 @@ Change Status to Resolved
     Sleep    60s
 
     Press Keycode    4
-    Press Keycode    4
 
 Change Status to Reschedule (No Date)
     #Tap With Positions    ${TAP_DURATION}    ${{ (${PendingAccept_Dropdown_HEADER_X}, ${PendingAccept_Dropdown_HEADER_Y}) }}
@@ -389,7 +388,6 @@ Change Status to Reschedule (No Date)
     Click Element    ${Yes_Button}  
     Sleep    60s
 
-    Press Keycode    4
     Press Keycode    4
 
 Change Status to Reschedule (With Date) 

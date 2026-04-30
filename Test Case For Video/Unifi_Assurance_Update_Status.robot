@@ -26,11 +26,11 @@ Execute Task List
     #CurrentTask.Change Status to In Progress
 
     # 7.4 RESOLVED
-    CurrentTask.Change Status to Resolved
+    CurrentTask.Change Status to Resolved   #Belum
 
     # 7.5 RESCHEDULED
-    CurrentTask.Change Status to Reschedule (No Date)
-    CurrentTask.Change Status to Reschedule (With Date) 
+    #CurrentTask.Change Status to Reschedule (No Date)
+    #CurrentTask.Change Status to Reschedule (With Date)  #Belum
     
 
 
