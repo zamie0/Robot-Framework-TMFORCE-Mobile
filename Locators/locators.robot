@@ -183,7 +183,10 @@ ${Advice_Customer_Button}           xpath=   //android.widget.Button[@content-de
 ${TMCPE_Replaced_Button}            xpath=   //android.widget.Button[@content-desc="TMCPE Replaced"]
 
 #Resolved Status page
-${Add_Attachment_Button}            xpath=   //android.view.View[@content-desc="* Attachments"]//android.widget.ImageView
+#${Add_Attachment_Button}            xpath=   //android.view.View[contains(@content-desc, "Attachments")]//android.widget.ImageView
+${Add_Attachment_Button_X}          975
+${Add_Attachment_Button_Y}          1182
+
 
 ${newAttachments_button}            xpath=   //android.widget.Button[@bounds='[891,2085][1038,2186]']
 ${uploadAttachment_list}            xpath=   //android.view.View[@content-desc="Upload Attachment"]

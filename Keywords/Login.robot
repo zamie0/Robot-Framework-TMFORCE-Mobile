@@ -8,11 +8,13 @@ Login app - negative scenario
     Click Element                      ${username_input}
     Input Text                         ${username_input}    USER1
     Hide Keyboard
+    Sleep    10
 
     Wait Until Element Is Visible      ${password_input}    10s
     Click Element                      ${password_input}
     Input Password                     ${password_input}    test
     Hide Keyboard
+    Sleep    10
 
     Click Element                      ${login_btn}
 
@@ -41,16 +43,18 @@ Login app - positive scenario
     Click Element                       ${username_input}
     Wait Until Page Contains Element    ${username_input}    timeout=10
     Input Text                          ${username_input}    D14331
-    Sleep    1
+    Sleep    5
     Hide Keyboard
+
     Click Element                       ${password_input}
     Wait Until Page Contains Element    ${password_input}    timeout=10
     Input Password                      ${password_input}    D14331
     Hide Keyboard
     Reveal Password
-    Sleep    2
+    Sleep    5
+
     Click Element                       ${login_btn}
-    Sleep    20
+    Sleep    5
 
 Late Login    
     # Wait Until Page Contains          ${lateLogin_popup}    timeout=10s
@@ -166,7 +170,7 @@ Toggle Language
 Reveal Password
     Wait Until Element Is Visible       ${EYE_BUTTON}    10s
     Click Element                       ${EYE_BUTTON}
-    Sleep    0.5s
+    Sleep    5
 
 Forgot Password
     Sleep    2

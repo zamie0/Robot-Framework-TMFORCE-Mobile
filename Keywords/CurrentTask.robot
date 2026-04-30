@@ -163,6 +163,12 @@ Change Status to In Progress
     Search by Activity ID
 
 Change Status to Resolved
+    #Tap With Positions    ${TAP_DURATION}    ${{ (${PendingAccept_Dropdown_HEADER_X}, ${PendingAccept_Dropdown_HEADER_Y}) }}
+    #Sleep    5
+    #Tap With Positions    ${TAP_DURATION}    ${{ (${CurrentTask_Dropdown_HEADER_X}, ${CurrentTask_Dropdown_HEADER_Y}) }}
+    #Sleep    5
+    #Task.Search by Source System
+
     Wait Until Element Is Visible    ${Click_CurrentTask}      30s
     Click Element    ${Click_CurrentTask}
     Sleep    5s
@@ -203,6 +209,7 @@ Change Status to Resolved
     
     Wait Until Element Is Visible     ${Resolution_Code}     timeout=30s
     Click Element    ${Resolution_Code}
+    Sleep    5s
     Click Element    xpath=//android.widget.Button[@content-desc="TMCPE Replaced"]
     Sleep    5s
 
@@ -212,10 +219,13 @@ Change Status to Resolved
     Click Element    ${notes_input}
     Input Text       ${notes_input}      Test  
     Sleep    5s
-    Hide Keyboard      
+    Hide Keyboard    
 
-    Wait Until Element Is Visible    ${Add_Attachment_Button}    timeout=30s
-    Click Element    ${Add_Attachment_Button}
+    Sleep    5
+    Tap With Positions    ${TAP_DURATION}    ${{ (${Add_Attachment_Button_X}, ${Add_Attachment_Button_Y}) }}
+    #Sleep    5
+    #Wait Until Element Is Visible    ${Add_Attachment_Button}    timeout=30s
+    #Click Element    ${Add_Attachment_Button}
     Sleep    5s
 
     #Click Element    ${newAttachments_button}
@@ -291,17 +301,177 @@ Change Status to Resolved
     Swipe    540    1200    540    800    500
     Sleep    1
 
-    Swipe    560    800    560    1200    500
-    Sleep    1
-    
-    Swipe    60    1105    1020    1105    500
-    Sleep    1
+    Wait Until Element Is Visible     ${Submit_Button}     timeout=30s
+    Click Element    ${Submit_Button}  
+    Sleep    5s
 
     Scroll until Submit button
 
     Wait Until Element Is Visible     ${Submit_Button}     timeout=30s
     Click Element    ${Submit_Button}  
     Sleep    5s
+
+    Wait Until Element Is Visible     ${Yes_Button}     timeout=30s
+    Click Element    ${Yes_Button}  
+    Sleep    60s
+
+    Press Keycode    4
+    Press Keycode    4
+
+Change Status to Reschedule (No Date)
+    #Tap With Positions    ${TAP_DURATION}    ${{ (${PendingAccept_Dropdown_HEADER_X}, ${PendingAccept_Dropdown_HEADER_Y}) }}
+    #Sleep    5
+    #Tap With Positions    ${TAP_DURATION}    ${{ (${CurrentTask_Dropdown_HEADER_X}, ${CurrentTask_Dropdown_HEADER_Y}) }}
+    #Sleep    5
+    #Task.Search by Source System
+
+    Wait Until Element Is Visible    ${Click_CurrentTask}      30s
+    Click Element    ${Click_CurrentTask}
+    Sleep    5s
+
+    Click Element    ${Activity_Tab}
+    Sleep    5s
+    
+    Capture Activity ID
+    Sleep    5s
+
+    Wait Until Element Is Visible    ${Action_button}      30s
+    Click Element    ${Action_button}
+    Sleep    5s
+
+    Wait Until Element Is Visible    ${Update_button}      30s
+    Click Element    ${Update_button}
+    Sleep    5s
+
+    Wait Until Element Is Visible     ${New_Status}     timeout=30s
+    Click Element    ${New_Status}  
+    Sleep    5s
+
+    Wait Until Element Is Visible     ${Rescheduled_Button}     timeout=30s
+    Click Element    ${Rescheduled_Button}
+    Sleep    5s   
+
+    Wait Until Element Is Visible     ${NoDate_Button}     timeout=30s
+    Click Element    ${NoDate_Button}
+    Sleep    5s   
+
+    Wait Until Element Is Visible     ${Cause_Category}     timeout=30s
+    Click Element    ${Cause_Category}
+    Sleep    5s
+    Click Element    xpath=//android.widget.Button[@content-desc="Customer"]
+    Sleep    5s
+
+    Wait Until Element Is Visible     ${Cause_Code}     timeout=30s
+    Click Element    ${Cause_Code}
+    Sleep    5s
+    Click Element    xpath=//android.widget.Button[@content-desc="Customer_Cancel TT"]
+    Sleep    5s
+    
+    Wait Until Element Is Visible     ${Resolution_Code}     timeout=30s
+    Click Element    ${Resolution_Code}
+    Sleep    5s
+    Click Element    xpath=//android.widget.Button[@content-desc="Advise UCC"]
+    Sleep    5s
+
+    Scroll until Submit button
+
+    Wait Until Element Is Visible     ${notes_input}     timeout=30s
+    Click Element    ${notes_input}
+    Input Text       ${notes_input}      Test  
+    Sleep    5s
+    Hide Keyboard  
+
+    Wait Until Element Is Visible     ${Submit_Button}     timeout=30s
+    Click Element    ${Submit_Button}  
+    Sleep    5s
+
+    Wait Until Element Is Visible     ${Yes_Button}     timeout=30s
+    Click Element    ${Yes_Button}  
+    Sleep    60s
+
+    Press Keycode    4
+    Press Keycode    4
+
+Change Status to Reschedule (With Date) 
+    #Tap With Positions    ${TAP_DURATION}    ${{ (${PendingAccept_Dropdown_HEADER_X}, ${PendingAccept_Dropdown_HEADER_Y}) }}
+    #Sleep    5
+    #Tap With Positions    ${TAP_DURATION}    ${{ (${CurrentTask_Dropdown_HEADER_X}, ${CurrentTask_Dropdown_HEADER_Y}) }}
+    #Sleep    5
+    #Task.Search by Source System
+
+    Wait Until Element Is Visible    ${Click_CurrentTask}      30s
+    Click Element    ${Click_CurrentTask}
+    Sleep    5s
+
+    Click Element    ${Activity_Tab}
+    Sleep    5s
+    
+    Capture Activity ID
+    Sleep    5s
+
+    Wait Until Element Is Visible    ${Action_button}      30s
+    Click Element    ${Action_button}
+    Sleep    5s
+
+    Wait Until Element Is Visible    ${Update_button}      30s
+    Click Element    ${Update_button}
+    Sleep    5s
+
+    Wait Until Element Is Visible     ${New_Status}     timeout=30s
+    Click Element    ${New_Status}  
+    Sleep    5s
+
+    Wait Until Element Is Visible     ${Rescheduled_Button}     timeout=30s
+    Click Element    ${Rescheduled_Button}
+    Sleep    5s   
+
+    Wait Until Element Is Visible      ${WithDate_Button}     timeout=30s
+    Click Element     ${WithDate_Button}
+    Sleep    5s
+
+    Click Element    ${Appointment_DateTime}
+    Wait Until Element Is Visible     ${Date_Appointmnet1}     timeout=90s
+    Click Element    ${Date_Appointmnet1}
+    Click Element    ${Timeslot_Appointment1}
+    Click Element    ${Confirm_Button} 
+
+    Click Element    ${First_Preferred_DateTime}
+    Wait Until Element Is Visible     ${Date_Appointmnet2}     timeout=90s
+    Click Element    ${Date_Appointmnet2}
+    Click Element    ${Timeslot_Appointment2}
+    Click Element    ${Confirm_Button} 
+
+    Click Element    ${Second_Preferred_DateTime}
+    Wait Until Element Is Visible     ${Date_Appointmnet2}     timeout=90s
+    Click Element    ${Date_Appointmnet2}
+    Click Element    ${Timeslot_Appointment2}
+    Click Element    ${Confirm_Button}    
+    
+    Wait Until Element Is Visible     ${Cause_Category}     timeout=30s
+    Click Element    ${Cause_Category}
+    Sleep    5s
+    Click Element    xpath=//android.widget.Button[@content-desc="Customer"]
+    Sleep    5s
+
+    Wait Until Element Is Visible     ${Cause_Code}     timeout=30s
+    Click Element    ${Cause_Code}
+    Sleep    5s
+    Click Element    xpath=//android.widget.Button[@content-desc="Customer_Cancel TT"]
+    Sleep    5s
+    
+    Wait Until Element Is Visible     ${Resolution_Code}     timeout=30s
+    Click Element    ${Resolution_Code}
+    Sleep    5s
+    Click Element    xpath=//android.widget.Button[@content-desc="Advise UCC"]
+    Sleep    5s
+
+    Scroll until Submit button
+
+    Wait Until Element Is Visible     ${notes_input}     timeout=30s
+    Click Element    ${notes_input}
+    Input Text       ${notes_input}      Test  
+    Sleep    5s
+    Hide Keyboard  
 
     Wait Until Element Is Visible     ${Submit_Button}     timeout=30s
     Click Element    ${Submit_Button}  
@@ -346,107 +516,7 @@ Search by Activity ID
 
 
 
-Change Status to Reschedule (No Date)
-    Wait Until Element Is Visible     ${New_Status}     timeout=90s
-    Click Element    ${New_Status}  
-    Wait Until Element Is Visible     ${Rescheduled_Button}     timeout=90s
-    Click Element    ${Rescheduled_Button}   
-    
-    Click Element    ${WithDate_Button}
-    Sleep    2
-    Click Element    ${NoDate_Button}
 
-    # Wait Until Element Is Visible     ${Cause_Category}     timeout=90s
-    
-    ${element}=    Run Keyword And Ignore Error    Get Webelement    ${Submit_Button}
-    FOR    ${i}    IN RANGE    5
-        Run Keyword If    '${element[0]}' != 'FAIL'    Exit For Loop
-        Swipe By Percent    50    80    50    30    500
-        Sleep    1
-        ${element}=    Run Keyword And Ignore Error    Get Webelement    ${Submit_Button}
-    END
-    Run Keyword If    '${element[0]}' == 'FAIL'    Fail    Accept button not found after scrolling
-
-    
-    Click Element    ${Cause_Category}
-    Click Element    ${Customer_Button}
-
-    Wait Until Element Is Visible     ${Cause_Code}     timeout=90s
-    Click Element    ${Cause_Code}
-    Click Element    ${Building_Internal_Button}
-    
-    Wait Until Element Is Visible     ${Resolution_Code}     timeout=90s
-    Click Element    ${Resolution_Code}
-    Click Element    ${Normalise_Cable_Button}
-    
-    Click Element    ${notes_input}
-    Input Text       ${notes_input}      test  
-    Sleep    1
-    Hide Keyboard                     
-    
-    Scroll until Submit button
-
-    Click Element    ${Submit_Button}  
-    Click Element    ${Yes_Button}  
-    Sleep    1
-    
-    # Wait Until Element Is Visible     ${Back_Button}     timeout=200s    #reshedule takde back button lepas submit??
-    # Click Element    ${Back_Button}  
-    # Sleep    1
-
-
-#from on my way  to reschedule (with date)
-Change Status to Reschedule (With Date) 
-    Wait Until Element Is Visible     ${New_Status}     timeout=90s
-    Click Element    ${New_Status}  
-    Wait Until Element Is Visible     ${Rescheduled_Button}     timeout=90s
-    Click Element    ${Rescheduled_Button}   
-    
-    Click Element    ${WithDate_Button}
-
-    # Wait Until Element Is Visible     ${Cause_Category}     timeout=90s
-    
-    Scroll until Submit button
-    
-    Click Element    ${Appointment_DateTime}
-    Wait Until Element Is Visible     ${Date_Appointmnet1}     timeout=90s
-    Click Element    ${Date_Appointmnet1}
-    Click Element    ${Timeslot_Appointment1}
-    Click Element    ${Confirm_Button} 
-
-    Click Element    ${First_Preferred_DateTime}
-    Wait Until Element Is Visible     ${Date_Appointmnet2}     timeout=90s
-    Click Element    ${Date_Appointmnet2}
-    Click Element    ${Timeslot_Appointment2}
-    Click Element    ${Confirm_Button} 
-
-    Click Element    ${Second_Preferred_DateTime}
-    Wait Until Element Is Visible     ${Date_Appointmnet2}     timeout=90s
-    Click Element    ${Date_Appointmnet2}
-    Click Element    ${Timeslot_Appointment2}
-    Click Element    ${Confirm_Button} 
-
-    Click Element    ${Cause_Category}
-    Click Element    ${Customer_Button}
-
-    Wait Until Element Is Visible     ${Cause_Code}     timeout=90s
-    Click Element    ${Cause_Code}
-    Click Element    ${Building_Internal_Button}
-
-    Wait Until Element Is Visible     ${Resolution_Code}     timeout=90s
-    Click Element    ${Resolution_Code}
-    Click Element    ${Normalise_Cable_Button}
-    
-    Click Element    ${notes_input}
-    Input Text       ${notes_input}      test  
-    Sleep    1
-    Hide Keyboard   
-
-    Scroll until Submit button
-
-    Click Element    ${Submit_Button}  
-    Click Element    ${Yes_Button}  
-    Sleep    2
     
 Change Status to Returned
 

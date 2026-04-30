@@ -23,10 +23,14 @@ Execute Task List
     #CurrentTask.Change Status to On Site
 
     # 7.3 IN PROGRESS
-    CurrentTask.Change Status to In Progress
+    #CurrentTask.Change Status to In Progress
 
     # 7.4 RESOLVED
     CurrentTask.Change Status to Resolved
+
+    # 7.5 RESCHEDULED
+    CurrentTask.Change Status to Reschedule (No Date)
+    CurrentTask.Change Status to Reschedule (With Date) 
     
 
 
