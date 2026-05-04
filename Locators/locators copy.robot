@@ -136,7 +136,7 @@ ${Calendar_Button}                    android=new UiSelector().className("androi
 ${ETTA_Popup}                         xpath=//android.view.View[@content-desc="ETTA Successfully Updated"]
 
 #dropdown task
-${PendingAccept_Dropdown}       xpath=//android.view.View[@content-desc="Pending Accept 42" and @clickable="true"]
+${PendingAccept_Dropdown}               xpath=//android.view.View[@content-desc="Pending Accept 42" and @clickable="true"]
 ${CurrentTask_Dropdown}              xpath=//android.view.View[@content-desc="Current Task"]
 ${CurrentTask_Dropdown}              android=new UiSelector().className("android.view.View").descriptionContains("Current Task").clickable(true)
 

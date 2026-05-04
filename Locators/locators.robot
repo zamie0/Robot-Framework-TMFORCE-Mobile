@@ -74,6 +74,46 @@ ${USER_PROFILE}                     xpath=    //android.view.View[@bounds='[0,24
 #${ASSIGNED_BUILDINGS}               xpath=    //android.view.View[@content-desc="Assigned Building(s)"]
 ${LOGOUT_BUTTON}                    xpath=    //android.widget.Button[@content-desc="Log Out"]
 ${CLOSE_SIDEBAR}                    xpath=    //android.view.View[@bounds='[804,240][1080,442]']
+${Setting_Support}                  xpath=    //android.widget.Button[@content-desc="Settings & Support"]
+${HELP_BUTTON}                      xpath=    //android.widget.Button[@content-desc="Help"]
+
+#-----------------------------------PROFILE-----------------------------------------------------
+
+${personalInformation_Section}      xpath=    //android.view.View[@content-desc="Personal Information"] 
+${personalInformation_Section_X}              936
+${personalInformation_Section_Y}              1006
+
+${assignedBuildings_Section}        xpath=    //android.view.View[@content-desc="Assigned Building(s)"]
+${assignedBuildings_Section_X}                931
+${assignedBuildings_Section_Y}                1206
+
+${primaryCabinets_Section}          xpath=    //android.view.View[@content-desc="Primary Cabinet(s)"]
+${primaryCabinets_Section_X}                  954
+${primaryCabinets_Section_Y}                  1366
+
+${secondaryCabinets_Section}        xpath=    //android.view.View[contains(@content-desc, "Secondary Cabinet(s)")]
+${secondaryCabinets_Section_X}                962
+${secondaryCabinets_Section_Y}                1553
+
+${skillsets_Section}                xpath=    //android.view.View[@content-desc="Skillset(s)"]
+${skillsets_Section_X}                        966
+${skillsets_Section_Y}                        1717
+
+${editPictureProfileButton}         xpath=    //android.widget.Button[@package="my.com.tm.tmforce.flutter.enterprise.sit"]
+${editPictureProfileButton_X}                 649
+${editPictureProfileButton_Y}                 670
+
+${uploadProfilePicture}             xpath=    //android.view.View[@content-desc="Upload Profile Picture"]
+${namePicture_input}                xpath=    //android.widget.EditText
+
+#-----------------------------------PARTNER-INFO------------------------------------------------
+
+${Partner_Info_Button}              xpath=    //android.widget.Button[@content-desc="Partner Info"]
+${Add_New_Partner_Button}           xpath=    //android.widget.Button[@content-desc="Add New Partner"]
+${Add_Partner_Button_X}                       854
+${Add_Partner_Button_Y}                       421
+${X_Partner_Button_X}                         943
+${X_Partner_Button_Y}                         652
 
 #---------------------------------- TASK PAGE---------------------------------------------------
 
