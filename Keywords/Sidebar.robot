@@ -75,6 +75,36 @@ Explore User Profile
     Tap With Positions    ${TAP_DURATION}    ${{ (${skillsets_Section_X}, ${skillsets_Section_Y}) }}
     Sleep    5
 
+Open Report History
+    Open Sidebar
+
+    Scroll Down A Bit
+
+    Wait Until Element Is Visible    ${Report}    timeout=30s
+    Click Element    ${Report}
+    Sleep    5
+
+    Open Ticket Reports
+
+Open Ticket Reports
+    Wait Until Element Is Visible    ${Ticket_Reports_Button}    timeout=30s
+    Click Element    ${Ticket_Reports_Button}
+    Sleep    5
+
+    Wait Until Element Is Visible    ${From_Button}    timeout=30s
+    Click Element    ${From_Button}
+    Sleep    5
+
+    Tap With Positions    ${TAP_DURATION}    ${{ (${calendar_From_X}, ${calendar_From_Y}) }}
+    Sleep    2s
+
+    Tap With Positions    ${TAP_DURATION}    ${{ (${calendar_Today_X}, ${calendar_Today_Y}) }}
+    Sleep    2s
+
+    Wait Until Element Is Visible    ${Confirm_Button}    timeout=30s
+    Click Element    ${Confirm_Button}
+    Sleep    5
+
 Change Picture Profile
     Wait Until Element Is Visible    ${editPictureProfileButton}    timeout=30s
     Tap With Positions    ${TAP_DURATION}    ${{ (${editPictureProfileButton_X}, ${editPictureProfileButton_Y}) }}

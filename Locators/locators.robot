@@ -75,6 +75,7 @@ ${USER_PROFILE}                     xpath=    //android.view.View[@bounds='[0,24
 ${LOGOUT_BUTTON}                    xpath=    //android.widget.Button[@content-desc="Log Out"]
 ${CLOSE_SIDEBAR}                    xpath=    //android.view.View[@bounds='[804,240][1080,442]']
 ${Setting_Support}                  xpath=    //android.widget.Button[@content-desc="Settings & Support"]
+${Report}                           xpath=    //android.widget.Button[@content-desc="Report"]
 ${HELP_BUTTON}                      xpath=    //android.widget.Button[@content-desc="Help"]
 
 #-----------------------------------PROFILE-----------------------------------------------------
@@ -114,6 +115,17 @@ ${Add_Partner_Button_X}                       854
 ${Add_Partner_Button_Y}                       421
 ${X_Partner_Button_X}                         943
 ${X_Partner_Button_Y}                         652
+
+#-----------------------------------TICKET-REPORT------------------------------------------------
+
+${Ticket_Reports_Button}            xpath=    //android.view.View[@content-desc="Ticket Reports"]
+${From_Button}                      xpath=    //android.widget.Button[contains(@content-desc, "From:")]
+${To_Button}                        xpath=    //android.widget.Button[contains(@content-desc, "To:")]
+
+${calendar_From_X}                            167
+${calendar_From_Y}                            1135
+${calendar_Today_X}                           664
+${calendar_Today_Y}                           1135
 
 #---------------------------------- TASK PAGE---------------------------------------------------
 
