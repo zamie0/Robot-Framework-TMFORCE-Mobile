@@ -2,6 +2,7 @@
 Resource    ../Configs/setting.robot
 Resource    ../Locators/locators.robot
 Resource    ../Keywords/Task.robot
+Resource    ../Keywords/Ticket.robot
 
 *** Variables ***
 # Global variable to store the ID across different keywords
@@ -491,13 +492,17 @@ Change Status to Reschedule (With Date)
     Hide Keyboard
     Sleep    5
 
-    ${ticket_no}=    Set Variable    ${Search_button}
-
-    ${Current_Ticket}    Set Variable    xpath=//android.view.View[contains(@content-desc, "${ticket_no}")]
-
-    Wait Until Element Is Visible    ${Current_Ticket}    30s
-    Click Element    ${Current_Ticket}
+    Wait Until Element Is Visible    ${Click_CurrentTask}      30s
+    Click Element    ${Click_CurrentTask}
     Sleep    5s
+
+    #${ticket_no}=    Set Variable    ${Search_button}
+
+    #${Current_Ticket}    Set Variable    xpath=//android.view.View[contains(@content-desc, "${ticket_no}")]
+
+    #Wait Until Element Is Visible    ${Current_Ticket}    30s
+    #Click Element    ${Current_Ticket}
+    #Sleep    5s
 
     Click Element    ${Activity_Tab}
     Sleep    5s
@@ -525,23 +530,33 @@ Change Status to Reschedule (With Date)
     Click Element     ${WithDate_Button}
     Sleep    5s
 
-    Click Element    ${Appointment_DateTime}
-    Wait Until Element Is Visible     ${Date_Appointmnet1}     timeout=90s
-    Click Element    ${Date_Appointmnet1}
-    Click Element    ${Timeslot_Appointment1}
-    Click Element    ${Confirm_Button} 
+    Ticket.Scroll Down A Bit
 
-    Click Element    ${First_Preferred_DateTime}
-    Wait Until Element Is Visible     ${Date_Appointmnet2}     timeout=90s
-    Click Element    ${Date_Appointmnet2}
-    Click Element    ${Timeslot_Appointment2}
-    Click Element    ${Confirm_Button} 
+    Wait Until Element Is Visible      ${Appointment_DateTime}     timeout=30s
+    Click Element     ${Appointment_DateTime}
+    Sleep    5s
 
-    Click Element    ${Second_Preferred_DateTime}
-    Wait Until Element Is Visible     ${Date_Appointmnet2}     timeout=90s
-    Click Element    ${Date_Appointmnet2}
-    Click Element    ${Timeslot_Appointment2}
-    Click Element    ${Confirm_Button}    
+    Tap With Positions    ${TAP_DURATION}    ${{ (${calendar_Today_May11_X}, ${calendar_Today_May11_Y}) }}
+    Sleep    5s
+
+    Tap With Positions    ${TAP_DURATION}    ${{ (${radioButton_Option_Time_X}, ${radioButton_Option_Time_Y}) }}
+    Sleep    5s
+
+    Wait Until Element Is Visible      ${Confirm_Button}     timeout=30s
+    Click Element     ${Confirm_Button}
+    Sleep    5s
+
+    #Click Element    ${First_Preferred_DateTime}
+    #Wait Until Element Is Visible     ${Date_Appointmnet2}     timeout=90s
+    #Click Element    ${Date_Appointmnet2}
+    #Click Element    ${Timeslot_Appointment2}
+    #Click Element    ${Confirm_Button} 
+
+    #Click Element    ${Second_Preferred_DateTime}
+    #Wait Until Element Is Visible     ${Date_Appointmnet2}     timeout=90s
+    #Click Element    ${Date_Appointmnet2}
+    #Click Element    ${Timeslot_Appointment2}
+    #Click Element    ${Confirm_Button}    
     
     Wait Until Element Is Visible     ${Cause_Category}     timeout=30s
     Click Element    ${Cause_Category}

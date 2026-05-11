@@ -66,7 +66,7 @@ Update Granite Inventory
     Click Element    ${Get_Network_Info}
     Sleep    10s
 
-    #Change FDP
+    Change FDP
 
     Change Port
 
@@ -147,7 +147,7 @@ Change Port
 Update NIS Inventory
     Sleep    5s
     Task.Click Current Task
-    
+
     WHILE    True
         ${found}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${NIS_Tab}    2s
         
@@ -159,6 +159,51 @@ Update NIS Inventory
         Swipe    900    320    200    320    500
     END
 
+    Sleep    5s
+
+    Wait Until Element Is Visible    ${Update_NIS_Inventory}    30s
+    Click Element    ${Update_NIS_Inventory}
+    Sleep    5s
+
+    Wait Until Element Is Visible    ${Get_Circuit_Details}    30s
+    Click Element    ${Get_Circuit_Details}
+    Sleep    10s
+
+    Scroll Down A Bit
+
+    Change DP Pair
+
+
+Change DP Pair
+    Wait Until Element Is Visible    ${Change_DP_Pair}    30s
+    Click Element    ${Change_DP_Pair}
+    Sleep    10s
+
+    Scroll Down A Bit
+
+    Wait Until Element Is Visible    ${availablePair_Dropdown}    timeout=30s
+    Tap With Positions    ${TAP_DURATION}    ${{ (${availablePair_Dropdown_X}, ${availablePair_Dropdown_Y}) }}
+    Sleep    5s
+
+    Wait Until Element Is Visible    xpath=//android.widget.Button[@content-desc="0003"]    30s
+    Click Element    xpath=//android.widget.Button[@content-desc="0003"]
+    Sleep    5s
+
+    Wait Until Element Is Visible    ${Reason_Dropdown_DP_Pair}    30s
+    Tap With Positions    ${TAP_DURATION}    ${{ (${reason_Dropdown_DP_Pair_X}, ${reason_Dropdown_DP_Pair_Y}) }}
+    Sleep    5s
+
+    Click Element    xpath=//android.widget.Button[@content-desc="Faulty"]
+    Sleep    5s
+
+    Wait Until Element Is Visible    ${Remark_Field_DP_Pair}    30s
+    Click Element    ${Remark_Field_DP_Pair}
+    Input Text    ${Remark_Field_DP_Pair}    Your remark here
+    Hide Keyboard
+    Sleep    5s
+
+    Wait Until Element Is Visible    ${Change_DP_Pair}    30s
+    Click Element    ${Change_DP_Pair}
     Sleep    5s
 
 Increment Last 4 Digits And Update FDP ID

@@ -234,9 +234,13 @@ ${WithDate_Button}                  xpath=    //android.view.View[@content-desc=
 ${Appointment_DateTime}             xpath=    //android.view.View[@content-desc="Appointment Datetime"]
 ${First_Preferred_DateTime}         xpath=    //android.view.View[@content-desc="First Preferred Datetime"]
 ${Second_Preferred_DateTime}        xpath=    //android.view.View[@content-desc="Second Preferred Datetime"]
-${Date_Appointmnet1}                xpath=    //android.view.View[contains(@content-desc, "Friday, May 23, 2025")]
-${Date_Appointmnet2}                xpath=    //android.view.View[contains(@content-desc, "Thursday, May 8, 2025")]
-${Timeslot_Appointment1}            xpath=    //android.view.View[contains(@content-desc, "09:00 - 11:59")]
+${calendar_Today_May11_X}                     294
+${calendar_Today_May11_Y}                     707
+${radioButton_Option_Time_X}                  907
+${radioButton_Option_Time_Y}                  1315
+${Date_Appointmnet1}                xpath=    //android.view.View[@content-desc="Monday, May 11, 2026 14"]
+${Date_Appointmnet2}                xpath=    //android.view.View[@content-desc="Friday, May 15, 2026 47"]
+${Timeslot_Appointment1}            xpath=    //android.view.View[@content-desc="15:45 - 16:45 (7)"]
 ${Timeslot_Appointment2}            xpath=    //android.view.View[contains(@content-desc, "12:00 - 17:59")]
 ${Timeslot_Appointment3}            xpath=    //android.view.View[contains(@content-desc, "18:00 - 20:59")]
 
@@ -333,9 +337,28 @@ ${Reason_Dropdown}                  xpath=    //android.view.View[contains(@hint
 ${reason_Dropdown_X}                          540
 ${reason_Dropdown_Y}                          1700
 
+${Reason_Dropdown_DP_Pair}          xpath=    //android.view.View[@content-desc="* Reason\nSelect"]
+${reason_Dropdown_DP_Pair_X}                  990
+${reason_Dropdown_DP_Pair_Y}                  1606
+${Remark_Field_DP_Pair}             xpath=    //android.widget.EditText[@hint="* Remark"]
+
 ${REMARK_FIELD}                     xpath=    //android.widget.EditText[@hint="Remark"]
 ${UPDATE_BUTTON}                    xpath=    //android.widget.Button[@content-desc="Update"]
 ${Exit_Button}                      xpath=    //android.widget.Button[@content-desc="Exit"]
+
+${Update_NIS_Inventory}             xpath=    //android.widget.Button[@content-desc="Update NIS Inventory"]
+${Get_Circuit_Details}              xpath=    //android.widget.Button[@content-desc="Get Circuit Details"]
+${Change_DSL_NE}                    xpath=    //android.widget.Button[@content-desc="Change DSL NE"]
+${Change_DSL_Port}                  xpath=    //android.widget.Button[@content-desc="Change DSL Port"]
+
+${Change_DP_Pair}                   xpath=    //android.widget.Button[@content-desc="Change DP Pair"]
+${Check_Alternate_DP}               xpath=    //android.widget.Button[@content-desc="Check Alternate DP"]
+${availablePair_Dropdown}           xpath=    //android.view.View[contains(@content-desc, "Available Pair")]
+${availablePair_Dropdown_X}                   977
+${availablePair_Dropdown_Y}                   1130
+
+${Change_Cabinet_E-Side}            xpath=    //android.widget.Button[@content-desc="Change Cabinet E-Side"]
+${Change_Cabinet_D-Side}            xpath=    //android.widget.Button[@content-desc="Change Cabinet D-Side"]
 
 #-----------------------------------NOTES------------------------------------------------------ 
 
