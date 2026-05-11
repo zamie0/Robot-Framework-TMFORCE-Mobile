@@ -12,6 +12,26 @@ Open Sidebar
     Click Element                       ${BTN_SIDEBAR}
     Sleep    2
 
+Explore Sidebar
+    Open Sidebar
+    Sleep    5
+
+    Wait Until Element Is Visible       ${PROFILE}    5s
+    Click Element                       ${PROFILE}
+    Sleep    5
+
+    Scroll Down A Bit
+
+    Wait Until Element Is Visible       ${SETTING_SUPPORT}    5s
+    Click Element                       ${SETTING_SUPPORT}
+    Sleep    5
+
+    Scroll Down A Bit
+
+    Sleep    5
+
+    Click Log Out Button
+
 Open User Profile
     Wait Until Element Is Visible       ${USER_PROFILE}    5s
     Click Element                       ${USER_PROFILE}
@@ -29,8 +49,8 @@ Open Help
 
     Scroll Down A Bit
 
-    Wait Until Element Is Visible       ${Setting_Support}    5s
-    Click Element                       ${Setting_Support}
+    Wait Until Element Is Visible       ${SETTING_SUPPORT}    5s
+    Click Element                       ${SETTING_SUPPORT}
     Sleep    5
 
     Scroll Down A Bit
@@ -80,8 +100,8 @@ Open Report History
 
     Scroll Down A Bit
 
-    Wait Until Element Is Visible    ${Report}    timeout=30s
-    Click Element    ${Report}
+    Wait Until Element Is Visible    ${REPORT}    timeout=30s
+    Click Element    ${REPORT}
     Sleep    5
 
     Open Ticket Reports

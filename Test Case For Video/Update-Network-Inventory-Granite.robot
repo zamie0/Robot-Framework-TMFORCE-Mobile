@@ -8,7 +8,7 @@ Resource      ../Keywords/Ticket.robot
 
 *** Test Cases ***
 Execute Task List
-    [Documentation]  To Test Ticket Details
+    [Documentation]  To Test Update Network Inventory Granite
     [Tags]  Regression Mobile App
 
     LaunchApp.Launch Application
@@ -16,6 +16,8 @@ Execute Task List
 
     Sleep    20
 
-    Ticket.Click All Tab
+    Task.Search by Source System UNIFI
+    Ticket.Update Granite Inventory
+
 
 

@@ -26,11 +26,25 @@ Clear Search
     Hide Keyboard
     Sleep    1
 
-Search by Source System
+Click Current Task
+    Wait Until Element Is Visible    ${Click_CurrentTask}    30s
+    Click Element    ${Click_CurrentTask}
+    Sleep    5s
+
+Search by Source System UNIFI
     Wait Until Element Is Visible    ${Search_button}     30s
     Click Element    ${Search_button} 
     Clear Text    ${Search_button} 
     Input Text    ${Search_button}     UNIFI
+    Sleep    5
+    Hide Keyboard
+    Sleep    1
+
+Search by Source System BAU
+    Wait Until Element Is Visible    ${Search_button}     30s
+    Click Element    ${Search_button} 
+    Clear Text    ${Search_button} 
+    Input Text    ${Search_button}     BAU
     Sleep    5
     Hide Keyboard
     Sleep    1

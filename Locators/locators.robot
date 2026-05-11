@@ -71,12 +71,32 @@ ${BTN_BM}                           xpath=    //android.widget.Button[@content-d
 
 ${BTN_SIDEBAR}                      xpath=    //android.widget.Button[@bounds='[0,106][147,253]']
 ${USER_PROFILE}                     xpath=    //android.view.View[@bounds='[0,245][788,418]']
-#${ASSIGNED_BUILDINGS}               xpath=    //android.view.View[@content-desc="Assigned Building(s)"]
+${MORNING_CALL}                     xpath=    //android.widget.Button[@content-desc="Morning Call"]
+${FAST_TRACK}                       xpath=    //android.widget.Button[@content-desc="Fast Track"]
+${SELF_PICK_UP}                     xpath=    //android.widget.Button[@content-desc="Self Pick Up"]
+${TASKS}                            xpath=    //android.widget.Button[@content-desc="Tasks"]
+${TASK_POOL}                        xpath=    //android.widget.Button[@content-desc="Task Pool"]
+${PARTNER_INFO}                     xpath=    //android.widget.Button[@content-desc="Partner Info"]
+${CPE_IN_HAND}                      xpath=    //android.widget.Button[@content-desc="CPE In Hand"]
+${CPE_STOCK_COUNT}                  xpath=    //android.widget.Button[@content-desc="CPE Stock Count"]
+${ACS}                              xpath=    //android.widget.Button[@content-desc="ACS"]
+
+${PROFILE}	                        xpath=    //android.widget.Button[@content-desc="Profile"]
+${MY_PROFILE}	                    xpath=    //android.widget.Button[@content-desc="My Profile"]
+${MY_ROSTERING}                     xpath=    //android.widget.Button[@content-desc="My Rostering"]
+${MY_MOVEMENT}	                    xpath=    //android.widget.Button[@content-desc="My Movement"]
+
+${REPORT}                           xpath=    //android.widget.Button[@content-desc="Report"]
+${EXTERNAL_APPLICATION}             xpath=    //android.widget.Button[@content-desc="External Application"]
+
+${SETTING_SUPPORT}                  xpath=    //android.widget.Button[@content-desc="Settings & Support"]
+${SETTING}	                        xpath=    //android.widget.Button[@content-desc="Settings"]
+${SERVER_TIME}                      xpath=    //android.widget.Button[@content-desc="Server Time"]
+
+${HELP_BUTTON}                      xpath=    //android.widget.Button[@content-desc="Help"]
+
 ${LOGOUT_BUTTON}                    xpath=    //android.widget.Button[@content-desc="Log Out"]
 ${CLOSE_SIDEBAR}                    xpath=    //android.view.View[@bounds='[804,240][1080,442]']
-${Setting_Support}                  xpath=    //android.widget.Button[@content-desc="Settings & Support"]
-${Report}                           xpath=    //android.widget.Button[@content-desc="Report"]
-${HELP_BUTTON}                      xpath=    //android.widget.Button[@content-desc="Help"]
 
 #-----------------------------------PROFILE-----------------------------------------------------
 
@@ -154,7 +174,7 @@ ${TaskHistory_Dropdown_Open}        xpath=    //android.view.View[@bounds="[21,1
 
 ${TAP_DURATION}                     500
 
-${Click_PendingAccept}              xpath=    //android.view.View[@content-desc="Pending Accept"]
+${Click_PendingAccept}              android=new UiSelector().descriptionContains("Pending Accept")  
 ${Click_CurrentTask}                android=new UiSelector().descriptionContains("Current Task")
 ${Click_AssignedTask}               xpath=    //android.view.View[contains(@content-desc, "Assigned")]
 ${Click_OnHold}                     xpath=    //android.view.View[@content-desc="On Hold"]
@@ -240,7 +260,7 @@ ${TMCPE_Replaced_Button}            xpath=   //android.widget.Button[@content-de
 #Resolved Status page
 #${Add_Attachment_Button}            xpath=   //android.view.View[contains(@content-desc, "Attachments")]//android.widget.ImageView
 ${Add_Attachment_Button_X}                   975
-${Add_Attachment_Button_Y}                   1182
+${Add_Attachment_Button_Y}                   1339
 
 ${newAttachments_button}            xpath=   //android.widget.Button[@bounds='[891,2085][1038,2186]']
 ${uploadAttachment_list}            xpath=   //android.view.View[@content-desc="Upload Attachment"]
@@ -303,10 +323,19 @@ ${Change_Port}                      xpath=    //android.widget.Button[@content-d
 ${NEW_FDP_ID}                       xpath=    //android.widget.EditText[@hint="New Fdp Id"]
 ${Check_Alternate_FDP}              xpath=    //android.widget.Button[@content-desc="Check Alternate FDP"]
 
-${Available_Port_Dropdown}          xpath=    //android.view.View[contains(@hint, "Available Port")]
-${Reason_Dropdown}                  xpath=    //android.view.View[@hint="Reason\nPlease Select"]
+${Available_Port}                   xpath=    //android.view.View[contains(@hint, "Available Port")]
+${availablePort_Dropdown_FDP_X}               966
+${availablePort_Dropdown_FDP_Y}               1488
+${availablePort_Dropdown_X}                   977
+${availablePort_Dropdown_Y}                   1332
+
+${Reason_Dropdown}                  xpath=    //android.view.View[contains(@hint, "Reason")]
+${reason_Dropdown_X}                          540
+${reason_Dropdown_Y}                          1700
+
 ${REMARK_FIELD}                     xpath=    //android.widget.EditText[@hint="Remark"]
 ${UPDATE_BUTTON}                    xpath=    //android.widget.Button[@content-desc="Update"]
+${Exit_Button}                      xpath=    //android.widget.Button[@content-desc="Exit"]
 
 #-----------------------------------NOTES------------------------------------------------------ 
 

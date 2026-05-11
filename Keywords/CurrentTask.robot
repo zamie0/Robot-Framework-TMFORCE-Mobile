@@ -95,12 +95,15 @@ Change Status to On Site
     Task.Clear Search
 
 Change Status to In Progress
+    Wait Until Element Is Visible    ${Click_PendingAccept}      30s
+    Sleep    5s
+
     Tap With Positions    ${TAP_DURATION}    ${{ (${PendingAccept_Dropdown_HEADER_X}, ${PendingAccept_Dropdown_HEADER_Y}) }}
     Sleep    5
     Tap With Positions    ${TAP_DURATION}    ${{ (${CurrentTask_Dropdown_HEADER_X}, ${CurrentTask_Dropdown_HEADER_Y}) }}
     Sleep    5
 
-    Task.Search by Source System
+    Task.Search by Source System UNIFI
 
     Wait Until Element Is Visible     ${Click_AssignedTask}     timeout=30s
     Click Element    ${Click_AssignedTask} 
@@ -150,7 +153,7 @@ Change Status to In Progress
     Sleep    60s
     
     Press Keycode    4
-    Press Keycode    4
+    #Press Keycode    4
 
     Wait Until Element Is Visible    ${CurrentTask_Dropdown_Open}      30s
     Click Element    ${CurrentTask_Dropdown_Open}
@@ -163,11 +166,13 @@ Change Status to In Progress
     Search by Activity ID
 
 Change Status to Resolved
+    Wait Until Element Is Visible    ${Click_PendingAccept}      30s
+    Sleep    5s
+    
     Tap With Positions    ${TAP_DURATION}    ${{ (${PendingAccept_Dropdown_HEADER_X}, ${PendingAccept_Dropdown_HEADER_Y}) }}
     Sleep    5
-    Tap With Positions    ${TAP_DURATION}    ${{ (${CurrentTask_Dropdown_HEADER_X}, ${CurrentTask_Dropdown_HEADER_Y}) }}
-    Sleep    5
-    Task.Search by Source System
+
+    Task.Search by Source System UNIFI
 
     Wait Until Element Is Visible    ${Click_CurrentTask}      30s
     Click Element    ${Click_CurrentTask}
@@ -301,6 +306,8 @@ Change Status to Resolved
     Swipe    540    1200    540    800    500
     Sleep    1
 
+    Scroll until Submit button
+
     Wait Until Element Is Visible     ${Submit_Button}     timeout=30s
     Click Element    ${Submit_Button}  
     Sleep    5s
@@ -322,7 +329,7 @@ Change Status to Reschedule (No Date)
     #Sleep    5
     #Tap With Positions    ${TAP_DURATION}    ${{ (${CurrentTask_Dropdown_HEADER_X}, ${CurrentTask_Dropdown_HEADER_Y}) }}
     #Sleep    5
-    #Task.Search by Source System
+    #Task.Search by Source System UNIFI
 
     Wait Until Element Is Visible    ${Click_CurrentTask}      30s
     Click Element    ${Click_CurrentTask}
@@ -390,15 +397,106 @@ Change Status to Reschedule (No Date)
 
     Press Keycode    4
 
+Change Status to Reschedule (No Date) Other Than Customer
+    #Tap With Positions    ${TAP_DURATION}    ${{ (${PendingAccept_Dropdown_HEADER_X}, ${PendingAccept_Dropdown_HEADER_Y}) }}
+    #Sleep    5
+    #Tap With Positions    ${TAP_DURATION}    ${{ (${CurrentTask_Dropdown_HEADER_X}, ${CurrentTask_Dropdown_HEADER_Y}) }}
+    #Sleep    5
+    #Task.Search by Source System UNIFI
+
+    Wait Until Element Is Visible    ${Click_PendingAccept}      30s
+    Sleep    5s
+
+    Tap With Positions    ${TAP_DURATION}    ${{ (${PendingAccept_Dropdown_HEADER_X}, ${PendingAccept_Dropdown_HEADER_Y}) }}
+    Sleep    5
+
+    Wait Until Element Is Visible    ${Click_CurrentTask}      30s
+    Click Element    ${Click_CurrentTask}
+    Sleep    5s
+
+    Click Element    ${Activity_Tab}
+    Sleep    5s
+    
+    Capture Activity ID
+    Sleep    5s
+
+    Wait Until Element Is Visible    ${Action_button}      30s
+    Click Element    ${Action_button}
+    Sleep    5s
+
+    Wait Until Element Is Visible    ${Update_button}      30s
+    Click Element    ${Update_button}
+    Sleep    5s
+
+    Wait Until Element Is Visible     ${New_Status}     timeout=30s
+    Click Element    ${New_Status}  
+    Sleep    5s
+
+    Wait Until Element Is Visible     ${Rescheduled_Button}     timeout=30s
+    Click Element    ${Rescheduled_Button}
+    Sleep    5s   
+
+    Wait Until Element Is Visible     ${NoDate_Button}     timeout=30s
+    Click Element    ${NoDate_Button}
+    Sleep    5s   
+
+    Wait Until Element Is Visible     ${Cause_Category}     timeout=30s
+    Click Element    ${Cause_Category}
+    Sleep    5s
+    Click Element    xpath=//android.widget.Button[@content-desc="Customer CPE"]
+    Sleep    5s
+
+    Wait Until Element Is Visible     ${Cause_Code}     timeout=30s
+    Click Element    ${Cause_Code}
+    Sleep    5s
+    Click Element    xpath=//android.widget.Button[@content-desc="BTU Faulty"]
+    Sleep    5s
+    
+    Wait Until Element Is Visible     ${Resolution_Code}     timeout=30s
+    Click Element    ${Resolution_Code}
+    Sleep    5s
+    Click Element    xpath=//android.widget.Button[@content-desc="CCP_CPE Replaced"]
+    Sleep    5s
+
+    Scroll until Submit button
+
+    Wait Until Element Is Visible     ${notes_input}     timeout=30s
+    Click Element    ${notes_input}
+    Input Text       ${notes_input}      Test  
+    Sleep    5s
+    Hide Keyboard  
+
+    Wait Until Element Is Visible     ${Submit_Button}     timeout=30s
+    Click Element    ${Submit_Button}  
+    Sleep    5s
+
+    Wait Until Element Is Visible     ${Yes_Button}     timeout=30s
+    Click Element    ${Yes_Button}  
+    Sleep    60s
+
+    Press Keycode    4
+
 Change Status to Reschedule (With Date) 
     #Tap With Positions    ${TAP_DURATION}    ${{ (${PendingAccept_Dropdown_HEADER_X}, ${PendingAccept_Dropdown_HEADER_Y}) }}
     #Sleep    5
     #Tap With Positions    ${TAP_DURATION}    ${{ (${CurrentTask_Dropdown_HEADER_X}, ${CurrentTask_Dropdown_HEADER_Y}) }}
     #Sleep    5
-    #Task.Search by Source System
+    #Task.Search by Source System UNIFI
 
-    Wait Until Element Is Visible    ${Click_CurrentTask}      30s
-    Click Element    ${Click_CurrentTask}
+    Wait Until Element Is Visible    ${Search_button}     30s
+    Click Element    ${Search_button} 
+    Clear Text    ${Search_button} 
+    Input Text    ${Search_button}     A-0000009612
+    Sleep    5
+    Hide Keyboard
+    Sleep    5
+
+    ${ticket_no}=    Set Variable    ${Search_button}
+
+    ${Current_Ticket}    Set Variable    xpath=//android.view.View[contains(@content-desc, "${ticket_no}")]
+
+    Wait Until Element Is Visible    ${Current_Ticket}    30s
+    Click Element    ${Current_Ticket}
     Sleep    5s
 
     Click Element    ${Activity_Tab}

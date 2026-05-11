@@ -50,6 +50,9 @@ Capture Activity ID
     RETURN    ${CAPTURED_ACTIVITY_ID}
 
 Change Status to On My Way    
+    Wait Until Element Is Visible    ${Click_PendingAccept}      30s
+    Sleep    5s
+
     Tap With Positions    ${TAP_DURATION}    ${{ (${PendingAccept_Dropdown_HEADER_X}, ${PendingAccept_Dropdown_HEADER_Y}) }}
     Sleep    5
     Tap With Positions    ${TAP_DURATION}    ${{ (${CurrentTask_Dropdown_HEADER_X}, ${CurrentTask_Dropdown_HEADER_Y}) }}
@@ -132,32 +135,6 @@ Search by Activity ID
     Hide Keyboard
     Sleep    5s
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Scroll up to the top
     ${element}=    Run Keyword And Ignore Error    Get Webelement    ${CurrentTask_Dropdown}
     FOR    ${i}    IN RANGE    5
@@ -167,47 +144,3 @@ Scroll up to the top
         ${element}=    Run Keyword And Ignore Error    Get Webelement    ${CurrentTask_Dropdown}
     END
     Run Keyword If    '${element[0]}' == 'FAIL'    Fail    Element not found after scrolling up
-
-Update Assigned Task
-
-    #Wait Until Element Is Visible     ${Task_View}     timeout=90s
-    
-    ${element}=    Run Keyword And Ignore Error    Get Webelement    ${AssignedTask_Update_Button}
-    FOR    ${i}    IN RANGE    5
-        Run Keyword If    '${element[0]}' != 'FAIL'    Exit For Loop
-        Swipe By Percent    50    80    50    30    500
-        Sleep    1
-        ${element}=    Run Keyword And Ignore Error    Get Webelement    ${AssignedTask_Update_Button}
-    END
-    Run Keyword If    '${element[0]}' == 'FAIL'    Fail    Accept button not found after scrolling
-    Click Element    ${AssignedTask_Update_Button}
-
-# Select Clock Hour
-#     [Arguments]    ${hour}
-#     ${center_x}=    Set Variable    540
-#     ${center_y}=    Set Variable    1192
-#     ${radius}=      Set Variable    450
-
-#     ${angle}=    Evaluate    ((${hour} % 12) * 30) - 90
-#     ${radian}=    Evaluate    ${angle} * 3.14159265 / 180
-
-#     ${tap_x}=    Evaluate    int(${center_x} + ${radius} * math.cos(${radian}))
-#     ${tap_y}=    Evaluate    int(${center_y} + ${radius} * math.sin(${radian}))
-
-#     Click A Point    ${tap_x}    ${tap_y}
-
-
-# *** Keywords ***
-# Select Clock Minute         #tak jadi
-#     [Arguments]    ${minute}
-#     ${center_x}=    Set Variable    #540
-#     ${center_y}=    Set Variable    #1192
-#     ${radius}=      Set Variable    #550
-
-#     ${angle}=    Evaluate    ((${minute} % 60) * 6) - 90
-#     ${radian}=    Evaluate    ${angle} * 3.14159265 / 180
-
-#     ${tap_x}=    Evaluate    int(${center_x} + ${radius} * math.cos(${radian}))
-#     ${tap_y}=    Evaluate    int(${center_y} + ${radius} * math.sin(${radian}))
-
-#     Tap With Positions    1000    ${tap_x}    ${tap_y}
