@@ -9,6 +9,19 @@ Resource    ../Keywords/Ticket.robot
 ${CAPTURED_ACTIVITY_ID}    NONE
 
 *** Keywords ***
+Search by Activity ID
+    [Documentation]    Uses the ID captured from the view
+    Wait Until Element Is Visible    ${Search_button}    30s
+    Click Element    ${Search_button} 
+    Clear Text       ${Search_button} 
+    
+    # Ensure variable is not empty
+    Run Keyword If    '${CAPTURED_ACTIVITY_ID}' == 'NONE'    Fail    No ID captured to search!
+    
+    Input Text       ${Search_button}    ${CAPTURED_ACTIVITY_ID}
+    Hide Keyboard
+    Sleep    5s
+
 Scroll until Submit button
     ${element}=    Run Keyword And Ignore Error    Get Webelement    ${Submit_Button}
     FOR    ${i}    IN RANGE    5
@@ -595,18 +608,8 @@ Change Status to Reschedule (With Date)
     Press Keycode    4
     Press Keycode    4
 
-Search by Activity ID
-    [Documentation]    Uses the ID captured from the view
-    Wait Until Element Is Visible    ${Search_button}    30s
-    Click Element    ${Search_button} 
-    Clear Text       ${Search_button} 
-    
-    # Ensure variable is not empty
-    Run Keyword If    '${CAPTURED_ACTIVITY_ID}' == 'NONE'    Fail    No ID captured to search!
-    
-    Input Text       ${Search_button}    ${CAPTURED_ACTIVITY_ID}
-    Hide Keyboard
-    Sleep    5s
+
+
 
 
 

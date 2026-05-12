@@ -3,3 +3,4 @@ Library           AppiumLibrary
 Library           OperatingSystem
 Library           Collections
 Library           String
+Library           BuiltIn

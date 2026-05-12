@@ -435,3 +435,112 @@ ${IVR_Pin_Code_Button}              xpath=    //android.widget.EditText
 ${Update_SPANMS_Button}             xpath=    //android.widget.Button[@content-desc=" Update Via SPANMS"]
 ${Update_Manually_Button}           xpath=    //android.widget.Button[@content-desc="Update Manually"]
 ${Reverify_Inventory_Button}        xpath=    //android.widget.Button[@content-desc="Reverify Inventory"]
+
+#-----------------------------------CCP Module-------------------------------------------------------
+
+${OneOff_Payment_Button}            xpath=    //android.view.View[@content-desc="One-Off Payment"]/android.widget.RadioButton
+${Renewal_Service_Button}           xpath=    //android.view.View[@content-desc="Renewal Service Contract"]/android.widget.RadioButton
+${Swap_CPE_Button}                  xpath=    //android.widget.Button[@content-desc="Swap CPE"]
+${Add_New_Equip_Button}             xpath=    //android.view.View[@content-desc="Add New Equip"]
+${Add_Loose_Equip_Button}           xpath=    //android.view.View[contains(@content-desc, "Add Loose Equip")]
+${Flag_Button}                      xpath=    //android.view.View[@content-desc="Flag"]
+${Service_Point_Update_Button}      xpath=    (//android.view.View[@content-desc="Update"])[3]
+
+${Scan_Barcode_Button}              xpath=    //android.widget.Button[@content-desc="Scan Barcode"]
+${Generate_SN_Button}               xpath=    //android.widget.Button[@content-desc="Generate SN"]
+${List_Button}                      xpath=    (//android.widget.Button[@content-desc])[3]
+${List_Option1_Button}              xpath=    //android.widget.Button[@content-desc="SLTSOYSY1912073148"]
+${Verify_SN_Button}                 xpath=    //android.widget.Button[@content-desc="Verify SN"]
+${Cancel_Scan_Button}               xpath=    //android.widget.Button[@resource-id="my.com.tm.tmforce.flutter.enterprise.sit2:id/btnBarcodeCaptureCancel"]
+${Save_Button}                      xpath=    //android.widget.Button[@content-desc="Save"]
+
+#SWAP CPE
+# UPDATE wifi (RG) //old CPE
+${Material_Desc_Button}             xpath=    (//android.view.View[contains(@content-desc, "Old CPE")]/android.view.View[@clickable="true"])[1]
+${ON_SITE_SUPPORT_Button}           Xpath=    (//android.view.View)[1]
+${Faulty_Reason_Button}             xpath=    (//android.view.View[contains(@content-desc, "Old CPE")]/android.view.View[@clickable="true"])[2]
+${VM_Physical_Damage_Button}        Xpath=    (//android.widget.Button)[2]
+${Remarks_Input}                    xpath=    //android.widget.EditText[2]
+${Service_Point}                    xpath=    //android.view.View[@content-desc="Service Point"]
+
+#Add loose Equipment
+${Equipment_Name_Button}            xpath=    //android.view.View[contains(@content-desc, "Select") and @clickable="true"]
+${TVOS_Button}                      xpath=    //android.widget.Button[@content-desc="STB EC6016V5 Remote Control (TVOS)"]
+${New_CPE}                          xpath=    //android.view.View[@content-desc="New CPE"]
+${Equipment_Back_Button}            xpath=    //android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[1]/android.widget.Button          
+
+#UPDATE SERVICE POINT//new CPE
+${Serial_Number_List1}              xpath=    (//android.widget.Button[@content-desc])[1]
+${Serial_Number_List2}              xpath=    (//android.widget.Button[@content-desc])[2]
+${Serial_Number_List3}              xpath=    (//android.widget.Button[@content-desc])[3]
+${MAC_Address_Input}                android=new UiSelector().className("android.widget.EditText").instance(1)
+
+#-----------------------------------RAF PAGE------------------------------------------------------
+
+${RAF_Button}                       xpath=    //android.widget.Button[@content-desc="RAF"]
+
+#Restoration Category
+${accessNetwork_Checkbox}           xpath=    //android.widget.CheckBox[@content-desc="TM Access Network (Drop Fiber-OLT or SDF-ODF)"]
+${internalFiber_Checkbox}           xpath=    //android.widget.CheckBox[@content-desc="Internal Fiber Standard Wiring (Entry Wall-FWS)"]
+
+#Physical Health Check
+${section2_Header}                  xpath=    //android.view.View[@content-desc="SECTION 2: PHYSICAL HEALTH CHECK"]
+${Landed_House_HSBA_FTTH_Button}    xpath=    //android.view.View[@content-desc="Landed House (HSBA FTTH)"]/android.widget.RadioButton
+${Landed_House_UnifiFTTH_Button}    xpath=    //android.view.View[@content-desc="Landed House (UniFi FTTH)"]
+${Landed_House_DSL/DEL_Button}      xpath=    //android.view.View[@content-desc="Landed House (DSL/DEL)"]
+
+#Restoration Charge
+${Renewal_Service_Contract_Button}  xpath=    //android.widget.RadioButton[@content-desc="Renewal Service Contract"]
+
+#Broadband
+${Add_Reading_Button}               xpath=    //android.widget.Button[@content-desc="Add Reading"]
+${Site_Dropdown}                    xpath=    //android.widget.ScrollView/android.view.View[1]
+${TM_Option_Button}                 xpath=    //android.view.View[@content-desc="TM"]
+${Customer_Option_button}           xpath=    //android.view.View[@content-desc="Customer"]
+${SNR_Download_Input}               xpath=    //android.widget.ScrollView/android.view.View[3]/android.widget.EditText
+${SNR_Upload_Input}                 xpath=    //android.widget.ScrollView/android.view.View[4]/android.widget.EditText
+${ATTN_Download_Input}              xpath=    //android.widget.ScrollView/android.view.View[6]/android.widget.EditText
+${ATTN_Upload_Input}                xpath=    //android.widget.ScrollView/android.view.View[2]/android.widget.EditText
+${AR_Download_Input}                xpath=    //android.widget.ScrollView/android.view.View[4]/android.widget.EditText
+${AR_Upload_Input}                  xpath=    //android.widget.ScrollView/android.view.View[5]/android.widget.EditText
+${Add_Button}                       xpath=    //android.widget.Button[@content-desc="Add"]
+${Delete_Button}                    xpath=    //android.widget.Button[@content-desc="TM"]
+${Tone_Dropdown}                    xpath=    //android.widget.ScrollView/android.view.View[6]
+${OK_Option_button}                 xpath=    //android.view.View[@content-desc="Ok"]
+${NOT_OK_Option_button}             xpath=    //android.view.View[@content-desc="Not Ok"]
+
+#Term and Condition
+${Terms_Condition}                  xpath=    //android.view.View[contains(@content-desc, "term and condition")]
+${Terms_Condition_CheckBox}         xpath=    //android.widget.CheckBox[@clickable="true" and @enabled="true"]
+${VASP_Field_Engineer_Name}         xpath=    //android.widget.EditText[contains(@hint,"VASP Field Engineer Name")]
+${IC_No_Field}                      xpath=    //android.widget.EditText[@hint="IC No.\nIC No."]
+${Comments_Field}                   xpath=    //android.widget.EditText[@hint="Comments\nComments"]
+${close_Button}                     xpath=    //android.widget.Button[@content-desc="Close"]
+${TnC_Form_Checkbox}                xpath=//android.widget.CheckBox[contains(@content-desc,"agree") or contains(@content-desc,"TM Berhad")]
+
+#PON PORT READING
+${ponPortReading_Row}               xpath=    //android.view.View[@content-desc="PON PORT READING"]
+${Optical_Overload_Input}           xpath=    //android.widget.EditText[contains(@hint, "Rx Optical Overload")]
+${Optical_Sensitivity_Input}        xpath=    //android.widget.EditText[contains(@hint, "Rx Optical Sensitivity")]
+${OPT_Power_Input}                  xpath=    //android.widget.EditText[contains(@hint, "Tx Opt Power")]
+${Ext_Ratio_Input}                  xpath=    //android.widget.EditText[contains(@hint, "Tx Ext Ratio")]
+
+#ONU READING
+${ONU_Reading_Dropdown}             xpath=    //android.view.View[@content-desc="ONU READING"]
+${Optical_Input}                    xpath=    //android.widget.EditText[contains(@hint, "Optical (Tx/Rx)")]
+${Attainable_Input}                 xpath=    //android.widget.EditText[contains(@hint, "Attainable (Dw/Up)")]
+${Actual_Rate_Input}                xpath=    //android.widget.EditText[contains(@hint, "Actual Rate")]
+
+#CAUSE CODE
+${causeCode_Header}                 xpath=    //android.view.View[@content-desc="SECTION 3: CAUSE CODE"]
+
+#ONE TIME CHARGES
+${oneTimeCharges_Header}            xpath=    //android.view.View[contains(@content-desc, "SECTION 4: ONE TIME CHARGES")]
+
+#Restoration Charges
+${Restoration_Charges}              xpath=    //android.view.View[@content-desc="SECTION 3: RESTORATION CHARGES"]
+
+#For TM Used Only
+${Cust_Refuse_Sign}                 xpath=    //android.view.View[@content-desc="Customer refuse to sign"]/android.widget.CheckBox
+${Cust_Disagree_Restoration}        xpath=    //android.view.View[@content-desc="Customer disagree with restoration work"]/android.widget.CheckBox
+${Restoration_Completed_Outside}    xpath=    //android.view.View[@content-desc="Restoration completed outside of customer premise"]/android.widget.CheckBox
