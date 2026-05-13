@@ -41,6 +41,25 @@ Click All Tab
     Click Element    ${InApp_Tab}
     Sleep    5s
 
+Trigger Dialler
+    Tap With Positions    ${TAP_DURATION}    ${{ (${PendingAccept_Dropdown_HEADER_X}, ${PendingAccept_Dropdown_HEADER_Y}) }}
+    Sleep    5
+    Tap With Positions    ${TAP_DURATION}    ${{ (${CurrentTask_Dropdown_HEADER_X}, ${CurrentTask_Dropdown_HEADER_Y}) }}
+    Sleep    5
+    Task.Search by Source System UNIFI
+
+    Wait Until Element Is Visible    ${Click_CurrentTask}      30s
+    Click Element    ${Click_CurrentTask}
+    Sleep    5s
+
+    Wait Until Element Is Visible    ${Customer_Tab}      30s
+    Click Element    ${Customer_Tab}
+    Sleep    5s
+
+    Wait Until Element Is Visible    xpath=//android.view.View[contains(@content-desc, "Contact Mobile No")]    timeout=30s
+    Tap With Positions    ${TAP_DURATION}    ${{ (${contactMobile_Field_X}, ${contactMobile_Field_Y}) }}
+    Sleep    5s
+
 Update Granite Inventory
     Sleep    5s
     Task.Click Current Task
@@ -172,7 +191,6 @@ Update NIS Inventory
     Scroll Down A Bit
 
     Change DP Pair
-
 
 Change DP Pair
     Wait Until Element Is Visible    ${Change_DP_Pair}    30s

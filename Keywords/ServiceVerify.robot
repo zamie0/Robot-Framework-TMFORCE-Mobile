@@ -3,14 +3,52 @@
 Resource    ../Configs/setting.robot
 Resource    ../Locators/locators.robot
 Resource    ../Keywords/CurrentTask.robot
+Resource    ../Keywords/Ticket.robot
 
 *** Keywords ***
-Ungated Area  
+Search Ticket by ID
+    Wait Until Element Is Visible    ${Search_button}     30s
+    Click Element    ${Search_button} 
+    Clear Text    ${Search_button} 
+    Input Text    ${Search_button}     T-0000000476
+    Sleep    5
+    Hide Keyboard
+    Sleep    1
+
+Service Verification
+    Wait Until Element Is Visible     ${Service_Verification_Button}     timeout=30s
+    Click Element    ${Service_Verification_Button}
+    Sleep    5s
+
+    Wait Until Element Is Visible     ${Verify_Button}     timeout=30s
+    Click Element    ${Verify_Button}
+    Sleep    5s
+
+    Wait Until Element Is Visible     ${Done_Button}     timeout=30s
+    Click Element    ${Done_Button}
+    Sleep    5s
+
+Ungated Area
+    Search Ticket by ID
     Tap With Positions    ${TAP_DURATION}    ${{ (${PendingAccept_Dropdown_HEADER_X}, ${PendingAccept_Dropdown_HEADER_Y}) }}
     Sleep    5
     Tap With Positions    ${TAP_DURATION}    ${{ (${CurrentTask_Dropdown_HEADER_X}, ${CurrentTask_Dropdown_HEADER_Y}) }}
     Sleep    5
-    Task.Search by Source System UNIFI
+    #Task.Search by Source System UNIFI
+
+    Wait Until Element Is Visible    ${Click_CurrentTask}      30s
+    Click Element    ${Click_CurrentTask}
+    Sleep    5s
+
+    Click Element    ${Activity_Tab}
+    Sleep    5s
+    
+    Capture Activity ID
+    Sleep    5s
+
+    Wait Until Element Is Visible    ${Action_button}      30s
+    Click Element    ${Action_button}
+    Sleep    5s
 
     Wait Until Element Is Visible    ${Update_button}      30s
     Click Element    ${Update_button}
@@ -42,19 +80,11 @@ Ungated Area
     Click Element    xpath=//android.widget.Button[@content-desc="Changed Jumper"]
     Sleep    5s
 
+    Ticket.Scroll Down A Bit
+
+    Service Verification
+
     Scroll until Submit button
-
-    Wait Until Element Is Visible     ${Service_Verification_Button}     timeout=30s
-    Click Element    ${Service_Verification_Button}
-    Sleep    5s
-
-    Wait Until Element Is Visible     ${Verify_Button}     timeout=30s
-    Click Element    ${Verify_Button}
-    Sleep    5s
-
-    Wait Until Element Is Visible     ${Done_Button}     timeout=30s
-    Click Element    ${Done_Button}
-    Sleep    5s
 
     Wait Until Element Is Visible     ${notes_input}     timeout=30s
     Click Element    ${notes_input}
@@ -63,7 +93,7 @@ Ungated Area
     Hide Keyboard    
 
     Sleep    5
-    Tap With Positions    ${TAP_DURATION}    ${{ (${Add_Attachment_Button_X}, ${Add_Attachment_Button_Y}) }}
+    Tap With Positions    ${TAP_DURATION}    ${{ (975, 1182) }}
     #Sleep    5
     #Wait Until Element Is Visible    ${Add_Attachment_Button}    timeout=30s
     #Click Element    ${Add_Attachment_Button}
@@ -81,43 +111,8 @@ Ungated Area
     Wait Until Element Is Visible    ${Yes_cameraCapture_button}    timeout=30s
     Click Element    ${Yes_cameraCapture_button}
     Sleep    10s
-
-    # Wait Until Element Is Visible    ${cameraCapture_button}    timeout=60s
-    # Click Element    ${cameraCapture_button}
-    #Click A Point    883    2020     # Flip camera
-    #Click A Point    540    2026    # Shutter button
-    #Sleep    2
-    #Click A Point    205    2007    # Tap Retry
-    #Sleep    2
-    #Click A Point    540    2060    # Shutter button
-    #Sleep    2
-    #Click A Point    882    2018    # Tap OK
-    #Sleep    6
-    
-    #Wait Until Element Is Visible    android=new UiSelector().className("android.widget.Button").instance(1)      timeout=60s
-    #Click Element     android=new UiSelector().className("android.widget.Button").instance(1)     #${Cancel_Attachment_button}
-
-    #add attachment (from photos)
-    #Click A Point    950    1254
-    # Click Element    ${Add_Attachment_Button}  
-
-    #Wait Until Element Is Visible    ${uploadAttachment_list}    timeout=60s
-    #Click Element    ${Photo_button}
-
-    #Wait Until Element Is Visible    ${Photo_From_Gallery_button}    timeout=60s
-    #Click Element    ${Photo_From_Gallery_button}
-    #Sleep    2
     
     Scroll until Submit button
-
-    # ${element}=    Run Keyword And Ignore Error    Get Webelement    ${remarksCaptured_input}
-    # FOR    ${i}    IN RANGE    5
-    #     Run Keyword If    '${element[0]}' != 'FAIL'    Exit For Loop
-    #     Swipe By Percent    50    80    50    30    500
-    #     Sleep    1
-    #     ${element}=    Run Keyword And Ignore Error    Get Webelement    ${remarksCaptured_input}
-    # END
-    # Run Keyword If    '${element[0]}' == 'FAIL'    Fail    Accept button not found after scrolling
 
     Wait Until Element Is Visible     ${nameCaptured_input}     timeout=30s
     Click Element    ${nameCaptured_input}
@@ -147,16 +142,6 @@ Ungated Area
     Sleep    5s
 
     Scroll until Submit button
-
-    Wait Until Element Is Visible     ${Submit_Button}     timeout=30s
-    Click Element    ${Submit_Button}  
-    Sleep    5s
-
-    Wait Until Element Is Visible     ${Yes_Button}     timeout=30s
-    Click Element    ${Yes_Button}  
-    Sleep    60s
-
-    Press Keycode    4
 
 Gated Area
 Gated HSI - Passed

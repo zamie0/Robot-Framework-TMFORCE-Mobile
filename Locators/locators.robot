@@ -221,17 +221,20 @@ ${TaskHistory_Dropdown}             xpath=    //android.view.View[@content-desc=
 
 #RETURN OPTION
 
-${Return_Reason_Button}              xpath=//android.view.View[contains(@content-desc, "Return Reason")]
-${Cabinet_Locked_Option}             xpath=//android.widget.Button[@content-desc="Cabinet Locked"]
-${Escalate_Option}                   xpath=//android.widget.Button[@content-desc="Escalate"]
-${New_Activity_Type_Button}          xpath=//android.view.View[contains(@content-desc, "New Activity Type")]      #//android.view.View[@content-desc="* New Activity Type Select"]
-${FS_Troubleshooting_Button}         xpath=//android.widget.Button[@content-desc="FS Troubleshooting"]
-${Attachment_type}                   xpath=//android.view.View[@text="jpg"]
-${nameCaptured_input}                xpath=//android.widget.EditText
-${remarksCaptured_input}             xpath=//android.widget.EditText[2]
-#${uploadCaptured_button}            xpath=//android.widget.Button[@content-desc="Upload"]
-${Signature_Button}                  xpath=//android.view.View[@content-desc="Please Input Signature"]
-${Additional_Information}            xpath=//android.view.View[@content-desc="Additional Information"]
+${Return_Reason_Button}             xpath=    //android.view.View[contains(@content-desc, "Return Reason")]
+${Cabinet_Locked_Option}            xpath=    //android.widget.Button[@content-desc="Cabinet Locked"]
+${Escalate_Option}                  xpath=    //android.widget.Button[@content-desc="Escalate"]
+${New_Activity_Type_Button}         xpath=    //android.view.View[contains(@content-desc, "New Activity Type")]      #//android.view.View[@content-desc="* New Activity Type Select"]
+${FS_Troubleshooting_Button}        xpath=    //android.widget.Button[@content-desc="FS Troubleshooting"]
+${Attachment_type}                  xpath=    //android.view.View[@text="jpg"]
+${nameCaptured_input}               xpath=    //android.widget.EditText
+${remarksCaptured_input}            xpath=    //android.widget.EditText[2]
+#${uploadCaptured_button}           xpath=    //android.widget.Button[@content-desc="Upload"]
+${Signature_Button}                 xpath=    //android.view.View[@content-desc="Please Input Signature"]
+${Additional_Information}           xpath=    //android.view.View[@content-desc="Additional Information"]
+
+${contactMobile_Field_X}                      936
+${contactMobile_Field_Y}                      936
 
 #-----------------------------------CURRENT TASK PAGE (EACH TICKET)------------------------------
 

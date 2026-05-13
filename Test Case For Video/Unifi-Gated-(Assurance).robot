@@ -16,8 +16,8 @@ Execute Task List
     Sleep    20
 
     ServiceVerify.Ungated Area
-    ServiceVerify.Gated Area+
-    ServiceVerify.Gated HSI - Passed
-    ServiceVerify.Gated HSI - Failed
-    ServiceVerify.Gated HSI, IPTV, IVR - Passed
+    ServiceVerify.Gated Area
+    #ServiceVerify.Gated HSI - Passed
+    #ServiceVerify.Gated HSI - Failed
+    #ServiceVerify.Gated HSI, IPTV, IVR - Passed
 

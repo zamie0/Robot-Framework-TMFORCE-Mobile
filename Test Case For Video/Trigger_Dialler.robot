@@ -2,21 +2,17 @@
 Resource      ../Configs/setting.robot
 Resource      ../Keywords/LaunchApp.robot
 Resource      ../Keywords/Login.robot
+Resource      ../Keywords/Ticket.robot
 Resource      ../Locators/locators.robot
-Resource      ../Keywords/ATV.robot
 
 *** Test Cases ***
 Execute Task List
-    [Documentation]  To Test Unifi Assurance Update Status
+    [Documentation]  To Test Attachment
     [Tags]  Regression Mobile App
 
     LaunchApp.Launch Application
     Login.Login app - positive scenario
 
     Sleep    20
-    
-    ATV.View Ticket Details
-    Press Keycode    4
-    ATV.Change Status to On My Way 
-    ATV.Change Status to On Site
-    ATV.Change Status to Resolved
+
+    Ticket.Trigger Dialler

@@ -9,6 +9,15 @@ Resource    ../Keywords/Ticket.robot
 ${CAPTURED_ACTIVITY_ID}    NONE
 
 *** Keywords ***
+Search Ticket by ID
+    Wait Until Element Is Visible    ${Search_button}     30s
+    Click Element    ${Search_button} 
+    Clear Text    ${Search_button} 
+    Input Text    ${Search_button}     T-0000009510
+    Sleep    5
+    Hide Keyboard
+    Sleep    1
+
 Search by Activity ID
     [Documentation]    Uses the ID captured from the view
     Wait Until Element Is Visible    ${Search_button}    30s
@@ -674,7 +683,6 @@ Change Status to Returned (Cabinet Locked)
     Press Keycode    4
 
 Change Status to Returned
-
     Tap With Positions    ${TAP_DURATION}    ${{ (${PendingAccept_Dropdown_HEADER_X}, ${PendingAccept_Dropdown_HEADER_Y}) }}
     Sleep    5
     Tap With Positions    ${TAP_DURATION}    ${{ (${CurrentTask_Dropdown_HEADER_X}, ${CurrentTask_Dropdown_HEADER_Y}) }}
