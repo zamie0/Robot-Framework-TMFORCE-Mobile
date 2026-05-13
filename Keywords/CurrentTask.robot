@@ -320,8 +320,6 @@ Change Status to Resolved
     Swipe    540    1200    540    800    500
     Sleep    1
 
-    Scroll until Submit button
-
     Wait Until Element Is Visible     ${Submit_Button}     timeout=30s
     Click Element    ${Submit_Button}  
     Sleep    5s
@@ -608,178 +606,137 @@ Change Status to Reschedule (With Date)
     Press Keycode    4
     Press Keycode    4
 
+Change Status to Returned (Cabinet Locked)
+    Tap With Positions    ${TAP_DURATION}    ${{ (${PendingAccept_Dropdown_HEADER_X}, ${PendingAccept_Dropdown_HEADER_Y}) }}
+    Sleep    5
+    Tap With Positions    ${TAP_DURATION}    ${{ (${CurrentTask_Dropdown_HEADER_X}, ${CurrentTask_Dropdown_HEADER_Y}) }}
+    Sleep    5
+    Task.Search by Source System UNIFI
 
+    Wait Until Element Is Visible    ${Click_PendingAccept}      30s
+    Sleep    5s
 
+    Tap With Positions    ${TAP_DURATION}    ${{ (${PendingAccept_Dropdown_HEADER_X}, ${PendingAccept_Dropdown_HEADER_Y}) }}
+    Sleep    5
 
+    Wait Until Element Is Visible    ${Click_CurrentTask}      30s
+    Click Element    ${Click_CurrentTask}
+    Sleep    5s
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    Click Element    ${Activity_Tab}
+    Sleep    5s
     
+    Capture Activity ID
+    Sleep    5s
+
+    Wait Until Element Is Visible    ${Action_button}      30s
+    Click Element    ${Action_button}
+    Sleep    5s
+
+    Wait Until Element Is Visible    ${Update_button}      30s
+    Click Element    ${Update_button}
+    Sleep    5s
+
+    Wait Until Element Is Visible     ${New_Status}     timeout=30s
+    Click Element    ${New_Status}  
+    Sleep    5s
+
+    Wait Until Element Is Visible     ${Returned_Button}     timeout=30s
+    Click Element    ${Returned_Button} 
+    Sleep    5s
+
+    Wait Until Element Is Visible     ${Return_Reason_Button}     timeout=30s
+    Click Element    ${Return_Reason_Button} 
+    Sleep    5s
+
+    Wait Until Element Is Visible     ${Cabinet_Locked_Option}     timeout=30s
+    Click Element    ${Cabinet_Locked_Option} 
+    Sleep    5s
+    
+    Scroll until Submit button
+
+    Wait Until Element Is Visible     ${notes_input}     timeout=30s
+    Click Element    ${notes_input}
+    Input Text       ${notes_input}      Test  
+    Sleep    5s
+    Hide Keyboard  
+
+    Scroll until Submit button
+
+    Wait Until Element Is Visible     ${Submit_Button}     timeout=30s
+    Click Element    ${Submit_Button}  
+    Sleep    5s
+
+    Wait Until Element Is Visible     ${Yes_Button}     timeout=30s
+    Click Element    ${Yes_Button}  
+    Sleep    60s
+
+    Press Keycode    4
+
 Change Status to Returned
 
-    Wait Until Element Is Visible     ${New_Status}     timeout=90s
-    Click Element    ${New_Status}  
-    Wait Until Element Is Visible     ${Returned_Button}     timeout=90s
-    Click Element    ${Returned_Button} 
+    Tap With Positions    ${TAP_DURATION}    ${{ (${PendingAccept_Dropdown_HEADER_X}, ${PendingAccept_Dropdown_HEADER_Y}) }}
+    Sleep    5
+    Tap With Positions    ${TAP_DURATION}    ${{ (${CurrentTask_Dropdown_HEADER_X}, ${CurrentTask_Dropdown_HEADER_Y}) }}
+    Sleep    5
+    Task.Search by Source System UNIFI
 
+    Wait Until Element Is Visible    ${Click_PendingAccept}      30s
+    Sleep    5s
+
+    Tap With Positions    ${TAP_DURATION}    ${{ (${PendingAccept_Dropdown_HEADER_X}, ${PendingAccept_Dropdown_HEADER_Y}) }}
+    Sleep    5
+
+    Wait Until Element Is Visible    ${Click_CurrentTask}      30s
+    Click Element    ${Click_CurrentTask}
+    Sleep    5s
+
+    Click Element    ${Activity_Tab}
+    Sleep    5s
+    
+    Capture Activity ID
+    Sleep    5s
+
+    Wait Until Element Is Visible    ${Action_button}      30s
+    Click Element    ${Action_button}
+    Sleep    5s
+
+    Wait Until Element Is Visible    ${Update_button}      30s
+    Click Element    ${Update_button}
+    Sleep    5s
+
+    Wait Until Element Is Visible     ${New_Status}     timeout=30s
+    Click Element    ${New_Status}  
+    Sleep    5s
+
+    Wait Until Element Is Visible     ${Returned_Button}     timeout=30s
+    Click Element    ${Returned_Button} 
+    Sleep    5s
+
+    Wait Until Element Is Visible     ${Return_Reason_Button}     timeout=30s
     Click Element    ${Return_Reason_Button} 
+    Sleep    5s
+
+    Wait Until Element Is Visible     ${Escalate_Option}     timeout=30s
     Click Element    ${Escalate_Option} 
-
-    Wait Until Element Is Visible    ${New_Activity_Type_Button}
-    Click Element    ${New_Activity_Type_Button} 
-    Click Element    ${FS_Troubleshooting_Button} 
-    
-    Wait Until Element Is Visible     ${Cause_Category}     timeout=90s
-    Click Element    ${Cause_Category}
-    Click Element    ${Customer_Button}
+    Sleep    5s
     
     Scroll until Submit button
 
-    Wait Until Element Is Visible     ${Cause_Code}     timeout=90s
-    Click Element    ${Cause_Code}
-    Click Element    ${Building_Internal_Button}
-    
-    Wait Until Element Is Visible     ${Resolution_Code}     timeout=90s
-    Click Element    ${Resolution_Code}
-    Click Element    ${Normalise_Cable_Button}
-
+    Wait Until Element Is Visible     ${notes_input}     timeout=30s
     Click Element    ${notes_input}
-    Input Text       ${notes_input}      test  
-    Sleep    1
-    Hide Keyboard 
-
-    #add attachment
-    Click A Point    945    1765
-
-    #Click Element    ${newAttachments_button}
-    Wait Until Element Is Visible    ${uploadAttachment_list}    timeout=60s
-    Click Element    ${camera_button}
-    # Wait Until Element Is Visible    ${cameraCapture_button}    timeout=60s
-    # Click Element    ${cameraCapture_button}
-    Click A Point    883    2020     # Flip camera
-    Click A Point    540    2026    # Shutter button
-    Sleep    2
-    Click A Point    205    2007    # Tap Retry
-    Sleep    2
-    Click A Point    540    2060    # Shutter button
-    Sleep    2
-    Click A Point    882    2018    # Tap OK
-    Sleep    2
-
-    ${element}=    Run Keyword And Ignore Error    Get Webelement    ${Attachment_type}
-    FOR    ${i}    IN RANGE    5
-        Run Keyword If    '${element[0]}' != 'FAIL'    Exit For Loop
-        Swipe By Percent    50    80    50    30    500
-        Sleep    1
-        ${element}=    Run Keyword And Ignore Error    Get Webelement    ${Attachment_type}
-    END
-    Run Keyword If    '${element[0]}' == 'FAIL'    Fail    Accept button not found after scrolling
+    Input Text       ${notes_input}      Test  
+    Sleep    5s
+    Hide Keyboard  
 
     Scroll until Submit button
 
-    #Wait Until Element Is Visible    ${sizeCaptured_text}    timeout=20s
-    Click Element    ${nameCaptured_input}
-    Clear Text       ${nameCaptured_input}
-    Input Text       ${nameCaptured_input}    testName
-    Sleep    1
-    Hide Keyboard
-    Sleep    1
-    Click Element    ${remarksCaptured_input} 
-    Input Text       ${remarksCaptured_input}    testRemarks
-    Sleep    1
-    Hide Keyboard
-
+    Wait Until Element Is Visible     ${Submit_Button}     timeout=30s
     Click Element    ${Submit_Button}  
+    Sleep    5s
+
+    Wait Until Element Is Visible     ${Yes_Button}     timeout=30s
     Click Element    ${Yes_Button}  
-    Sleep    2
+    Sleep    60s
 
-Change Status to Returned (Cabinet Locked)
-    Click Element    ${New_Status}  
-    Wait Until Element Is Visible     ${Returned_Button}     timeout=90s
-    Click Element    ${Returned_Button} 
-
-    Click Element    ${Return_Reason_Button} 
-    Click Element    ${Cabinet_Locked_Option} 
-    
-    Scroll until Submit button
-
-    Click Element    ${notes_input}
-    Input Text       ${notes_input}      test  
-    Sleep    1
-    Hide Keyboard 
-
-    #add attachment
-    Click A Point    945    1765
-
-    #Click Element    ${newAttachments_button}
-    Wait Until Element Is Visible    ${uploadAttachment_list}    timeout=60s
-    Click Element    ${camera_button}
-    # Wait Until Element Is Visible    ${cameraCapture_button}    timeout=60s
-    # Click Element    ${cameraCapture_button}
-    Click A Point    883    2020     # Flip camera
-    Click A Point    540    2026    # Shutter button
-    Sleep    2
-    Click A Point    205    2007    # Tap Retry
-    Sleep    2
-    Click A Point    540    2060    # Shutter button
-    Sleep    2
-    Click A Point    882    2018    # Tap OK
-    Sleep    2
-
-    ${element}=    Run Keyword And Ignore Error    Get Webelement    ${Attachment_type}
-    FOR    ${i}    IN RANGE    5
-        Run Keyword If    '${element[0]}' != 'FAIL'    Exit For Loop
-        Swipe By Percent    50    80    50    30    500
-        Sleep    1
-        ${element}=    Run Keyword And Ignore Error    Get Webelement    ${Attachment_type}
-    END
-    Run Keyword If    '${element[0]}' == 'FAIL'    Fail    Accept button not found after scrolling
-
-    Scroll until Submit button
-
-    #Wait Until Element Is Visible    ${sizeCaptured_text}    timeout=20s
-    Click Element    ${nameCaptured_input}
-    Clear Text       ${nameCaptured_input}
-    Input Text       ${nameCaptured_input}    testName
-    Sleep    1
-    Hide Keyboard
-    Sleep    1
-    Click Element    ${remarksCaptured_input} 
-    Input Text       ${remarksCaptured_input}    testRemarks
-    Sleep    1
-    Hide Keyboard
-
-    # Click Element    ${Submit_Button}  
-    # Click Element    ${Yes_Button}  
-    # Sleep    1
-
-Scroll until update button
-
-    Wait Until Element Is Visible     ${Task_View}     timeout=90s
-    
-    ${element}=    Run Keyword And Ignore Error    Get Webelement    ${AssignedTask_Update_Button}
-    FOR    ${i}    IN RANGE    5
-        Run Keyword If    '${element[0]}' != 'FAIL'    Exit For Loop
-        Swipe By Percent    50    80    50    30    500
-        Sleep    1
-        ${element}=    Run Keyword And Ignore Error    Get Webelement    ${AssignedTask_Update_Button}
-    END
-    Run Keyword If    '${element[0]}' == 'FAIL'    Fail    Accept button not found after scrolling
-    Click Element    ${AssignedTask_Update_Button}
+    Press Keycode    4

@@ -17,5 +17,3 @@ Execute Task List
     Sleep    20
 
     Ticket.Click All Tab
-
-

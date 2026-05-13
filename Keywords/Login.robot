@@ -42,13 +42,13 @@ Handle Login Error
 Login app - positive scenario
     Click Element                       ${username_input}
     Wait Until Page Contains Element    ${username_input}    timeout=10
-    Input Text                          ${username_input}    F14331     #B16653   #F14331
+    Input Text                          ${username_input}    B14331     #B16653   #F14331
     Sleep    5
     Hide Keyboard
 
     Click Element                       ${password_input}
     Wait Until Page Contains Element    ${password_input}    timeout=10
-    Input Password                      ${password_input}    F14331     #B16653   #F14331
+    Input Password                      ${password_input}    B14331     #B16653   #F14331
     Hide Keyboard
     Reveal Password
     Sleep    5

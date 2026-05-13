@@ -219,6 +219,20 @@ ${CurrentTask_Dropdown}             android=new UiSelector().className("android.
 ${AssignedTask_Dropdown}            xpath=    //android.view.View[@content-desc="Assigned Task"]
 ${TaskHistory_Dropdown}             xpath=    //android.view.View[@content-desc="Task History"]
 
+#RETURN OPTION
+
+${Return_Reason_Button}              xpath=//android.view.View[contains(@content-desc, "Return Reason")]
+${Cabinet_Locked_Option}             xpath=//android.widget.Button[@content-desc="Cabinet Locked"]
+${Escalate_Option}                   xpath=//android.widget.Button[@content-desc="Escalate"]
+${New_Activity_Type_Button}          xpath=//android.view.View[contains(@content-desc, "New Activity Type")]      #//android.view.View[@content-desc="* New Activity Type Select"]
+${FS_Troubleshooting_Button}         xpath=//android.widget.Button[@content-desc="FS Troubleshooting"]
+${Attachment_type}                   xpath=//android.view.View[@text="jpg"]
+${nameCaptured_input}                xpath=//android.widget.EditText
+${remarksCaptured_input}             xpath=//android.widget.EditText[2]
+#${uploadCaptured_button}            xpath=//android.widget.Button[@content-desc="Upload"]
+${Signature_Button}                  xpath=//android.view.View[@content-desc="Please Input Signature"]
+${Additional_Information}            xpath=//android.view.View[@content-desc="Additional Information"]
+
 #-----------------------------------CURRENT TASK PAGE (EACH TICKET)------------------------------
 
 #status menus for current task
@@ -248,18 +262,21 @@ ${Timeslot_Appointment3}            xpath=    //android.view.View[contains(@cont
 ${NoDate_Button}                    xpath=   //android.view.View[@content-desc="No Date"]/android.widget.RadioButton
 ${Cause_Category}                   xpath=   //android.view.View[contains(@content-desc, "* Cause Category") and contains(@content-desc, "Select")]
 ${BTU_Button}                       xpath=   //android.widget.Button[@content-desc="BTU"]
+${LocalAccess_Button}               xpath=   //android.widget.Button[@content-desc="LocalAccess"]
 ${Customer_Button}                  xpath=   //android.widget.Button[@content-desc="Customer"]
 
 ${Cause_Code}                       xpath=   //android.view.View[contains(@content-desc, "* Cause Code") and contains(@content-desc, "Select")]
 ${BTU_Issue_Button}                 xpath=   //android.widget.Button[@content-desc="BTU Issue"]
 ${Building_Internal_Button}         xpath=   //android.widget.Button[@content-desc="Building Internal Wiring"]
 ${BTU_Faulty_Button}                xpath=   //android.widget.Button[@content-desc="BTU Faulty"]
+${Damaged_by_3rd_Party_Button}      xpath=   //android.widget.Button[@content-desc="Damaged by 3rd Party"]
 
 ${Resolution_Code}                  xpath=   //android.view.View[contains(@content-desc, "* Resolution Code") and contains(@content-desc, "Select")]
 ${Firmware_Upgrade_Button}          xpath=   //android.widget.Button[@content-desc="Firmware Upgrade"]
 ${Normalise_Cable_Button}           xpath=   //android.widget.Button[@content-desc="Normalise Cable Connection"]
 ${Advice_Customer_Button}           xpath=   //android.widget.Button[@content-desc="Advise Customer_Counter"]
 ${TMCPE_Replaced_Button}            xpath=   //android.widget.Button[@content-desc="TMCPE Replaced"]
+${FDP_Port_Changed_Button}          xpath=   //android.widget.Button[@content-desc="FDP Port Changed"]
 
 #Resolved Status page
 #${Add_Attachment_Button}            xpath=   //android.view.View[contains(@content-desc, "Attachments")]//android.widget.ImageView
@@ -486,8 +503,8 @@ ${internalFiber_Checkbox}           xpath=    //android.widget.CheckBox[@content
 #Physical Health Check
 ${section2_Header}                  xpath=    //android.view.View[@content-desc="SECTION 2: PHYSICAL HEALTH CHECK"]
 ${Landed_House_HSBA_FTTH_Button}    xpath=    //android.view.View[@content-desc="Landed House (HSBA FTTH)"]/android.widget.RadioButton
-${Landed_House_UnifiFTTH_Button}    xpath=    //android.view.View[@content-desc="Landed House (UniFi FTTH)"]
-${Landed_House_DSL/DEL_Button}      xpath=    //android.view.View[@content-desc="Landed House (DSL/DEL)"]
+${Landed_House_UnifiFTTH_Button}    xpath=    //android.view.View[@content-desc="Landed House (UniFi FTTH)"]/android.widget.RadioButton
+${Landed_House_DSL/DEL_Button}      xpath=    //android.view.View[@content-desc="Landed House (DSL/DEL)"]/android.widget.RadioButton
 
 #Restoration Charge
 ${Renewal_Service_Contract_Button}  xpath=    //android.widget.RadioButton[@content-desc="Renewal Service Contract"]
@@ -513,10 +530,13 @@ ${NOT_OK_Option_button}             xpath=    //android.view.View[@content-desc=
 ${Terms_Condition}                  xpath=    //android.view.View[contains(@content-desc, "term and condition")]
 ${Terms_Condition_CheckBox}         xpath=    //android.widget.CheckBox[@clickable="true" and @enabled="true"]
 ${VASP_Field_Engineer_Name}         xpath=    //android.widget.EditText[contains(@hint,"VASP Field Engineer Name")]
+${Name_Field}                       xpath=    //android.widget.EditText[contains(@hint,"Name")]
 ${IC_No_Field}                      xpath=    //android.widget.EditText[@hint="IC No.\nIC No."]
+${Email_Field}                      xpath=    //android.widget.EditText[contains(@hint,"Email")]
+${Relationship_Field}               xpath=    //android.widget.EditText[contains(@hint,"Relationship")]
 ${Comments_Field}                   xpath=    //android.widget.EditText[@hint="Comments\nComments"]
 ${close_Button}                     xpath=    //android.widget.Button[@content-desc="Close"]
-${TnC_Form_Checkbox}                xpath=//android.widget.CheckBox[contains(@content-desc,"agree") or contains(@content-desc,"TM Berhad")]
+${TnC_Form_Checkbox}                xpath=    //android.widget.CheckBox[contains(@content-desc,"agree") or contains(@content-desc,"TM Berhad")]
 
 #PON PORT READING
 ${ponPortReading_Row}               xpath=    //android.view.View[@content-desc="PON PORT READING"]
