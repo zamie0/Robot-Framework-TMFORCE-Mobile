@@ -75,6 +75,7 @@ ${MORNING_CALL}                     xpath=    //android.widget.Button[@content-d
 ${FAST_TRACK}                       xpath=    //android.widget.Button[@content-desc="Fast Track"]
 ${SELF_PICK_UP}                     xpath=    //android.widget.Button[@content-desc="Self Pick Up"]
 ${TASKS}                            xpath=    //android.widget.Button[@content-desc="Tasks"]
+${SUPERVISOR}	                    xpath=    //android.widget.Button[@content-desc="Supervisor"]
 ${TASK_POOL}                        xpath=    //android.widget.Button[@content-desc="Task Pool"]
 ${PARTNER_INFO}                     xpath=    //android.widget.Button[@content-desc="Partner Info"]
 ${CPE_IN_HAND}                      xpath=    //android.widget.Button[@content-desc="CPE In Hand"]
@@ -135,6 +136,24 @@ ${Add_Partner_Button_X}                       854
 ${Add_Partner_Button_Y}                       421
 ${X_Partner_Button_X}                         943
 ${X_Partner_Button_Y}                         652
+
+#-----------------------------------CPE---------------------------------------------------------
+
+${Calculator_Button}                xpath=    //android.widget.Button[@bounds="[828,117][954,243]"]
+${Transfer_Button}                  xpath=    //android.widget.Button[@content-desc="Transfer"]
+${Staff_Number_Field}               xpath=    //android.widget.EditText[contains(@hint,"Staff Number")]
+${Confirm_Button}                   xpath=    //android.widget.Button[@content-desc="Confirm"]
+${Yes_Button}                       xpath=    //android.widget.Button[@content-desc="Yes"]
+${No_Button}                        xpath=    //android.widget.Button[@content-desc="No"]
+${Received_Tab}                     xpath=    //android.view.View[contains(@content-desc,"Received")]
+${Accept_Button}                    xpath=    //android.widget.Button[@content-desc="Accept"]
+${Reject_Button}                    xpath=    //android.widget.Button[@content-desc="Reject"]
+
+${Scanner_Button}                   android=new UiSelector().className("android.widget.Button").bounds("[933,413][1059,539]")
+${Add_To_List_Button}               xpath=    //android.widget.Button[@content-desc="Add to list"]
+${X_Button}                         xpath=    (//android.widget.Button)[1]
+${Zero_Balance_Tab}                 xpath=    //android.view.View[contains(@content-desc,"Zero Balance")]
+${Agree_Zero_Balance_Button}        android=new UiSelector().className("android.widget.RadioButton").bounds("[949,409][1033,493]")
 
 #-----------------------------------TICKET-REPORT------------------------------------------------
 

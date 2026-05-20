@@ -17,21 +17,21 @@ Execute Task List
     Sleep    20
 
     # 7.1 ON MY WAY
-    #AssignedTask.Change Status to On My Way
+    AssignedTask.Change Status to On My Way
 
     # 7.2 ON SITE
-    #CurrentTask.Change Status to On Site
+    CurrentTask.Change Status to On Site
 
     # 7.3 IN PROGRESS
-    #CurrentTask.Change Status to In Progress
+    CurrentTask.Change Status to In Progress
 
     # 7.4 RESOLVED
-    #CurrentTask.Change Status to Resolved  
+    CurrentTask.Change Status to Resolved  
 
     # 7.5 RESCHEDULED
-    #CurrentTask.Change Status to Reschedule (No Date)
-    #CurrentTask.Change Status to Reschedule (No Date) Other Than Customer
-    CurrentTask.Change Status to Reschedule (With Date)  #Belum
+    CurrentTask.Change Status to Reschedule (No Date)
+    CurrentTask.Change Status to Reschedule (No Date) Other Than Customer
+    CurrentTask.Change Status to Reschedule (With Date)  
     
 
 

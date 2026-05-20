@@ -13,7 +13,7 @@ Execute Task List
     LaunchApp.Launch Application
     Login.Login app - positive scenario
 
-    Sleep    20
+    Sleep    40
 
     Sidebar.Open Sidebar
     Sidebar.Open Help

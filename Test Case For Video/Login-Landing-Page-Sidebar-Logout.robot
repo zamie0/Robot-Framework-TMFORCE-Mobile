@@ -11,9 +11,9 @@ Execute Task List
     [Tags]  Regression Mobile App
 
     LaunchApp.Launch Application
-    #Login.Device Info
-    #Login.Language RoundTrip
-    #Login.Login app - negative scenario
+    Login.Device Info
+    Login.Language RoundTrip
+    Login.Login app - negative scenario
     Login.Login app - positive scenario
 
     Sleep    20

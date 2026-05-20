@@ -15,6 +15,12 @@ Open Sidebar
 Explore Sidebar
     Open Sidebar
     Sleep    5
+    
+    Wait Until Element Is Visible       ${SUPERVISOR}    5s
+    Click Element                       ${SUPERVISOR}
+    Sleep    5
+
+    Scroll Down A Bit
 
     Wait Until Element Is Visible       ${PROFILE}    5s
     Click Element                       ${PROFILE}
