@@ -135,15 +135,7 @@ Create Activity
 
 
 
-Search by keywords - New Ticket
 
-    Wait Until Element Is Visible    ${Search_button}     30s
-    Click Element    ${Search_button} 
-    Clear Text    ${Search_button} 
-    Input Text    ${Search_button}     3787
-    Sleep    5
-    Hide Keyboard
-    Sleep    1
 
 Search by keywords - New Ticket 1
 

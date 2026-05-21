@@ -7,6 +7,15 @@ Resource    ../Locators/locators.robot
 ${CAPTURED_ACTIVITY_ID}    NONE
 
 *** Keywords ***
+Search by keywords - Ticket UNIFI ELite
+    Wait Until Element Is Visible    ${Search_button}     30s
+    Click Element    ${Search_button} 
+    Clear Text    ${Search_button} 
+    Input Text    ${Search_button}     T-0000010288
+    Sleep    5
+    Hide Keyboard
+    Sleep    1
+
 Close Task List dropdown
     Sleep    5
     Tap With Positions    ${TAP_DURATION}    ${{ (${PendingAccept_Dropdown_HEADER_X}, ${PendingAccept_Dropdown_HEADER_Y}) }}
@@ -18,6 +27,13 @@ Close Task List dropdown
     Tap With Positions    ${TAP_DURATION}    ${{ (${OnHold_Dropdown_HEADER_X}, ${OnHold_Dropdown_HEADER_Y}) }} 
     Sleep    5
     Tap With Positions    ${TAP_DURATION}    ${{ (${TaskHistory_Dropdown_HEADER_X}, ${TaskHistory_Dropdown_HEADER_Y}) }}
+    Sleep    5
+
+Close Task List dropdown for UNIFI ELite
+    Sleep    5
+    Tap With Positions    ${TAP_DURATION}    ${{ (${PendingAccept_Dropdown_HEADER_X}, ${PendingAccept_Dropdown_HEADER_Y}) }}
+    Sleep    5
+    Tap With Positions    ${TAP_DURATION}    ${{ (${CurrentTask_Dropdown_HEADER_X}, ${CurrentTask_Dropdown_HEADER_Y}) }}
     Sleep    5
 
 Capture Activity ID
@@ -50,13 +66,13 @@ Capture Activity ID
     RETURN    ${CAPTURED_ACTIVITY_ID}
 
 Change Status to On My Way    
-    Wait Until Element Is Visible    ${Click_PendingAccept}      30s
-    Sleep    5s
+    #Wait Until Element Is Visible    ${Click_PendingAccept}      30s
+    #Sleep    5s
 
-    Tap With Positions    ${TAP_DURATION}    ${{ (${PendingAccept_Dropdown_HEADER_X}, ${PendingAccept_Dropdown_HEADER_Y}) }}
-    Sleep    5
-    Tap With Positions    ${TAP_DURATION}    ${{ (${CurrentTask_Dropdown_HEADER_X}, ${CurrentTask_Dropdown_HEADER_Y}) }}
-    Sleep    5
+    #Tap With Positions    ${TAP_DURATION}    ${{ (${PendingAccept_Dropdown_HEADER_X}, ${PendingAccept_Dropdown_HEADER_Y}) }}
+    #Sleep    5
+    #Tap With Positions    ${TAP_DURATION}    ${{ (${CurrentTask_Dropdown_HEADER_X}, ${CurrentTask_Dropdown_HEADER_Y}) }}
+    #Sleep    5
 
     Wait Until Element Is Visible     ${Click_AssignedTask}     timeout=30s
     Click Element    ${Click_AssignedTask} 

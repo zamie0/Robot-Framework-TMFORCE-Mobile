@@ -3,6 +3,7 @@ Resource    ../Configs/setting.robot
 Resource    ../Locators/locators.robot
 Resource    ../Keywords/Task.robot
 Resource    ../Keywords/Ticket.robot
+Resource    ../Keywords/RAF.robot
 
 *** Variables ***
 # Global variable to store the ID across different keywords
@@ -334,6 +335,128 @@ Change Status to Resolved
     Sleep    5s
 
     Scroll until Submit button
+
+    Wait Until Element Is Visible     ${Submit_Button}     timeout=30s
+    Click Element    ${Submit_Button}  
+    Sleep    5s
+
+    Wait Until Element Is Visible     ${Yes_Button}     timeout=30s
+    Click Element    ${Yes_Button}  
+    Sleep    60s
+
+    Press Keycode    4
+
+Change Status to Resolved - UNIFI Elite
+    Wait Until Element Is Visible    ${Click_PendingAccept}      30s
+    Sleep    5s
+    
+    Tap With Positions    ${TAP_DURATION}    ${{ (${PendingAccept_Dropdown_HEADER_X}, ${PendingAccept_Dropdown_HEADER_Y}) }}
+    Sleep    5
+
+    Wait Until Element Is Visible    ${Click_CurrentTask}      30s
+    Click Element    ${Click_CurrentTask}
+    Sleep    5s
+
+    Click Element    ${Activity_Tab}
+    Sleep    5s
+    
+    Capture Activity ID
+    Sleep    5s
+
+    Wait Until Element Is Visible    ${Action_button}      30s
+    Click Element    ${Action_button}
+    Sleep    5s
+
+    Wait Until Element Is Visible    ${Update_button}      30s
+    Click Element    ${Update_button}
+    Sleep    5s
+
+    Wait Until Element Is Visible     ${New_Status}     timeout=30s
+    Click Element    ${New_Status}  
+    Sleep    5s
+
+    Wait Until Element Is Visible     ${Resolved_Button}     timeout=30s
+    Click Element    ${Resolved_Button}   
+    Sleep    5s
+
+    Wait Until Element Is Visible     ${Cause_Category}     timeout=30s
+    Click Element    ${Cause_Category}
+    Sleep    5s
+    Click Element    xpath=//android.widget.Button[@content-desc="UE Consultancy"]
+    Sleep    5s
+
+    Wait Until Element Is Visible     ${Cause_Code}     timeout=30s
+    Click Element    ${Cause_Code}
+    Sleep    5s
+    Click Element    xpath=//android.widget.Button[@content-desc="Customer_Not Reachable"]
+    Sleep    5s
+    
+    Wait Until Element Is Visible     ${Resolution_Code}     timeout=30s
+    Click Element    ${Resolution_Code}
+    Sleep    5s
+    Click Element    xpath=//android.widget.Button[@content-desc="Need Reappointment"]
+    Sleep    5s
+
+    Scroll until Submit button
+
+    Wait Until Element Is Visible     ${notes_input}     timeout=30s
+    Click Element    ${notes_input}
+    Input Text       ${notes_input}      Test  
+    Sleep    5s
+    Hide Keyboard    
+
+    Sleep    5
+    Tap With Positions    ${TAP_DURATION}    ${{ (${Add_Attachment_Button_X}, ${Add_Attachment_Button_Y}) }}
+    #Sleep    5
+    #Wait Until Element Is Visible    ${Add_Attachment_Button}    timeout=30s
+    #Click Element    ${Add_Attachment_Button}
+    Sleep    5s
+
+    #Click Element    ${newAttachments_button}
+    Wait Until Element Is Visible    ${uploadAttachment_list}    timeout=30s
+    Click Element    ${camera_button}
+    Sleep    5s
+
+    Wait Until Element Is Visible    ${cameraCapture_button}    timeout=30s
+    Click Element    ${cameraCapture_button}
+    Sleep    5s
+
+    Wait Until Element Is Visible    ${Yes_cameraCapture_button}    timeout=30s
+    Click Element    ${Yes_cameraCapture_button}
+    Sleep    10s
+    
+    Scroll until Submit button
+
+    Wait Until Element Is Visible     ${nameCaptured_input}     timeout=30s
+    Click Element    ${nameCaptured_input}
+    Clear Text       ${nameCaptured_input}
+    Input Text       ${nameCaptured_input}    testName
+    Sleep    1
+    Hide Keyboard
+    Sleep    1
+
+    Wait Until Element Is Visible     ${remarksCaptured_input}     timeout=30s
+    Click Element    ${remarksCaptured_input} 
+    Input Text       ${remarksCaptured_input}    Test Remarks
+    Sleep    1
+    Hide Keyboard
+    Sleep    1
+
+    Scroll until Submit button
+
+    Click Element    ${Signature_Button}
+    Sleep    2
+    
+    Swipe    540    1200    540    800    500
+    Sleep    1
+
+    Wait Until Element Is Visible     ${Submit_Button}     timeout=30s
+    Click Element    ${Submit_Button}  
+    Sleep    5s
+
+    Scroll until Submit button
+
+    RAF
 
     Wait Until Element Is Visible     ${Submit_Button}     timeout=30s
     Click Element    ${Submit_Button}  
