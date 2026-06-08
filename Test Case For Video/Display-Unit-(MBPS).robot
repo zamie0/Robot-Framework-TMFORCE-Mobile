@@ -2,12 +2,12 @@
 Resource      ../Configs/setting.robot
 Resource      ../Keywords/LaunchApp.robot
 Resource      ../Keywords/Login.robot
-Resource      ../Keywords/CurrentTask.robot
+Resource      ../Keywords/WifiTest.robot
 Resource      ../Locators/locators.robot
 
 *** Test Cases ***
 Execute Task List
-    [Documentation]  To Test My Profile Page
+    [Documentation]  To Test Display Unit (MBPS)
     [Tags]  Regression Mobile App
 
     LaunchApp.Launch Application
@@ -15,6 +15,14 @@ Execute Task List
 
     Sleep    20
 
-    CurrentTask.Change Status to On Site
+    WifiTest.Update Status to Resolved - Test Wifi
+    WifiTest.Wi-Fi Signal Test
+
+
+
+
+
+
+
 
 

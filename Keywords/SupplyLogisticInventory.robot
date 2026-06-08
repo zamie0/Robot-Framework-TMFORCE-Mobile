@@ -11,15 +11,15 @@ CPE List In Hand
     Click Element                       ${CPE_IN_HAND}
     Sleep    5
 
-    Wait Until Element Is Visible       ${Calculator_Button}    30s
-    Click Element                       ${Calculator_Button}
-    Sleep    5
+    #Wait Until Element Is Visible       ${Calculator_Button}    30s
+    #Click Element                       ${Calculator_Button}
+    #Sleep    5
 
-    Tap With Positions    ${TAP_DURATION}    ${{ (714, 714) }}
-    Sleep    5
+    #Tap With Positions    ${TAP_DURATION}    ${{ (714, 714) }}
+    #Sleep    5
 
-    Search CPE Test
-    Click Sort Button
+    #Search CPE Test
+    #Click Sort Button
 
 Search CPE Test
     Wait Until Element Is Visible    ${Search_button}     30s
@@ -46,10 +46,6 @@ Click Sort Button
 
     Click Element    ${applyFilter_button}
     Sleep    3
-
-Stock Transfer
-    Stock Transfer To Team
-    Accept CPE Stock Transfer
 
 Stock Transfer To Team
     ${element}=    Run Keyword And Ignore Error    Get Webelement    ${Transfer_Button}
@@ -82,16 +78,6 @@ Stock Transfer To Team
     Sleep    5
 
 Accept CPE Stock Transfer
-    Scroll up to the top
-    ${element}=    Run Keyword And Ignore Error    Get Webelement    ${Received_Tab}
-    FOR    ${i}    IN RANGE    5
-        Run Keyword If    '${element[0]}' != 'FAIL'    Exit For Loop
-        Swipe By Percent    50    30    50    80    500
-        Sleep    1
-        ${element}=    Run Keyword And Ignore Error    Get Webelement    ${Received_Tab}
-    END
-    Run Keyword If    '${element[0]}' == 'FAIL'    Fail    Element not found after scrolling up
-
     Wait Until Element Is Visible       ${Accept_Button}    30s
     Click Element                       ${Accept_Button}
     Sleep    5
@@ -109,10 +95,14 @@ Accept CPE Stock Transfer
     Sleep    5
 
 CPE Stock Count
-    Press Keycode    4
+    Sidebar.Open Sidebar
 
     Wait Until Element Is Visible       ${CPE_STOCK_COUNT}    30s
     Click Element                       ${CPE_STOCK_COUNT}
+    Sleep    10
+
+    Wait Until Element Is Visible       ${Scanner_Button}    30s
+    Click Element                       ${Scanner_Button}
     Sleep    10
 
     Wait Until Element Is Visible       ${Add_To_List_Button}    30s
@@ -131,6 +121,10 @@ CPE Stock Count
     Click Element                       ${Submit_Button}
     Sleep    10
 
+    Wait Until Element Is Visible       ${Yes_Button}    30s
+    Click Element                       ${Yes_Button}
+    Sleep    10
+
     Wait Until Element Is Visible       ${Zero_Balance_Tab}    30s
     Click Element                       ${Zero_Balance_Tab}
     Sleep    5
@@ -144,6 +138,20 @@ CPE Stock Count
     Sleep    10
 
 CPE Swap
-    Press Keycode    4
-    Sidebar.Close Sidebar
-    
+    CPE SWAP MOVEMENT
+    CPE SWAP MOVEMENT (BAU)
+    CPE STATUS = LOCK STATUS
+    CPE STATUS = PROPOSED TRANSFER
+
+CPE SWAP MOVEMENT
+
+
+CPE SWAP MOVEMENT (BAU)
+
+
+CPE STATUS = LOCK STATUS
+
+
+CPE STATUS = PROPOSED TRANSFER
+
+

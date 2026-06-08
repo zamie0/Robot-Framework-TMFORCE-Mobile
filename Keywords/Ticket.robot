@@ -6,7 +6,7 @@ Resource    ../Keywords/Task.robot
 
 *** Keywords ***
 Scroll Down A Bit
-    Swipe    500    1500    500    500
+    Swipe By Percent    50    80    50    30    500
     Sleep    1s
 
 Click All Tab

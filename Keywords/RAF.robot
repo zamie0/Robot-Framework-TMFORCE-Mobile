@@ -268,6 +268,42 @@ Fill in RAF - Section 2 (Landed House Unifi FTTH Button)
     Hide Keyboard
     Sleep    1
 
+Fill in RAF - Section 2 (Wifi Assedssment Checklist)
+    
+    Wait Until Element Is Visible     ${Existing_WiFI_Coverage_Button}     timeout=30s
+    Click Element    ${Existing_WiFI_Coverage_Button}
+    Sleep    5s
+
+    Wait Until Element Is Visible    ${uploadAttachment_list}    timeout=30s
+    Click Element    ${camera_button}
+    Sleep    5s
+
+    Wait Until Element Is Visible    ${cameraCapture_button}    timeout=30s
+    Click Element    ${cameraCapture_button}
+    Sleep    5s
+
+    Wait Until Element Is Visible    ${Yes_cameraCapture_button}    timeout=30s
+    Click Element    ${Yes_cameraCapture_button}
+    Sleep    10s
+
+    Ticket.Scroll Down A Bit
+
+    Tap With Positions    ${TAP_DURATION}    ${{ (933, 2188) }}
+    Sleep    2s
+    Sleep    5s
+
+    Wait Until Element Is Visible    ${uploadAttachment_list}    timeout=30s
+    Click Element    ${camera_button}
+    Sleep    5s
+
+    Wait Until Element Is Visible    ${cameraCapture_button}    timeout=30s
+    Click Element    ${cameraCapture_button}
+    Sleep    5s
+
+    Wait Until Element Is Visible    ${Yes_cameraCapture_button}    timeout=30s
+    Click Element    ${Yes_cameraCapture_button}
+    Sleep    10s
+
 Fill in RAF - Section 3 (CAUSE CODE)
     #${element}=    Run Keyword And Ignore Error    Get Webelement    ${causeCode_Header}
     #FOR    ${i}    IN RANGE    5
@@ -480,177 +516,82 @@ Fill in Notes, Attachments, Signature
 
     Scroll until Submit button
 
+Fill in PHC Section
 
+    Ticket.Scroll Down A Bit
+    Ticket.Scroll Down A Bit
+    Ticket.Scroll Down A Bit
 
+    Sleep    5s
 
+    Wait Until Element Is Visible     ${Scan_Checkbox}     timeout=30s
+    Click Element    ${Scan_Checkbox}  
+    Sleep    5s
 
+    Wait Until Element Is Visible     ${Router_Speed_Checkbox}     timeout=30s
+    Click Element    ${Router_Speed_Checkbox}  
+    Sleep    5s
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Fil in RAF - section 2 (Landed_House_DSL)
-    #section 2 
-    Click Element    ${Landed_House_DSL/DEL_Button}
-
-    #delete 
-    Click Element    ${Add_Reading_Button}
-    Click Element    ${Site_Dropdown}
-    Click Element    ${TM_Option_Button}
-
-    Click Element    ${SNR_Download_Input}
-    Input Text       ${SNR_Download_Input}    40
-    Click Element    ${Add_Button}
-    Sleep    3
-    Click Element    ${Delete_Button}
-
-    #broadband
-    Click Element    ${Add_Reading_Button}
-    Click Element    ${Site_Dropdown}
-    Click Element    ${TM_Option_Button}
-
-    Click Element    ${SNR_Download_Input}
-    Input Text       ${SNR_Download_Input}    40
-
-    Click Element    ${SNR_Upload_Input}
-    Input Text       ${SNR_Upload_Input}    66
-
-    Click Element    ${ATTN_Download_Input}
-    Input Text       ${ATTN_Download_Input}    70
-
-    
-    #scroll
-    Swipe    540    1225    540    408    500
-    Sleep    3
-
-    Wait Until Element Is Visible     ${ATTN_Upload_Input}
-    Click Element    ${ATTN_Upload_Input}
-    Input Text       ${ATTN_Upload_Input}    100
-
-    Click Element    ${AR_Download_Input}
-    Input Text       ${AR_Download_Input}    55
-
-    Click Element    ${AR_Upload_Input}
-    Input Text       ${AR_Upload_Input}    55
-
-    Click Element    ${Tone_Dropdown}
-    Click Element    ${OK_Option_button}
-
-    Click Element    ${Add_Button}
-
-    #scroll
-    ${element}=    Run Keyword And Ignore Error    Get Webelement    ${ONU_Reading_Dropdown}
+Fill in Charge Section
+    ${element}=    Run Keyword And Ignore Error    Get Webelement    ${Product_Equipment_Select}
     FOR    ${i}    IN RANGE    5
         Run Keyword If    '${element[0]}' != 'FAIL'    Exit For Loop
         Swipe By Percent    50    80    50    30    500
         Sleep    1
-        ${element}=    Run Keyword And Ignore Error    Get Webelement    ${ONU_Reading_Dropdown}
+        ${element}=    Run Keyword And Ignore Error    Get Webelement    ${Product_Equipment_Select}
     END
     Run Keyword If    '${element[0]}' == 'FAIL'    Fail    Accept button not found after scrolling
 
-Fil in RAF - section 3
-#scroll
-    ${element}=    Run Keyword And Ignore Error    Get Webelement    ${Renewal_Service_Button}
-    FOR    ${i}    IN RANGE    5
-        Run Keyword If    '${element[0]}' != 'FAIL'    Exit For Loop
-        Swipe By Percent    50    80    50    30    500
-        Sleep    1
-        ${element}=    Run Keyword And Ignore Error    Get Webelement    ${Renewal_Service_Button}
-    END
-    Run Keyword If    '${element[0]}' == 'FAIL'    Fail    Accept button not found after scrolling
-    
-    
-    Click Element    ${Renewal_Service_Button}
+    Ticket.Scroll Down A Bit
 
-Fil in RAF - section 4
-    
-    #scroll
-    ${element}=    Run Keyword And Ignore Error    Get Webelement    ${TNC_Detail}
-    FOR    ${i}    IN RANGE    5
-        Run Keyword If    '${element[0]}' != 'FAIL'    Exit For Loop
-        Swipe By Percent    50    80    50    30    500
-        Sleep    1
-        ${element}=    Run Keyword And Ignore Error    Get Webelement    ${TNC_Detail}
-    END
-    Run Keyword If    '${element[0]}' == 'FAIL'    Fail    Accept button not found after scrolling
-    
-    
-    Click Element    ${TNC_Detail}
-    Swipe    540    2103    540    381    1000
-    Click Element    ${Close_Button}
+    Wait Until Element Is Visible     ${Product_Equipment_Select}     timeout=30s
+    Click Element    ${Product_Equipment_Select}  
+    Sleep    5s
 
-    Click Element    ${Check_Box}
-    Swipe    540    2103    540    381    1000
+    Wait Until Element Is Visible     ${Cat6_Button}     timeout=30s
+    Click Element    ${Cat6_Button}  
+    Sleep    5s
 
-    Click Element    ${Name_Input}
-    Input Text       ${Name_Input}    Ali bin Abu
+    Wait Until Element Is Visible     ${Add_Charge_Button}     timeout=30s
+    Click Element    ${Add_Charge_Button}  
+    Sleep    8s
 
-    Click Element    ${IC_Input}
-    Input Text       ${IC_Input}    961201010044
+    Ticket.Scroll Down A Bit
 
-    Click Element    ${Email_Input}
-    Input Text       ${Email_Input}    aliabu@gmail.com
+    Sleep    8s
 
-    Hide Keyboard
-    # Click Element    ${Ext_Ratio_Input}
-    # Input Text       ${Ext_Ratio_Input}    70
+    Ticket.Scroll Down A Bit
 
-    # #scroll
-    # ${element}=    Run Keyword And Ignore Error    Get Webelement    ${Comments_Input}
-    # FOR    ${i}    IN RANGE    5
-    #     Run Keyword If    '${element[0]}' != 'FAIL'    Exit For Loop
-    #     Swipe By Percent    50    80    50    30    500
-    #     Sleep    1
-    #     ${element}=    Run Keyword And Ignore Error    Get Webelement    ${Comments_Input}
-    # END
-    # Run Keyword If    '${element[0]}' == 'FAIL'    Fail    Accept button not found after scrolling
-    
-    Click Element    ${Relationship_Input}
-    Input Text       ${Relationship_Input}    family
+    Sleep    8s
 
-    Hide Keyboard
+RAF UNIFI Elite
+    Scroll to RAF Button
 
-    Click Element    ${Comments_Input}
-    Input Text       ${Comments_Input}    test
+    Wait Until Element Is Visible     ${Submit_Button}     timeout=30s
+    Click Element    ${Submit_Button}  
+    Sleep    5s
 
-    Hide Keyboard
-    
-    #tak semua RAF ada yang ni
-    Swipe By Percent    50    80    50    30    500
+    Fill in RAF - Section 2 (Wifi Assedssment Checklist)
+    Fill in PHC Section
+    Fill in Charge Section
+    Fill in RAF - Section 4 (TNC)
 
-    Click Element    ${Cust_Refuse_Sign}
-    Click Element    ${Cust_Disagree_Restoration}
 
-    Click Element    ${Back_Button}
 
-        #scroll
-    ${element}=    Run Keyword And Ignore Error    Get Webelement    ${Restoration_Charges}
-    FOR    ${i}    IN RANGE    5
-        Run Keyword If    '${element[0]}' != 'FAIL'    Exit For Loop
-        Swipe    540    1058    540    313    500
-        Sleep    1
-        ${element}=    Run Keyword And Ignore Error    Get Webelement    ${Restoration_Charges}
-    END
-    Run Keyword If    '${element[0]}' == 'FAIL'    Fail    Accept button not found after scrolling
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

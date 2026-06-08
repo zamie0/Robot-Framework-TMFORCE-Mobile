@@ -13,11 +13,12 @@ Execute Task List
     LaunchApp.Launch Application
     Login.Login app - positive scenario
 
-    Sleep    20
+    Sleep    30
 
-    SupplyLogisticInventory.CPE List In Hand
-    SupplyLogisticInventory.Stock Transfer
-    SupplyLogisticInventory.CPE Stock Count
+    #SupplyLogisticInventory.CPE List In Hand
+    #SupplyLogisticInventory.Stock Transfer To Team
+    #SupplyLogisticInventory.Accept CPE Stock Transfer
+    #SupplyLogisticInventory.CPE Stock Count
     SupplyLogisticInventory.CPE Swap
 
 

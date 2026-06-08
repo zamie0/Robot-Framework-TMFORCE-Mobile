@@ -14,7 +14,7 @@ Search Ticket by ID
     Wait Until Element Is Visible    ${Search_button}     30s
     Click Element    ${Search_button} 
     Clear Text    ${Search_button} 
-    Input Text    ${Search_button}     T-0000009510
+    Input Text    ${Search_button}     T-0000009779
     Sleep    5
     Hide Keyboard
     Sleep    1
@@ -72,6 +72,14 @@ Capture Activity ID
     RETURN    ${CAPTURED_ACTIVITY_ID}
 
 Change Status to On Site
+    Wait Until Element Is Visible    ${Click_PendingAccept}      30s
+    Sleep    5s
+
+    Tap With Positions    ${TAP_DURATION}    ${{ (${PendingAccept_Dropdown_HEADER_X}, ${PendingAccept_Dropdown_HEADER_Y}) }}
+    Sleep    5
+
+    Search Ticket by ID
+
     Wait Until Element Is Visible    ${Click_CurrentTask}      30s
     Click Element    ${Click_CurrentTask}
     Sleep    5s
@@ -127,7 +135,7 @@ Change Status to In Progress
     Tap With Positions    ${TAP_DURATION}    ${{ (${CurrentTask_Dropdown_HEADER_X}, ${CurrentTask_Dropdown_HEADER_Y}) }}
     Sleep    5
 
-    Task.Search by Source System UNIFI
+    Search Ticket by ID
 
     Wait Until Element Is Visible     ${Click_AssignedTask}     timeout=30s
     Click Element    ${Click_AssignedTask} 
@@ -177,7 +185,7 @@ Change Status to In Progress
     Sleep    60s
     
     Press Keycode    4
-    #Press Keycode    4
+    Press Keycode    4
 
     Wait Until Element Is Visible    ${CurrentTask_Dropdown_Open}      30s
     Click Element    ${CurrentTask_Dropdown_Open}
@@ -196,7 +204,7 @@ Change Status to Resolved
     Tap With Positions    ${TAP_DURATION}    ${{ (${PendingAccept_Dropdown_HEADER_X}, ${PendingAccept_Dropdown_HEADER_Y}) }}
     Sleep    5
 
-    Task.Search by Source System UNIFI
+    Search Ticket by ID
 
     Wait Until Element Is Visible    ${Click_CurrentTask}      30s
     Click Element    ${Click_CurrentTask}
@@ -382,19 +390,19 @@ Change Status to Resolved - UNIFI Elite
     Wait Until Element Is Visible     ${Cause_Category}     timeout=30s
     Click Element    ${Cause_Category}
     Sleep    5s
-    Click Element    xpath=//android.widget.Button[@content-desc="UE Consultancy"]
+    Click Element    xpath=//android.widget.Button[@content-desc="Customer"]
     Sleep    5s
 
     Wait Until Element Is Visible     ${Cause_Code}     timeout=30s
     Click Element    ${Cause_Code}
     Sleep    5s
-    Click Element    xpath=//android.widget.Button[@content-desc="Customer_Not Reachable"]
+    Click Element    xpath=//android.widget.Button[@content-desc="Customer_Cancel TT"]
     Sleep    5s
     
     Wait Until Element Is Visible     ${Resolution_Code}     timeout=30s
     Click Element    ${Resolution_Code}
     Sleep    5s
-    Click Element    xpath=//android.widget.Button[@content-desc="Need Reappointment"]
+    Click Element    xpath=//android.widget.Button[@content-desc="Advise UCC"]
     Sleep    5s
 
     Scroll until Submit button
@@ -405,11 +413,11 @@ Change Status to Resolved - UNIFI Elite
     Sleep    5s
     Hide Keyboard    
 
-    Sleep    5
-    Tap With Positions    ${TAP_DURATION}    ${{ (${Add_Attachment_Button_X}, ${Add_Attachment_Button_Y}) }}
     #Sleep    5
-    #Wait Until Element Is Visible    ${Add_Attachment_Button}    timeout=30s
-    #Click Element    ${Add_Attachment_Button}
+    #Tap With Positions    ${TAP_DURATION}    ${{ (${Add_Attachment_Button_X}, ${Add_Attachment_Button_Y}) }}
+    Sleep    5
+    Wait Until Element Is Visible    xpath=//android.widget.Button[@bounds="[912,1130][1038,1235]"]    timeout=30s
+    Click Element    xpath=//android.widget.Button[@bounds="[912,1130][1038,1235]"]
     Sleep    5s
 
     #Click Element    ${newAttachments_button}
@@ -454,9 +462,11 @@ Change Status to Resolved - UNIFI Elite
     Click Element    ${Submit_Button}  
     Sleep    5s
 
-    Scroll until Submit button
+    #Scroll until Submit button
 
-    RAF
+    RAF.RAF UNIFI Elite
+
+    Scroll until Submit button
 
     Wait Until Element Is Visible     ${Submit_Button}     timeout=30s
     Click Element    ${Submit_Button}  
@@ -469,11 +479,12 @@ Change Status to Resolved - UNIFI Elite
     Press Keycode    4
 
 Change Status to Reschedule (No Date)
-    #Tap With Positions    ${TAP_DURATION}    ${{ (${PendingAccept_Dropdown_HEADER_X}, ${PendingAccept_Dropdown_HEADER_Y}) }}
-    #Sleep    5
-    #Tap With Positions    ${TAP_DURATION}    ${{ (${CurrentTask_Dropdown_HEADER_X}, ${CurrentTask_Dropdown_HEADER_Y}) }}
-    #Sleep    5
-    #Task.Search by Source System UNIFI
+    Wait Until Element Is Visible    ${Click_PendingAccept}      30s
+    Sleep    5s
+
+    Tap With Positions    ${TAP_DURATION}    ${{ (${PendingAccept_Dropdown_HEADER_X}, ${PendingAccept_Dropdown_HEADER_Y}) }}
+    Sleep    5
+    Task.Search by Source System UNIFI
 
     Wait Until Element Is Visible    ${Click_CurrentTask}      30s
     Click Element    ${Click_CurrentTask}
@@ -542,11 +553,13 @@ Change Status to Reschedule (No Date)
     Press Keycode    4
 
 Change Status to Reschedule (No Date) Other Than Customer
-    #Tap With Positions    ${TAP_DURATION}    ${{ (${PendingAccept_Dropdown_HEADER_X}, ${PendingAccept_Dropdown_HEADER_Y}) }}
-    #Sleep    5
-    #Tap With Positions    ${TAP_DURATION}    ${{ (${CurrentTask_Dropdown_HEADER_X}, ${CurrentTask_Dropdown_HEADER_Y}) }}
-    #Sleep    5
-    #Task.Search by Source System UNIFI
+    Wait Until Element Is Visible    ${Click_PendingAccept}      30s
+    Sleep    5s
+
+    Tap With Positions    ${TAP_DURATION}    ${{ (${PendingAccept_Dropdown_HEADER_X}, ${PendingAccept_Dropdown_HEADER_Y}) }}
+    Sleep    5
+
+    Search Ticket by ID
 
     Wait Until Element Is Visible    ${Click_PendingAccept}      30s
     Sleep    5s
@@ -871,3 +884,67 @@ Change Status to Returned
     Sleep    60s
 
     Press Keycode    4
+
+Change Status to On Site - On Site Late Reason
+    Wait Until Element Is Visible    ${Click_PendingAccept}      30s
+    Sleep    5s
+
+    Tap With Positions    ${TAP_DURATION}    ${{ (${PendingAccept_Dropdown_HEADER_X}, ${PendingAccept_Dropdown_HEADER_Y}) }}
+    Sleep    5
+
+    Search Ticket by ID
+
+    Wait Until Element Is Visible    ${Click_CurrentTask}      30s
+    Click Element    ${Click_CurrentTask}
+    Sleep    5s
+
+    Click Element    ${Activity_Tab}
+    Sleep    5s
+    
+    Capture Activity ID
+    Sleep    5s
+
+    Wait Until Element Is Visible    ${Action_button}      30s
+    Click Element    ${Action_button}
+    Sleep    5s
+
+    Wait Until Element Is Visible    ${Update_button}      30s
+    Click Element    ${Update_button}
+    Sleep    5s
+
+    Wait Until Element Is Visible     ${New_Status}     timeout=30s
+    Click Element    ${New_Status}  
+    Sleep    5s
+
+    Wait Until Element Is Visible     ${OnSite_Button}     timeout=30s
+    Click Element    ${OnSite_Button}   
+    Sleep    5s
+    
+    Wait Until Element Is Visible     ${Late_Reason_Dropdown}     timeout=30s
+    Click Element    ${Late_Reason_Dropdown}  
+    Sleep    5s
+
+    Wait Until Element Is Visible     xpath=//android.widget.Button[@content-desc="Bad weather"]     timeout=30s
+    Click Element    xpath=//android.widget.Button[@content-desc="Bad weather"]  
+    Sleep    5s
+
+    Scroll until Submit button
+    
+    Wait Until Element Is Visible     ${notes_input}     timeout=30s
+    Click Element    ${notes_input}
+    Input Text       ${notes_input}      Test  
+    Sleep    5s
+    Hide Keyboard                      
+
+    Wait Until Element Is Visible     ${Submit_Button}     timeout=30s
+    Click Element    ${Submit_Button}  
+    Sleep    5s
+
+    Wait Until Element Is Visible     ${Yes_Button}     timeout=30s
+    Click Element    ${Yes_Button}  
+    Sleep    60s
+
+    Press Keycode    4
+    Press Keycode    4
+
+    Task.Clear Search

@@ -1,6 +1,7 @@
 *** Settings ***
 Resource    ../Configs/setting.robot
 Resource    ../Locators/locators.robot
+Resource    ../Keywords/Task.robot
 
 *** Variables ***
 # Global variable to store the ID across different keywords
@@ -65,14 +66,16 @@ Capture Activity ID
 
     RETURN    ${CAPTURED_ACTIVITY_ID}
 
-Change Status to On My Way    
-    #Wait Until Element Is Visible    ${Click_PendingAccept}      30s
-    #Sleep    5s
+Change Status to On My Way
+    Task.Search by Source System UNIFI
 
-    #Tap With Positions    ${TAP_DURATION}    ${{ (${PendingAccept_Dropdown_HEADER_X}, ${PendingAccept_Dropdown_HEADER_Y}) }}
-    #Sleep    5
-    #Tap With Positions    ${TAP_DURATION}    ${{ (${CurrentTask_Dropdown_HEADER_X}, ${CurrentTask_Dropdown_HEADER_Y}) }}
-    #Sleep    5
+    Wait Until Element Is Visible    ${Click_PendingAccept}      30s
+    Sleep    5s
+
+    Tap With Positions    ${TAP_DURATION}    ${{ (${PendingAccept_Dropdown_HEADER_X}, ${PendingAccept_Dropdown_HEADER_Y}) }}
+    Sleep    5
+    Tap With Positions    ${TAP_DURATION}    ${{ (${CurrentTask_Dropdown_HEADER_X}, ${CurrentTask_Dropdown_HEADER_Y}) }}
+    Sleep    5
 
     Wait Until Element Is Visible     ${Click_AssignedTask}     timeout=30s
     Click Element    ${Click_AssignedTask} 

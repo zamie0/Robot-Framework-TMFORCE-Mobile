@@ -149,9 +149,9 @@ ${Received_Tab}                     xpath=    //android.view.View[contains(@cont
 ${Accept_Button}                    xpath=    //android.widget.Button[@content-desc="Accept"]
 ${Reject_Button}                    xpath=    //android.widget.Button[@content-desc="Reject"]
 
-${Scanner_Button}                   android=new UiSelector().className("android.widget.Button").bounds("[933,413][1059,539]")
+${Scanner_Button}                   xpath=    //android.widget.Button[@bounds="[933,413][1059,539]"]
 ${Add_To_List_Button}               xpath=    //android.widget.Button[@content-desc="Add to list"]
-${X_Button}                         xpath=    (//android.widget.Button)[1]
+${X_Button}                         xpath=    //android.widget.Button[@bounds="[896,857][1022,962]"]
 ${Zero_Balance_Tab}                 xpath=    //android.view.View[contains(@content-desc,"Zero Balance")]
 ${Agree_Zero_Balance_Button}        android=new UiSelector().className("android.widget.RadioButton").bounds("[949,409][1033,493]")
 
@@ -173,23 +173,23 @@ ${Task_View}                        xpath=    //android.widget.ScrollView
 
 ${PendingAccept_Dropdown_HEADER_X}            540
 ${PendingAccept_Dropdown_HEADER_Y}            710
-${PendingAccept_Dropdown_Open}      xpath=    //android.view.View[@bounds="[21,628][1059,802]"]
+${PendingAccept_Dropdown_Open}      xpath=    //android.view.View[@bounds="[11,628][1070,802]"]
 
 ${CurrentTask_Dropdown_HEADER_X}              540
 ${CurrentTask_Dropdown_HEADER_Y}              882
-${CurrentTask_Dropdown_Open}        xpath=    //android.view.View[@bounds="[21,802][1059,975]"]
+${CurrentTask_Dropdown_Open}        xpath=    //android.view.View[@bounds="[11,802][1070,975]"]
 
 ${AssignedTask_Dropdown_HEADER_X}             540
 ${AssignedTask_Dropdown_HEADER_Y}             1061
-${AssignedTask_Dropdown_Open}       xpath=    //android.view.View[@bounds="[21,975][1059,1148]"]
+${AssignedTask_Dropdown_Open}       xpath=    //android.view.View[@bounds="[11,975][1070,1148]"]
 
 ${OnHold_Dropdown_HEADER_X}                   540
 ${OnHold_Dropdown_HEADER_Y}                   1234
-${OnHold_Dropdown_Open}             xpath=    //android.view.View[@bounds="[21,1148][1059,1321]"]
+${OnHold_Dropdown_Open}             xpath=    //android.view.View[@bounds="[11,1148][1070,1321]"]
 
 ${TaskHistory_Dropdown_HEADER_X}              540
 ${TaskHistory_Dropdown_HEADER_Y}    1407
-${TaskHistory_Dropdown_Open}        xpath=    //android.view.View[@bounds="[21,1321][1059,1495]"]
+${TaskHistory_Dropdown_Open}        xpath=    //android.view.View[@bounds="[11,1321][1070,1495]"]
 
 ${TAP_DURATION}                     500
 
@@ -223,6 +223,7 @@ ${ETTA_TIME_MINUTE_INPUT}           xpath=    //android.widget.FrameLayout[@reso
 ${OK_Button}                        xpath=    //android.widget.Button[@content-desc="OK"]
 ${Clear_Button}                     xpath=    //android.widget.Button[contains(@content-desc, "Clear")]
 ${Close_Button}                     xpath=    //android.widget.Button[@content-desc="Close"]
+${Late_Reason_Dropdown}             xpath=    //android.view.View[contains(@content-desc, "Late Reason")]
 
 #on my way edit ETTA
 ${Edit_ETTA_Button}                 xpath=    //android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[1]/android.widget.Button[2]
@@ -486,6 +487,9 @@ ${Flag_Button}                      xpath=    //android.view.View[@content-desc=
 ${Service_Point_Update_Button}      xpath=    (//android.view.View[@content-desc="Update"])[3]
 
 ${Scan_Barcode_Button}              xpath=    //android.widget.Button[@content-desc="Scan Barcode"]
+${List_Barcode_Button}              xpath=    //android.widget.Button[@content-desc="List"]
+${List_Barcode_Button_X}                      901
+${List_Barcode_Button_Y}                      1553
 ${Generate_SN_Button}               xpath=    //android.widget.Button[@content-desc="Generate SN"]
 ${List_Button}                      xpath=    (//android.widget.Button[@content-desc])[3]
 ${List_Option1_Button}              xpath=    //android.widget.Button[@content-desc="SLTSOYSY1912073148"]
@@ -586,3 +590,31 @@ ${Restoration_Charges}              xpath=    //android.view.View[@content-desc=
 ${Cust_Refuse_Sign}                 xpath=    //android.view.View[@content-desc="Customer refuse to sign"]/android.widget.CheckBox
 ${Cust_Disagree_Restoration}        xpath=    //android.view.View[@content-desc="Customer disagree with restoration work"]/android.widget.CheckBox
 ${Restoration_Completed_Outside}    xpath=    //android.view.View[@content-desc="Restoration completed outside of customer premise"]/android.widget.CheckBox
+
+#WIFI ASSESSMENT CHECKLIST
+${Existing_WiFI_Coverage_Button}    xpath=    //android.widget.Button[@bounds="[870,1605][996,1710]"]
+${Propose_WiFI_Coverage_Button}     xpath=    //android.view.View[contains(@content-desc,"Proposed WiFi Coverage Solution")]//android.widget.Button
+
+#PHC SECTION
+${PHC_Section}                      xpath=    //android.view.View[contains(@content-desc,"PHC")]
+${Scan_Checkbox}                    xpath=    //android.widget.CheckBox[@content-desc="Scan at least 4 different location within the premise"]
+${Router_Speed_Checkbox}            xpath=    //android.widget.CheckBox[@content-desc="Check main router direct connection speed"]
+
+#CHARGE SECTION
+${Charge_Section}                   xpath=    //android.view.View[@content-desc="CHARGE"]
+${Product_Equipment_Select}         xpath=    //android.view.View[contains(@content-desc,"Product / Equipment")]
+${Cat6_Button}                      xpath=    //android.widget.Button[@content-desc="Cat6 Cable Supply and Installation"]
+${Add_Charge_Button}                xpath=    (//android.widget.Button)[4]
+
+#-----------------------------------Wifi-Test-------------------------------------------------------
+
+${Wifi_Signal_Test_Button}          xpath=    //android.widget.Button[@content-desc="Wi-Fi Signal Test"]
+${AP_Name_Refresh_Button}           xpath=    //android.widget.Button[@bounds='[896,379][1022,484]']
+${Wifi_Test_Button}                 xpath=    //android.widget.Button[@content-desc='Wi-Fi Test']
+${Test_Type_HEADER_X}                         986
+${Test_Type_HEADER_Y}                         639
+${RG_Location_HEADER_X}                       962
+${RG_Location_HEADER_Y}                       859
+${Test_Area_HEADER_X}                         966
+${Test_Area_HEADER_Y}                         1069
+${Add_Results_Button}               xpath=    //android.widget.Button[@content-desc="Add result to list"]

@@ -8,7 +8,7 @@ Search Ticket by ID
     Wait Until Element Is Visible    ${Search_button}     30s
     Click Element    ${Search_button} 
     Clear Text    ${Search_button} 
-    Input Text    ${Search_button}     T-0000009510
+    Input Text    ${Search_button}     T-0000010288
     Sleep    5
     Hide Keyboard
     Sleep    1
@@ -73,7 +73,6 @@ Update Status to Resolved - Test CCP module
     Sleep    5s
 
 Verify Swap CPE Action - Old CPE (Service Point)
-
     ${element}=    Run Keyword And Ignore Error    Get Webelement    ${Swap_CPE_Button}
     FOR    ${i}    IN RANGE    5
         Run Keyword If    '${element[0]}' != 'FAIL'    Exit For Loop
@@ -144,7 +143,26 @@ Verify Swap CPE Action - New CPE (Scan Barcode)
 
     Wait Until Element Is Visible     ${Scan_Barcode_Button}     timeout=30s
     Click Element    ${Scan_Barcode_Button}
+    Press Keycode    4
     Sleep    5s
+
+    Wait Until Element Is Visible     xpath=(//android.widget.Button[@content-desc="Scan Barcode"])[2]     timeout=30s
+    Click Element    xpath=(//android.widget.Button[@content-desc="Scan Barcode"])[2]
+    Press Keycode    4
+    Sleep    5s
+
+    Wait Until Element Is Visible     xpath=(//android.widget.Button[@content-desc="Scan Barcode"])[2]     timeout=30s
+    Click Element    xpath=(//android.widget.Button[@content-desc="Scan Barcode"])[2]
+    Press Keycode    4
+    Sleep    5s
+
+    Tap With Positions    ${TAP_DURATION}    ${{ (${List_Barcode_Button_X}, ${List_Barcode_Button_Y}) }}
+    Sleep    10s
+    Click Element    xpath=//android.widget.Button[@content-desc="UONUMIZA0000001001"]
+
+    #Wait Until Element Is Visible     xpath=(//android.widget.Button[@content-desc="Scan Barcode"])[1]     timeout=30s
+    #Click Element    xpath=(//android.widget.Button[@content-desc="Scan Barcode"])[1] 
+    #Sleep    10s
 
     Wait Until Element Is Visible     ${Verify_SN_Button}     timeout=30s
     Click Element    ${Verify_SN_Button}
