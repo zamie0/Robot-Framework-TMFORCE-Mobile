@@ -3,11 +3,11 @@ Resource      ../Configs/setting.robot
 Resource      ../Keywords/LaunchApp.robot
 Resource      ../Keywords/Login.robot
 Resource      ../Locators/locators.robot
-Resource      ../Keywords/ServiceVerify.robot
+Resource      ../Keywords/Sidebar.robot
 
 *** Test Cases ***
 Execute Task List
-    [Documentation]  To Test Attachment
+    [Documentation]  To Test My Profile Page
     [Tags]  Regression Mobile App
 
     LaunchApp.Launch Application
@@ -15,9 +15,8 @@ Execute Task List
 
     Sleep    20
 
-    #ServiceVerify.Ungated Area
-    ServiceVerify.Gated Area 
-    #ServiceVerify.Gated HSI - Passed - belum
-    #ServiceVerify.Gated HSI - Failed - belum
-    #ServiceVerify.Gated HSI, IPTV, IVR - Passed - belum
+    Sidebar.Open Sidebar
+    Sidebar.Open Self Pickup
+    Sidebar.Search Ticket by ID
+
 

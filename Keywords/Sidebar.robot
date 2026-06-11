@@ -3,8 +3,17 @@ Resource      ../Configs/setting.robot
 Resource      ../Locators/locators.robot
 
 *** Keywords ***
+Search Ticket by ID
+    Wait Until Element Is Visible    ${Search_button}     30s
+    Click Element    ${Search_button} 
+    Clear Text    ${Search_button} 
+    Input Text    ${Search_button}     T-0000010346
+    Sleep    5
+    Hide Keyboard
+    Sleep    1
+
 Scroll Down A Bit
-    Swipe    500    1500    500    500
+    Swipe By Percent   540    1200    540    800    500
     Sleep    1s
 
 Open Sidebar
@@ -66,6 +75,51 @@ Open Help
     Sleep    10
 
     Scroll Down A Bit
+
+Open Self Pickup
+    Sleep    5
+
+    Wait Until Element Is Visible       ${SELF_PICK_UP}    5s
+    Click Element                       ${SELF_PICK_UP}
+    Sleep    5
+
+    Accept Self Pickup Ticket
+
+Accept Self Pickup Ticket
+    Wait Until Element Is Visible       ${DETAILS_BUTTON}    20s
+    Click Element                       ${DETAILS_BUTTON}
+    Sleep    10
+
+    Press Keycode    4
+
+    Wait Until Element Is Visible       ${SELF_PICK_UP_ACCEPT_BUTTON}    20s
+    Click Element                       ${SELF_PICK_UP_ACCEPT_BUTTON}
+    Sleep    5
+
+    Wait Until Element Is Visible       ${Yes_Button}    20s
+    Click Element                       ${Yes_Button}
+    Sleep    10
+
+    Press Keycode    4
+
+    Close Sidebar
+
+Open Server Time
+    Sleep    5
+
+    Swipe By Percent    50    80    50    40    1000
+
+    Wait Until Element Is Visible       ${SETTING_SUPPORT}    5s
+    Click Element                       ${SETTING_SUPPORT}
+    Sleep    5
+
+    Swipe By Percent    50    80    50    40    1000
+
+    Sleep    5
+
+    Wait Until Element Is Visible       ${SERVER_TIME}    5s
+    Click Element                       ${SERVER_TIME}
+    Sleep    10
 
 Click Log Out Button
     Wait Until Element Is Visible       ${LOGOUT_BUTTON}    5s

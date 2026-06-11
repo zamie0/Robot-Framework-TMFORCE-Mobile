@@ -618,3 +618,8 @@ ${RG_Location_HEADER_Y}                       859
 ${Test_Area_HEADER_X}                         966
 ${Test_Area_HEADER_Y}                         1069
 ${Add_Results_Button}               xpath=    //android.widget.Button[@content-desc="Add result to list"]
+
+#-----------------------------------Self-Pick-Up-------------------------------------------------------
+
+${DETAILS_BUTTON}                   xpath=    //android.view.View[@content-desc='Details']
+${SELF_PICK_UP_ACCEPT_BUTTON}       xpath=    (//android.view.View[@content-desc="Self Pick Up"])[2]

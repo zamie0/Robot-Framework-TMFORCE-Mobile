@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.2 (Python 3.14.5 on win32)" generated="2026-06-04T10:45:40.506764" rpa="false" schemaversion="5">
-<suite id="s1" name="On-Site-Late-Reason" source="C:\Users\zamic\Documents\Intern\Robot Framework\Robot Framework TMFORCE Mobile\Test Case For Video\On-Site-Late-Reason.robot">
+<robot generator="Robot 7.4.2 (Python 3.14.5 on win32)" generated="2026-06-10T15:08:39.249734" rpa="false" schemaversion="5">
+<suite id="s1" name="Self-Pickup" source="C:\Users\zamic\Documents\Intern\Robot Framework\Robot Framework TMFORCE Mobile\Test Case For Video\Self-Pickup.robot">
 <test id="s1-t1" name="Execute Task List" line="9">
 <kw name="Launch Application" owner="LaunchApp">
 <kw name="Open Application" owner="AppiumLibrary">
@@ -19,688 +19,317 @@ Please check https://appium.io/docs/en/2.19/guides/caps/
 | *Option*            | *Man.* | *Description*     |
 | remote_url          | Yes    | Appium server url |
 | alias               | No     | alias             |</doc>
-<status status="PASS" start="2026-06-04T10:45:40.860696" elapsed="2.403863"/>
+<status status="PASS" start="2026-06-10T15:08:39.605765" elapsed="2.587557"/>
 </kw>
-<status status="PASS" start="2026-06-04T10:45:40.859838" elapsed="2.404874"/>
+<status status="PASS" start="2026-06-10T15:08:39.604998" elapsed="2.588491"/>
 </kw>
 <kw name="Login app - positive scenario" owner="Login">
 <kw name="Click Element" owner="AppiumLibrary">
-<msg time="2026-06-04T10:45:43.272854" level="INFO">Clicking element 'xpath= //android.widget.EditText[@password='false']'.</msg>
-<msg time="2026-06-04T10:45:43.582005" level="INFO">xpath criteria: //android.widget.EditText[@password='false']</msg>
+<msg time="2026-06-10T15:08:42.202829" level="INFO">Clicking element 'xpath= //android.widget.EditText[@password='false']'.</msg>
+<msg time="2026-06-10T15:08:44.236469" level="INFO">xpath criteria: //android.widget.EditText[@password='false']</msg>
 <arg>${username_input}</arg>
 <doc>Clicks the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-04T10:45:43.265467" elapsed="0.316636"/>
+<status status="PASS" start="2026-06-10T15:08:42.194312" elapsed="2.042256"/>
 </kw>
 <kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
-<msg time="2026-06-04T10:45:44.569804" level="INFO">xpath criteria: //android.widget.EditText[@password='false']</msg>
+<msg time="2026-06-10T15:08:44.295124" level="INFO">xpath criteria: //android.widget.EditText[@password='false']</msg>
 <arg>${username_input}</arg>
 <arg>timeout=10</arg>
 <doc>Waits until the element specified by the ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2026-06-04T10:45:43.582282" elapsed="0.987617"/>
+<status status="PASS" start="2026-06-10T15:08:44.236744" elapsed="0.058507"/>
 </kw>
 <kw name="Input Text" owner="AppiumLibrary">
-<msg time="2026-06-04T10:45:44.577871" level="INFO">Typing text 'XL225135' into text field 'xpath= //android.widget.EditText[@password='false']'</msg>
-<msg time="2026-06-04T10:45:45.134560" level="INFO">xpath criteria: //android.widget.EditText[@password='false']</msg>
+<msg time="2026-06-10T15:08:44.304075" level="INFO">Typing text 'A14331' into text field 'xpath= //android.widget.EditText[@password='false']'</msg>
+<msg time="2026-06-10T15:08:44.397986" level="INFO">xpath criteria: //android.widget.EditText[@password='false']</msg>
 <arg>${username_input}</arg>
-<arg>XL225135</arg>
+<arg>A14331</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-04T10:45:44.570103" elapsed="0.564554"/>
+<status status="PASS" start="2026-06-10T15:08:44.295427" elapsed="0.102739"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2026-06-04T10:45:50.135506" level="INFO">Slept 5 seconds.</msg>
+<msg time="2026-06-10T15:08:49.399297" level="INFO">Slept 5 seconds.</msg>
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-06-04T10:45:45.134848" elapsed="5.000851"/>
+<status status="PASS" start="2026-06-10T15:08:44.398459" elapsed="5.000955"/>
 </kw>
 <kw name="Hide Keyboard" owner="AppiumLibrary">
 <doc>Hides the software keyboard on the device if it is currently visible.</doc>
-<status status="PASS" start="2026-06-04T10:45:50.135925" elapsed="2.664689"/>
+<status status="PASS" start="2026-06-10T15:08:49.399587" elapsed="2.620141"/>
 </kw>
 <kw name="Click Element" owner="AppiumLibrary">
-<msg time="2026-06-04T10:45:52.809458" level="INFO">Clicking element 'xpath= //android.widget.EditText[@password='true']'.</msg>
-<msg time="2026-06-04T10:45:53.295673" level="INFO">xpath criteria: //android.widget.EditText[@password='true']</msg>
+<msg time="2026-06-10T15:08:52.027588" level="INFO">Clicking element 'xpath= //android.widget.EditText[@password='true']'.</msg>
+<msg time="2026-06-10T15:08:53.234545" level="INFO">xpath criteria: //android.widget.EditText[@password='true']</msg>
 <arg>${password_input}</arg>
 <doc>Clicks the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-04T10:45:52.800802" elapsed="0.494983"/>
+<status status="PASS" start="2026-06-10T15:08:52.019939" elapsed="1.214692"/>
 </kw>
 <kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
-<msg time="2026-06-04T10:45:54.456272" level="INFO">xpath criteria: //android.widget.EditText[@password='true']</msg>
+<msg time="2026-06-10T15:08:53.301260" level="INFO">xpath criteria: //android.widget.EditText[@password='true']</msg>
 <arg>${password_input}</arg>
 <arg>timeout=10</arg>
 <doc>Waits until the element specified by the ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2026-06-04T10:45:53.295987" elapsed="1.160396"/>
+<status status="PASS" start="2026-06-10T15:08:53.234808" elapsed="0.066560"/>
 </kw>
 <kw name="Input Password" owner="AppiumLibrary">
-<msg time="2026-06-04T10:45:54.465419" level="INFO">Typing password into text field 'xpath= //android.widget.EditText[@password='true']'</msg>
-<msg time="2026-06-04T10:45:54.567936" level="INFO">xpath criteria: //android.widget.EditText[@password='true']</msg>
+<msg time="2026-06-10T15:08:53.309319" level="INFO">Typing password into text field 'xpath= //android.widget.EditText[@password='true']'</msg>
+<msg time="2026-06-10T15:08:53.411793" level="INFO">xpath criteria: //android.widget.EditText[@password='true']</msg>
 <arg>${password_input}</arg>
-<arg>XL225135</arg>
+<arg>A14331</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-04T10:45:54.456607" elapsed="0.111438"/>
+<status status="PASS" start="2026-06-10T15:08:53.301565" elapsed="0.110314"/>
 </kw>
 <kw name="Hide Keyboard" owner="AppiumLibrary">
 <doc>Hides the software keyboard on the device if it is currently visible.</doc>
-<status status="PASS" start="2026-06-04T10:45:54.568245" elapsed="2.627583"/>
+<status status="PASS" start="2026-06-10T15:08:53.412039" elapsed="2.514464"/>
 </kw>
 <kw name="Reveal Password" owner="Login">
 <kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
-<msg time="2026-06-04T10:45:58.121699" level="INFO">xpath criteria: //android.widget.EditText[2]/android.widget.Button</msg>
+<msg time="2026-06-10T15:08:56.017341" level="INFO">xpath criteria: //android.widget.EditText[2]/android.widget.Button</msg>
 <arg>${EYE_BUTTON}</arg>
 <arg>10s</arg>
 <doc>Waits until the element specified by the ``locator`` is visible.</doc>
-<status status="PASS" start="2026-06-04T10:45:57.196421" elapsed="0.925394"/>
+<status status="PASS" start="2026-06-10T15:08:55.927082" elapsed="0.090345"/>
 </kw>
 <kw name="Click Element" owner="AppiumLibrary">
-<msg time="2026-06-04T10:45:58.130855" level="INFO">Clicking element 'xpath= //android.widget.EditText[2]/android.widget.Button'.</msg>
-<msg time="2026-06-04T10:45:58.355457" level="INFO">xpath criteria: //android.widget.EditText[2]/android.widget.Button</msg>
+<msg time="2026-06-10T15:08:56.026257" level="INFO">Clicking element 'xpath= //android.widget.EditText[2]/android.widget.Button'.</msg>
+<msg time="2026-06-10T15:08:56.195838" level="INFO">xpath criteria: //android.widget.EditText[2]/android.widget.Button</msg>
 <arg>${EYE_BUTTON}</arg>
 <doc>Clicks the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-04T10:45:58.122020" elapsed="0.233567"/>
+<status status="PASS" start="2026-06-10T15:08:56.017589" elapsed="0.178365"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2026-06-04T10:46:03.356505" level="INFO">Slept 5 seconds.</msg>
+<msg time="2026-06-10T15:09:01.197068" level="INFO">Slept 5 seconds.</msg>
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-06-04T10:45:58.355780" elapsed="5.000870"/>
+<status status="PASS" start="2026-06-10T15:08:56.196137" elapsed="5.001086"/>
 </kw>
-<status status="PASS" start="2026-06-04T10:45:57.196105" elapsed="6.160668"/>
+<status status="PASS" start="2026-06-10T15:08:55.926777" elapsed="5.270571"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2026-06-04T10:46:08.357460" level="INFO">Slept 5 seconds.</msg>
+<msg time="2026-06-10T15:09:06.198538" level="INFO">Slept 5 seconds.</msg>
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-06-04T10:46:03.356956" elapsed="5.000629"/>
+<status status="PASS" start="2026-06-10T15:09:01.197518" elapsed="5.001147"/>
 </kw>
 <kw name="Click Element" owner="AppiumLibrary">
-<msg time="2026-06-04T10:46:08.366404" level="INFO">Clicking element 'xpath= //android.widget.Button[@content-desc="Sign In"]'.</msg>
-<msg time="2026-06-04T10:46:09.129472" level="INFO">xpath criteria: //android.widget.Button[@content-desc="Sign In"]</msg>
+<msg time="2026-06-10T15:09:06.206178" level="INFO">Clicking element 'xpath= //android.widget.Button[@content-desc="Sign In"]'.</msg>
+<msg time="2026-06-10T15:09:07.042295" level="INFO">xpath criteria: //android.widget.Button[@content-desc="Sign In"]</msg>
 <arg>${login_btn}</arg>
 <doc>Clicks the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-04T10:46:08.357771" elapsed="0.771796"/>
+<status status="PASS" start="2026-06-10T15:09:06.198842" elapsed="0.843557"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2026-06-04T10:46:14.130279" level="INFO">Slept 5 seconds.</msg>
+<msg time="2026-06-10T15:09:12.043464" level="INFO">Slept 5 seconds.</msg>
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-06-04T10:46:09.129757" elapsed="5.000671"/>
+<status status="PASS" start="2026-06-10T15:09:07.042584" elapsed="5.001015"/>
 </kw>
-<status status="PASS" start="2026-06-04T10:45:43.265150" elapsed="30.865381"/>
+<status status="PASS" start="2026-06-10T15:08:42.193955" elapsed="29.849734"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2026-06-04T10:46:34.131555" level="INFO">Slept 20 seconds.</msg>
+<msg time="2026-06-10T15:09:32.044807" level="INFO">Slept 20 seconds.</msg>
 <arg>20</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-06-04T10:46:14.130907" elapsed="20.000808"/>
+<status status="PASS" start="2026-06-10T15:09:12.044014" elapsed="20.000932"/>
 </kw>
-<kw name="Search Ticket by ID" owner="CurrentTask">
+<kw name="Open Sidebar" owner="Sidebar">
 <kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
-<msg time="2026-06-04T10:46:34.243502" level="INFO">xpath criteria: //android.widget.EditText</msg>
-<arg>${Search_button}</arg>
-<arg>30s</arg>
+<msg time="2026-06-10T15:09:32.148496" level="INFO">xpath criteria: //android.widget.Button[@bounds='[0,106][147,253]']</msg>
+<arg>${BTN_SIDEBAR}</arg>
+<arg>5s</arg>
 <doc>Waits until the element specified by the ``locator`` is visible.</doc>
-<status status="PASS" start="2026-06-04T10:46:34.132606" elapsed="0.111030"/>
+<status status="PASS" start="2026-06-10T15:09:32.045812" elapsed="0.102766"/>
 </kw>
 <kw name="Click Element" owner="AppiumLibrary">
-<msg time="2026-06-04T10:46:34.256732" level="INFO">Clicking element 'xpath= //android.widget.EditText'.</msg>
-<msg time="2026-06-04T10:46:35.401040" level="INFO">xpath criteria: //android.widget.EditText</msg>
-<arg>${Search_button}</arg>
+<msg time="2026-06-10T15:09:32.156300" level="INFO">Clicking element 'xpath= //android.widget.Button[@bounds='[0,106][147,253]']'.</msg>
+<msg time="2026-06-10T15:09:32.983639" level="INFO">xpath criteria: //android.widget.Button[@bounds='[0,106][147,253]']</msg>
+<arg>${BTN_SIDEBAR}</arg>
 <doc>Clicks the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-04T10:46:34.243922" elapsed="1.157253"/>
-</kw>
-<kw name="Clear Text" owner="AppiumLibrary">
-<msg time="2026-06-04T10:46:35.409808" level="INFO">Clear text field 'xpath= //android.widget.EditText'</msg>
-<msg time="2026-06-04T10:46:35.487941" level="INFO">xpath criteria: //android.widget.EditText</msg>
-<arg>${Search_button}</arg>
-<doc>Clears the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-04T10:46:35.401338" elapsed="0.086711"/>
-</kw>
-<kw name="Input Text" owner="AppiumLibrary">
-<msg time="2026-06-04T10:46:35.497700" level="INFO">Typing text 'T-0000009779' into text field 'xpath= //android.widget.EditText'</msg>
-<msg time="2026-06-04T10:46:35.576513" level="INFO">xpath criteria: //android.widget.EditText</msg>
-<arg>${Search_button}</arg>
-<arg>T-0000009779</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-04T10:46:35.488210" elapsed="0.088425"/>
+<status status="PASS" start="2026-06-10T15:09:32.148745" elapsed="0.835001"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2026-06-04T10:46:40.577882" level="INFO">Slept 5 seconds.</msg>
+<msg time="2026-06-10T15:09:34.984745" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-10T15:09:32.983914" elapsed="2.000955"/>
+</kw>
+<status status="PASS" start="2026-06-10T15:09:32.045412" elapsed="2.939543"/>
+</kw>
+<kw name="Open Self Pickup" owner="Sidebar">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-10T15:09:39.986380" level="INFO">Slept 5 seconds.</msg>
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-06-04T10:46:35.576870" elapsed="5.001277"/>
+<status status="PASS" start="2026-06-10T15:09:34.985683" elapsed="5.000838"/>
 </kw>
-<kw name="Hide Keyboard" owner="AppiumLibrary">
-<doc>Hides the software keyboard on the device if it is currently visible.</doc>
-<status status="PASS" start="2026-06-04T10:46:40.578562" elapsed="2.551534"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-06-04T10:46:44.131025" level="INFO">Slept 1 second.</msg>
-<arg>1</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-06-04T10:46:43.130286" elapsed="1.000933"/>
-</kw>
-<status status="PASS" start="2026-06-04T10:46:34.132221" elapsed="9.999138"/>
-</kw>
-<kw name="Change Status to On Site - On Site Late Reason" owner="CurrentTask">
 <kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
-<arg>${Click_PendingAccept}</arg>
-<arg>30s</arg>
-<doc>Waits until the element specified by the ``locator`` is visible.</doc>
-<status status="PASS" start="2026-06-04T10:46:44.132318" elapsed="14.076735"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-06-04T10:47:03.210145" level="INFO">Slept 5 seconds.</msg>
+<msg time="2026-06-10T15:09:40.089477" level="INFO">xpath criteria: //android.widget.Button[@content-desc="Self Pick Up"]</msg>
+<arg>${SELF_PICK_UP}</arg>
 <arg>5s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-06-04T10:46:58.209281" elapsed="5.001005"/>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-10T15:09:39.986736" elapsed="0.102827"/>
 </kw>
-<kw name="Tap With Positions" owner="AppiumLibrary">
-<msg time="2026-06-04T10:47:03.213121" level="WARN">Keyword 'Tap With Positions' will not support int in ms for 'duration' in the future. Use timedelta with units ('ms' or 's') instead.</msg>
-<arg>${TAP_DURATION}</arg>
-<arg>${{ (${PendingAccept_Dropdown_HEADER_X}, ${PendingAccept_Dropdown_HEADER_Y}) }}</arg>
-<doc>Taps on a particular place with up to five fingers, holding for a
-certain time.</doc>
-<status status="PASS" start="2026-06-04T10:47:03.210515" elapsed="0.826050"/>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2026-06-10T15:09:40.096984" level="INFO">Clicking element 'xpath= //android.widget.Button[@content-desc="Self Pick Up"]'.</msg>
+<msg time="2026-06-10T15:09:41.188422" level="INFO">xpath criteria: //android.widget.Button[@content-desc="Self Pick Up"]</msg>
+<arg>${SELF_PICK_UP}</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-10T15:09:40.089726" elapsed="1.098790"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2026-06-04T10:47:09.040711" level="INFO">Slept 5 seconds.</msg>
+<msg time="2026-06-10T15:09:46.189330" level="INFO">Slept 5 seconds.</msg>
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-06-04T10:47:04.036795" elapsed="5.004092"/>
+<status status="PASS" start="2026-06-10T15:09:41.188683" elapsed="5.000770"/>
 </kw>
-<kw name="Search Ticket by ID" owner="CurrentTask">
+<kw name="Accept Self Pickup Ticket" owner="Sidebar">
 <kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
-<msg time="2026-06-04T10:47:09.217351" level="INFO">xpath criteria: //android.widget.EditText</msg>
-<arg>${Search_button}</arg>
-<arg>30s</arg>
+<msg time="2026-06-10T15:09:46.340706" level="INFO">xpath criteria: //android.view.View[@content-desc='Details']</msg>
+<arg>${DETAILS_BUTTON}</arg>
+<arg>20s</arg>
 <doc>Waits until the element specified by the ``locator`` is visible.</doc>
-<status status="PASS" start="2026-06-04T10:47:09.041650" elapsed="0.175810"/>
+<status status="PASS" start="2026-06-10T15:09:46.190008" elapsed="0.150792"/>
 </kw>
 <kw name="Click Element" owner="AppiumLibrary">
-<msg time="2026-06-04T10:47:09.228983" level="INFO">Clicking element 'xpath= //android.widget.EditText'.</msg>
-<msg time="2026-06-04T10:47:09.462911" level="INFO">xpath criteria: //android.widget.EditText</msg>
-<arg>${Search_button}</arg>
+<msg time="2026-06-10T15:09:46.348545" level="INFO">Clicking element 'xpath= //android.view.View[@content-desc='Details']'.</msg>
+<msg time="2026-06-10T15:09:47.957010" level="INFO">xpath criteria: //android.view.View[@content-desc='Details']</msg>
+<arg>${DETAILS_BUTTON}</arg>
 <doc>Clicks the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-04T10:47:09.217677" elapsed="0.245343"/>
-</kw>
-<kw name="Clear Text" owner="AppiumLibrary">
-<msg time="2026-06-04T10:47:09.472548" level="INFO">Clear text field 'xpath= //android.widget.EditText'</msg>
-<msg time="2026-06-04T10:47:10.524034" level="INFO">xpath criteria: //android.widget.EditText</msg>
-<arg>${Search_button}</arg>
-<doc>Clears the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-04T10:47:09.463179" elapsed="1.060967"/>
-</kw>
-<kw name="Input Text" owner="AppiumLibrary">
-<msg time="2026-06-04T10:47:10.532986" level="INFO">Typing text 'T-0000009779' into text field 'xpath= //android.widget.EditText'</msg>
-<msg time="2026-06-04T10:47:12.137755" level="INFO">xpath criteria: //android.widget.EditText</msg>
-<arg>${Search_button}</arg>
-<arg>T-0000009779</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-04T10:47:10.524312" elapsed="1.613584"/>
+<status status="PASS" start="2026-06-10T15:09:46.340970" elapsed="1.616144"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2026-06-04T10:47:17.138768" level="INFO">Slept 5 seconds.</msg>
-<arg>5</arg>
+<msg time="2026-06-10T15:09:57.957950" level="INFO">Slept 10 seconds.</msg>
+<arg>10</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-06-04T10:47:12.138076" elapsed="5.000817"/>
-</kw>
-<kw name="Hide Keyboard" owner="AppiumLibrary">
-<doc>Hides the software keyboard on the device if it is currently visible.</doc>
-<status status="PASS" start="2026-06-04T10:47:17.139103" elapsed="2.614789"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-06-04T10:47:20.754952" level="INFO">Slept 1 second.</msg>
-<arg>1</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-06-04T10:47:19.754153" elapsed="1.000948"/>
-</kw>
-<status status="PASS" start="2026-06-04T10:47:09.041274" elapsed="11.713966"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
-<arg>${Click_CurrentTask}</arg>
-<arg>30s</arg>
-<doc>Waits until the element specified by the ``locator`` is visible.</doc>
-<status status="PASS" start="2026-06-04T10:47:20.755443" elapsed="0.472201"/>
-</kw>
-<kw name="Click Element" owner="AppiumLibrary">
-<msg time="2026-06-04T10:47:21.237329" level="INFO">Clicking element 'android=new UiSelector().descriptionContains("Current Task")'.</msg>
-<arg>${Click_CurrentTask}</arg>
-<doc>Clicks the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-04T10:47:21.227859" elapsed="0.189320"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-06-04T10:47:26.418417" level="INFO">Slept 5 seconds.</msg>
-<arg>5s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-06-04T10:47:21.417432" elapsed="5.001128"/>
-</kw>
-<kw name="Click Element" owner="AppiumLibrary">
-<msg time="2026-06-04T10:47:26.428502" level="INFO">Clicking element 'xpath= //android.view.View[contains(@content-desc, "Activity")]'.</msg>
-<msg time="2026-06-04T10:47:27.442188" level="INFO">xpath criteria: //android.view.View[contains(@content-desc, "Activity")]</msg>
-<arg>${Activity_Tab}</arg>
-<doc>Clicks the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-04T10:47:26.418779" elapsed="1.023533"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-06-04T10:47:32.443441" level="INFO">Slept 5 seconds.</msg>
-<arg>5s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-06-04T10:47:27.442593" elapsed="5.000968"/>
-</kw>
-<kw name="Capture Activity ID" owner="CurrentTask">
-<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
-<msg time="2026-06-04T10:47:33.121574" level="INFO">xpath criteria: //*[contains(@content-desc, 'Activity Id')]</msg>
-<arg>${activity_id_element}</arg>
-<arg>timeout=30s</arg>
-<doc>Waits until the element specified by the ``locator`` is visible.</doc>
-<status status="PASS" start="2026-06-04T10:47:32.444398" elapsed="0.677349"/>
-</kw>
-<kw name="Get Element Attribute" owner="AppiumLibrary">
-<msg time="2026-06-04T10:47:33.287873" level="INFO">Element 'xpath= //*[contains(@content-desc, 'Activity Id')]' attribute 'content-desc' value 'Activity Id
-A-0000009960' </msg>
-<msg time="2026-06-04T10:47:33.288036" level="INFO">xpath criteria: //*[contains(@content-desc, 'Activity Id')]</msg>
-<msg time="2026-06-04T10:47:33.288200" level="INFO">${full_text} = Activity Id
-A-0000009960</msg>
-<var>${full_text}</var>
-<arg>${activity_id_element}</arg>
-<arg>content-desc</arg>
-<doc>Returns the element attribute using the given ``attribute``, e.g. name, value, etc.</doc>
-<status status="PASS" start="2026-06-04T10:47:33.122069" elapsed="0.166172"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2026-06-04T10:47:33.288926" level="INFO">Raw Text Captured: Activity Id
-A-0000009960</msg>
-<arg>Raw Text Captured: ${full_text}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2026-06-04T10:47:33.288494" elapsed="0.000477"/>
-</kw>
-<kw name="Evaluate" owner="BuiltIn">
-<msg time="2026-06-04T10:47:33.289799" level="INFO">${match} = None</msg>
-<var>${match}</var>
-<arg>re.search(r'A-\d+', """${full_text}""")</arg>
-<arg>re</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2026-06-04T10:47:33.289100" elapsed="0.000731"/>
-</kw>
-<if>
-<branch type="IF" condition="${match} is not None">
-<kw name="Set Variable" owner="BuiltIn">
-<var>${id}</var>
-<arg>${match.group(0)}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2026-06-04T10:47:33.290184" elapsed="0.000022"/>
-</kw>
-<kw name="Set Suite Variable" owner="BuiltIn">
-<arg>${CAPTURED_ACTIVITY_ID}</arg>
-<arg>${id}</arg>
-<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="NOT RUN" start="2026-06-04T10:47:33.290344" elapsed="0.000020"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<arg>Successfully Extracted Activity ID: ${CAPTURED_ACTIVITY_ID}</arg>
-<arg>console=True</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2026-06-04T10:47:33.290472" elapsed="0.000018"/>
-</kw>
-<status status="NOT RUN" start="2026-06-04T10:47:33.289961" elapsed="0.000563"/>
-</branch>
-<branch type="ELSE">
-<kw name="Evaluate" owner="BuiltIn">
-<msg time="2026-06-04T10:47:33.291030" level="INFO">${lines} = ['Activity', 'Id', 'A-0000009960']</msg>
-<var>${lines}</var>
-<arg>"""${full_text}""".split()</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2026-06-04T10:47:33.290659" elapsed="0.000401"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-06-04T10:47:33.295137" level="INFO">${id} = A-0000009960</msg>
-<var>${id}</var>
-<arg>${lines[-1]}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-06-04T10:47:33.291169" elapsed="0.003998"/>
-</kw>
-<kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2026-06-04T10:47:33.295763" level="INFO">${CAPTURED_ACTIVITY_ID} = A-0000009960</msg>
-<arg>${CAPTURED_ACTIVITY_ID}</arg>
-<arg>${id}</arg>
-<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2026-06-04T10:47:33.295321" elapsed="0.000491"/>
-</kw>
-<status status="PASS" start="2026-06-04T10:47:33.290559" elapsed="0.005297"/>
-</branch>
-<status status="PASS" start="2026-06-04T10:47:33.289922" elapsed="0.005971"/>
-</if>
-<if>
-<branch type="IF" condition="not '${CAPTURED_ACTIVITY_ID}'.startswith('A-')">
-<kw name="Fail" owner="BuiltIn">
-<arg>Failed to extract a valid ID. Result was: ${CAPTURED_ACTIVITY_ID}</arg>
-<doc>Fails the test with the given message and optionally alters its tags.</doc>
-<status status="NOT RUN" start="2026-06-04T10:47:33.296186" elapsed="0.000020"/>
-</kw>
-<status status="NOT RUN" start="2026-06-04T10:47:33.295980" elapsed="0.000262"/>
-</branch>
-<status status="PASS" start="2026-06-04T10:47:33.295959" elapsed="0.000309"/>
-</if>
-<return>
-<value>${CAPTURED_ACTIVITY_ID}</value>
-<status status="PASS" start="2026-06-04T10:47:33.296314" elapsed="0.000055"/>
-</return>
-<doc>Extracts the ID even if "Activity Id" text comes first</doc>
-<status status="PASS" start="2026-06-04T10:47:32.444031" elapsed="0.852450"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-06-04T10:47:38.297474" level="INFO">Slept 5 seconds.</msg>
-<arg>5s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-06-04T10:47:33.296587" elapsed="5.001037"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
-<msg time="2026-06-04T10:47:38.470187" level="INFO">xpath criteria: //android.widget.Button[@bounds='[954,117][1080,243]']</msg>
-<arg>${Action_button}</arg>
-<arg>30s</arg>
-<doc>Waits until the element specified by the ``locator`` is visible.</doc>
-<status status="PASS" start="2026-06-04T10:47:38.297869" elapsed="0.172456"/>
-</kw>
-<kw name="Click Element" owner="AppiumLibrary">
-<msg time="2026-06-04T10:47:38.480604" level="INFO">Clicking element 'xpath= //android.widget.Button[@bounds='[954,117][1080,243]']'.</msg>
-<msg time="2026-06-04T10:47:40.124047" level="INFO">xpath criteria: //android.widget.Button[@bounds='[954,117][1080,243]']</msg>
-<arg>${Action_button}</arg>
-<doc>Clicks the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-04T10:47:38.470511" elapsed="1.653649"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-06-04T10:47:45.124825" level="INFO">Slept 5 seconds.</msg>
-<arg>5s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-06-04T10:47:40.124340" elapsed="5.000631"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
-<msg time="2026-06-04T10:47:45.235719" level="INFO">xpath criteria: //android.widget.Button[@content-desc="Update"]</msg>
-<arg>${Update_button}</arg>
-<arg>30s</arg>
-<doc>Waits until the element specified by the ``locator`` is visible.</doc>
-<status status="PASS" start="2026-06-04T10:47:45.125194" elapsed="0.110613"/>
-</kw>
-<kw name="Click Element" owner="AppiumLibrary">
-<msg time="2026-06-04T10:47:45.244607" level="INFO">Clicking element 'xpath= //android.widget.Button[@content-desc="Update"]'.</msg>
-<msg time="2026-06-04T10:47:46.378615" level="INFO">xpath criteria: //android.widget.Button[@content-desc="Update"]</msg>
-<arg>${Update_button}</arg>
-<doc>Clicks the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-04T10:47:45.236031" elapsed="1.142695"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-06-04T10:47:51.379933" level="INFO">Slept 5 seconds.</msg>
-<arg>5s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-06-04T10:47:46.379021" elapsed="5.001059"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
-<msg time="2026-06-04T10:47:51.553403" level="INFO">xpath criteria: //android.view.View[contains(@content-desc, "New Status")]</msg>
-<arg>${New_Status}</arg>
-<arg>timeout=30s</arg>
-<doc>Waits until the element specified by the ``locator`` is visible.</doc>
-<status status="PASS" start="2026-06-04T10:47:51.380303" elapsed="0.173204"/>
-</kw>
-<kw name="Click Element" owner="AppiumLibrary">
-<msg time="2026-06-04T10:47:51.562409" level="INFO">Clicking element 'xpath= //android.view.View[contains(@content-desc, "New Status")]'.</msg>
-<msg time="2026-06-04T10:47:52.186075" level="INFO">xpath criteria: //android.view.View[contains(@content-desc, "New Status")]</msg>
-<arg>${New_Status}</arg>
-<doc>Clicks the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-04T10:47:51.553680" elapsed="0.632526"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-06-04T10:47:57.187163" level="INFO">Slept 5 seconds.</msg>
-<arg>5s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-06-04T10:47:52.186467" elapsed="5.000839"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
-<msg time="2026-06-04T10:47:57.289784" level="INFO">xpath criteria: //android.widget.Button[@content-desc="On Site"]</msg>
-<arg>${OnSite_Button}</arg>
-<arg>timeout=30s</arg>
-<doc>Waits until the element specified by the ``locator`` is visible.</doc>
-<status status="PASS" start="2026-06-04T10:47:57.187570" elapsed="0.102336"/>
-</kw>
-<kw name="Click Element" owner="AppiumLibrary">
-<msg time="2026-06-04T10:47:57.300509" level="INFO">Clicking element 'xpath= //android.widget.Button[@content-desc="On Site"]'.</msg>
-<msg time="2026-06-04T10:47:59.126273" level="INFO">xpath criteria: //android.widget.Button[@content-desc="On Site"]</msg>
-<arg>${OnSite_Button}</arg>
-<doc>Clicks the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-04T10:47:57.290152" elapsed="1.836305"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-06-04T10:48:04.127260" level="INFO">Slept 5 seconds.</msg>
-<arg>5s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-06-04T10:47:59.126676" elapsed="5.000730"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
-<msg time="2026-06-04T10:48:04.313683" level="INFO">xpath criteria: //android.view.View[contains(@content-desc, "Late Reason")]</msg>
-<arg>${Late_Reason_Dropdown}</arg>
-<arg>timeout=30s</arg>
-<doc>Waits until the element specified by the ``locator`` is visible.</doc>
-<status status="PASS" start="2026-06-04T10:48:04.127656" elapsed="0.186112"/>
-</kw>
-<kw name="Click Element" owner="AppiumLibrary">
-<msg time="2026-06-04T10:48:04.323498" level="INFO">Clicking element 'xpath= //android.view.View[contains(@content-desc, "Late Reason")]'.</msg>
-<msg time="2026-06-04T10:48:05.113909" level="INFO">xpath criteria: //android.view.View[contains(@content-desc, "Late Reason")]</msg>
-<arg>${Late_Reason_Dropdown}</arg>
-<doc>Clicks the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-04T10:48:04.313978" elapsed="0.800047"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-06-04T10:48:10.115443" level="INFO">Slept 5 seconds.</msg>
-<arg>5s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-06-04T10:48:05.114375" elapsed="5.001195"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
-<msg time="2026-06-04T10:48:10.230840" level="INFO">xpath criteria: //android.widget.Button[@content-desc="Bad weather"]</msg>
-<arg>xpath=//android.widget.Button[@content-desc="Bad weather"]</arg>
-<arg>timeout=30s</arg>
-<doc>Waits until the element specified by the ``locator`` is visible.</doc>
-<status status="PASS" start="2026-06-04T10:48:10.115758" elapsed="0.115186"/>
-</kw>
-<kw name="Click Element" owner="AppiumLibrary">
-<msg time="2026-06-04T10:48:10.240662" level="INFO">Clicking element 'xpath=//android.widget.Button[@content-desc="Bad weather"]'.</msg>
-<msg time="2026-06-04T10:48:11.115855" level="INFO">xpath criteria: //android.widget.Button[@content-desc="Bad weather"]</msg>
-<arg>xpath=//android.widget.Button[@content-desc="Bad weather"]</arg>
-<doc>Clicks the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-04T10:48:10.231103" elapsed="0.884921"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-06-04T10:48:16.117193" level="INFO">Slept 5 seconds.</msg>
-<arg>5s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-06-04T10:48:11.116295" elapsed="5.001039"/>
-</kw>
-<kw name="Scroll until Submit button" owner="CurrentTask">
-<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
-<kw name="Get Webelement" owner="AppiumLibrary">
-<msg time="2026-06-04T10:48:16.254803" level="INFO">xpath criteria: //android.widget.Button[contains(@content-desc, "Submit")]</msg>
-<arg>${Submit_Button}</arg>
-<doc>Returns the first [http://selenium-python.readthedocs.io/api.html#module-selenium.webdriver.remote.webelement|WebElement] object matching ``locator``.</doc>
-<status status="PASS" start="2026-06-04T10:48:16.118579" elapsed="0.136315"/>
-</kw>
-<msg time="2026-06-04T10:48:16.255120" level="INFO">${element} = ('PASS', &lt;appium.webdriver.webelement.WebElement (session="be8bb8e7-4ca8-457c-abc7-cddbeef5ae84", element="00000000-0000-0312-0000-0b490000021f")&gt;)</msg>
-<var>${element}</var>
-<arg>Get Webelement</arg>
-<arg>${Submit_Button}</arg>
-<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
-<status status="PASS" start="2026-06-04T10:48:16.118142" elapsed="0.137019"/>
-</kw>
-<for flavor="IN RANGE">
-<iter>
-<kw name="Run Keyword If" owner="BuiltIn">
-<kw name="Exit For Loop" owner="BuiltIn">
-<msg time="2026-06-04T10:48:16.259317" level="INFO">Exiting for loop altogether.</msg>
-<doc>Stops executing the enclosing FOR loop.</doc>
-<status status="PASS" start="2026-06-04T10:48:16.259141" elapsed="0.000256"/>
-</kw>
-<arg>'${element[0]}' != 'FAIL'</arg>
-<arg>Exit For Loop</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2026-06-04T10:48:16.255772" elapsed="0.003672"/>
-</kw>
-<kw name="Swipe By Percent" owner="AppiumLibrary">
-<arg>50</arg>
-<arg>80</arg>
-<arg>50</arg>
-<arg>30</arg>
-<arg>500</arg>
-<doc>Swipes from one percent of the screen to another percent, for an optional ``duration``.
-Normal swipe fails to scale for different screen resolutions, this can be avoided by using this keyword.</doc>
-<status status="NOT RUN" start="2026-06-04T10:48:16.259552" elapsed="0.000017"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<arg>1</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2026-06-04T10:48:16.259657" elapsed="0.000014"/>
-</kw>
-<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
-<var>${element}</var>
-<arg>Get Webelement</arg>
-<arg>${Submit_Button}</arg>
-<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
-<status status="NOT RUN" start="2026-06-04T10:48:16.259759" elapsed="0.000015"/>
-</kw>
-<var name="${i}">0</var>
-<status status="PASS" start="2026-06-04T10:48:16.255601" elapsed="0.004204"/>
-</iter>
-<var>${i}</var>
-<value>5</value>
-<status status="PASS" start="2026-06-04T10:48:16.255272" elapsed="0.004570"/>
-</for>
-<kw name="Run Keyword If" owner="BuiltIn">
-<arg>'${element[0]}' == 'FAIL'</arg>
-<arg>Fail</arg>
-<arg>Accept button not found after scrolling</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2026-06-04T10:48:16.259940" elapsed="0.002563"/>
-</kw>
-<status status="PASS" start="2026-06-04T10:48:16.117725" elapsed="0.144848"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
-<msg time="2026-06-04T10:48:16.409174" level="INFO">xpath criteria: //android.widget.EditText</msg>
-<arg>${notes_input}</arg>
-<arg>timeout=30s</arg>
-<doc>Waits until the element specified by the ``locator`` is visible.</doc>
-<status status="PASS" start="2026-06-04T10:48:16.262668" elapsed="0.146600"/>
-</kw>
-<kw name="Click Element" owner="AppiumLibrary">
-<msg time="2026-06-04T10:48:16.417836" level="INFO">Clicking element 'xpath= //android.widget.EditText'.</msg>
-<msg time="2026-06-04T10:48:17.579408" level="INFO">xpath criteria: //android.widget.EditText</msg>
-<arg>${notes_input}</arg>
-<doc>Clicks the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-04T10:48:16.409527" elapsed="1.169977"/>
-</kw>
-<kw name="Input Text" owner="AppiumLibrary">
-<msg time="2026-06-04T10:48:17.589992" level="INFO">Typing text 'Test' into text field 'xpath= //android.widget.EditText'</msg>
-<msg time="2026-06-04T10:48:18.257294" level="INFO">xpath criteria: //android.widget.EditText</msg>
-<arg>${notes_input}</arg>
-<arg>Test</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-04T10:48:17.579669" elapsed="0.677702"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-06-04T10:48:23.258151" level="INFO">Slept 5 seconds.</msg>
-<arg>5s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-06-04T10:48:18.257539" elapsed="5.000805"/>
-</kw>
-<kw name="Hide Keyboard" owner="AppiumLibrary">
-<doc>Hides the software keyboard on the device if it is currently visible.</doc>
-<status status="PASS" start="2026-06-04T10:48:23.258525" elapsed="2.613970"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
-<msg time="2026-06-04T10:48:26.279701" level="INFO">xpath criteria: //android.widget.Button[contains(@content-desc, "Submit")]</msg>
-<arg>${Submit_Button}</arg>
-<arg>timeout=30s</arg>
-<doc>Waits until the element specified by the ``locator`` is visible.</doc>
-<status status="PASS" start="2026-06-04T10:48:25.872692" elapsed="0.407093"/>
-</kw>
-<kw name="Click Element" owner="AppiumLibrary">
-<msg time="2026-06-04T10:48:26.289574" level="INFO">Clicking element 'xpath= //android.widget.Button[contains(@content-desc, "Submit")]'.</msg>
-<msg time="2026-06-04T10:48:27.111322" level="INFO">xpath criteria: //android.widget.Button[contains(@content-desc, "Submit")]</msg>
-<arg>${Submit_Button}</arg>
-<doc>Clicks the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-04T10:48:26.279967" elapsed="0.831463"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-06-04T10:48:32.112484" level="INFO">Slept 5 seconds.</msg>
-<arg>5s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-06-04T10:48:27.111589" elapsed="5.001079"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
-<msg time="2026-06-04T10:48:32.218453" level="INFO">xpath criteria: //android.widget.Button[@content-desc="Yes"]</msg>
-<arg>${Yes_Button}</arg>
-<arg>timeout=30s</arg>
-<doc>Waits until the element specified by the ``locator`` is visible.</doc>
-<status status="PASS" start="2026-06-04T10:48:32.112972" elapsed="0.105587"/>
-</kw>
-<kw name="Click Element" owner="AppiumLibrary">
-<msg time="2026-06-04T10:48:32.233024" level="INFO">Clicking element 'xpath= //android.widget.Button[@content-desc="Yes"]'.</msg>
-<msg time="2026-06-04T10:48:33.121771" level="INFO">xpath criteria: //android.widget.Button[@content-desc="Yes"]</msg>
-<arg>${Yes_Button}</arg>
-<doc>Clicks the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-04T10:48:32.218793" elapsed="0.903094"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-06-04T10:49:33.123307" level="INFO">Slept 1 minute.</msg>
-<arg>60s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-06-04T10:48:33.122160" elapsed="60.001310"/>
+<status status="PASS" start="2026-06-10T15:09:47.957286" elapsed="10.000788"/>
 </kw>
 <kw name="Press Keycode" owner="AppiumLibrary">
 <arg>4</arg>
 <doc>Sends a press of ``keycode`` to the device.</doc>
-<status status="PASS" start="2026-06-04T10:49:33.123731" elapsed="0.100236"/>
+<status status="PASS" start="2026-06-10T15:09:57.958300" elapsed="0.123377"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2026-06-10T15:09:59.125768" level="INFO">xpath criteria: (//android.view.View[@content-desc="Self Pick Up"])[2]</msg>
+<arg>${SELF_PICK_UP_ACCEPT_BUTTON}</arg>
+<arg>20s</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-10T15:09:58.081897" elapsed="1.043955"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2026-06-10T15:09:59.133654" level="INFO">Clicking element 'xpath= (//android.view.View[@content-desc="Self Pick Up"])[2]'.</msg>
+<msg time="2026-06-10T15:09:59.404500" level="INFO">xpath criteria: (//android.view.View[@content-desc="Self Pick Up"])[2]</msg>
+<arg>${SELF_PICK_UP_ACCEPT_BUTTON}</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-10T15:09:59.125999" elapsed="0.278603"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-10T15:10:04.405460" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-10T15:09:59.404763" elapsed="5.000821"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2026-06-10T15:10:04.959049" level="INFO">xpath criteria: //android.widget.Button[@content-desc="Yes"]</msg>
+<arg>${Yes_Button}</arg>
+<arg>20s</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-10T15:10:04.405765" elapsed="0.553374"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2026-06-10T15:10:04.966774" level="INFO">Clicking element 'xpath= //android.widget.Button[@content-desc="Yes"]'.</msg>
+<msg time="2026-06-10T15:10:05.946595" level="INFO">xpath criteria: //android.widget.Button[@content-desc="Yes"]</msg>
+<arg>${Yes_Button}</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-10T15:10:04.959301" elapsed="0.987378"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-10T15:10:15.947682" level="INFO">Slept 10 seconds.</msg>
+<arg>10</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-10T15:10:05.946848" elapsed="10.000971"/>
 </kw>
 <kw name="Press Keycode" owner="AppiumLibrary">
 <arg>4</arg>
 <doc>Sends a press of ``keycode`` to the device.</doc>
-<status status="PASS" start="2026-06-04T10:49:33.224183" elapsed="1.006082"/>
+<status status="PASS" start="2026-06-10T15:10:15.948018" elapsed="0.075931"/>
 </kw>
-<kw name="Clear Search" owner="Task">
+<kw name="Close Sidebar" owner="Sidebar">
+<kw name="Element Should Be Visible" owner="AppiumLibrary">
+<msg time="2026-06-10T15:10:16.024631" level="WARN">Keyword 'AppiumLibrary.Element Should Be Visible' is deprecated. Use `Expect Element` instead
+Verifies that the element identified by ``locator`` is visible.</msg>
+<msg time="2026-06-10T15:10:17.046282" level="INFO">xpath criteria: //android.view.View[@bounds='[804,240][1080,442]']</msg>
+<arg>${CLOSE_SIDEBAR}</arg>
+<arg>5s</arg>
+<doc>*DEPRECATED!!* Use `Expect Element` instead
+Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-10T15:10:16.024595" elapsed="1.021770"/>
+</kw>
 <kw name="Click Element" owner="AppiumLibrary">
-<msg time="2026-06-04T10:49:34.238331" level="INFO">Clicking element 'xpath= //android.widget.EditText'.</msg>
-<msg time="2026-06-04T10:49:35.332508" level="INFO">xpath criteria: //android.widget.EditText</msg>
+<msg time="2026-06-10T15:10:17.054530" level="INFO">Clicking element 'xpath= //android.view.View[@bounds='[804,240][1080,442]']'.</msg>
+<msg time="2026-06-10T15:10:17.944380" level="INFO">xpath criteria: //android.view.View[@bounds='[804,240][1080,442]']</msg>
+<arg>${CLOSE_SIDEBAR}</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-10T15:10:17.046522" elapsed="0.897952"/>
+</kw>
+<status status="PASS" start="2026-06-10T15:10:16.024194" elapsed="1.920364"/>
+</kw>
+<status status="PASS" start="2026-06-10T15:09:46.189724" elapsed="31.754879"/>
+</kw>
+<status status="PASS" start="2026-06-10T15:09:34.985362" elapsed="42.959278"/>
+</kw>
+<kw name="Search Ticket by ID" owner="Sidebar">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2026-06-10T15:10:18.028460" level="INFO">xpath criteria: //android.widget.EditText</msg>
+<arg>${Search_button}</arg>
+<arg>30s</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-10T15:10:17.945283" elapsed="0.083264"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2026-06-10T15:10:18.037595" level="INFO">Clicking element 'xpath= //android.widget.EditText'.</msg>
+<msg time="2026-06-10T15:10:19.098139" level="INFO">xpath criteria: //android.widget.EditText</msg>
 <arg>${Search_button}</arg>
 <doc>Clicks the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-04T10:49:34.230812" elapsed="1.101777"/>
+<status status="PASS" start="2026-06-10T15:10:18.028721" elapsed="1.069521"/>
 </kw>
 <kw name="Clear Text" owner="AppiumLibrary">
-<msg time="2026-06-04T10:49:35.340549" level="INFO">Clear text field 'xpath= //android.widget.EditText'</msg>
-<msg time="2026-06-04T10:49:36.426793" level="INFO">xpath criteria: //android.widget.EditText</msg>
+<msg time="2026-06-10T15:10:19.106326" level="INFO">Clear text field 'xpath= //android.widget.EditText'</msg>
+<msg time="2026-06-10T15:10:19.213330" level="INFO">xpath criteria: //android.widget.EditText</msg>
 <arg>${Search_button}</arg>
 <doc>Clears the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-04T10:49:35.332739" elapsed="1.094167"/>
+<status status="PASS" start="2026-06-10T15:10:19.098505" elapsed="0.114923"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2026-06-10T15:10:19.221660" level="INFO">Typing text 'T-0000010346' into text field 'xpath= //android.widget.EditText'</msg>
+<msg time="2026-06-10T15:10:19.309243" level="INFO">xpath criteria: //android.widget.EditText</msg>
+<arg>${Search_button}</arg>
+<arg>T-0000010346</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-10T15:10:19.213600" elapsed="0.095743"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2026-06-04T10:49:41.427837" level="INFO">Slept 5 seconds.</msg>
+<msg time="2026-06-10T15:10:24.310243" level="INFO">Slept 5 seconds.</msg>
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-06-04T10:49:36.427084" elapsed="5.000879"/>
+<status status="PASS" start="2026-06-10T15:10:19.309531" elapsed="5.000839"/>
 </kw>
 <kw name="Hide Keyboard" owner="AppiumLibrary">
 <doc>Hides the software keyboard on the device if it is currently visible.</doc>
-<status status="PASS" start="2026-06-04T10:49:41.428151" elapsed="2.616878"/>
+<status status="PASS" start="2026-06-10T15:10:24.310526" elapsed="2.640445"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2026-06-04T10:49:45.045931" level="INFO">Slept 1 second.</msg>
+<msg time="2026-06-10T15:10:27.952533" level="INFO">Slept 1 second.</msg>
 <arg>1</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-06-04T10:49:44.045241" elapsed="1.000832"/>
+<status status="PASS" start="2026-06-10T15:10:26.951188" elapsed="1.001556"/>
 </kw>
-<status status="PASS" start="2026-06-04T10:49:34.230528" elapsed="10.815657"/>
+<status status="PASS" start="2026-06-10T15:10:17.944988" elapsed="10.007908"/>
 </kw>
-<status status="PASS" start="2026-06-04T10:46:44.131997" elapsed="180.914245"/>
-</kw>
-<doc>To Test On Site Late Reason</doc>
+<doc>To Test My Profile Page</doc>
 <tag>Regression Mobile App</tag>
-<status status="PASS" start="2026-06-04T10:45:40.858967" elapsed="244.187633"/>
+<status status="PASS" start="2026-06-10T15:08:39.604196" elapsed="108.349123"/>
 </test>
-<status status="PASS" start="2026-06-04T10:45:40.508237" elapsed="244.539266"/>
+<status status="PASS" start="2026-06-10T15:08:39.251209" elapsed="108.703042"/>
 </suite>
 <statistics>
 <total>
@@ -710,10 +339,11 @@ Normal swipe fails to scale for different screen resolutions, this can be avoide
 <stat pass="1" fail="0" skip="0">Regression Mobile App</stat>
 </tag>
 <suite>
-<stat name="On-Site-Late-Reason" id="s1" pass="1" fail="0" skip="0">On-Site-Late-Reason</stat>
+<stat name="Self-Pickup" id="s1" pass="1" fail="0" skip="0">Self-Pickup</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2026-06-04T10:47:03.213121" level="WARN">Keyword 'Tap With Positions' will not support int in ms for 'duration' in the future. Use timedelta with units ('ms' or 's') instead.</msg>
+<msg time="2026-06-10T15:10:16.024631" level="WARN">Keyword 'AppiumLibrary.Element Should Be Visible' is deprecated. Use `Expect Element` instead
+Verifies that the element identified by ``locator`` is visible.</msg>
 </errors>
 </robot>
