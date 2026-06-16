@@ -4,13 +4,14 @@ Resource    ../Configs/setting.robot
 Resource    ../Locators/locators.robot
 Resource    ../Keywords/CurrentTask.robot
 Resource    ../Keywords/Ticket.robot
+Resource    ../Keywords/RAF.robot
 
 *** Keywords ***
 Search Ticket by ID
     Wait Until Element Is Visible    ${Search_button}     30s
     Click Element    ${Search_button} 
     Clear Text    ${Search_button} 
-    Input Text    ${Search_button}     T-0000010245
+    Input Text    ${Search_button}     T-0000010324
     Sleep    5
     Hide Keyboard
     Sleep    1
@@ -277,7 +278,7 @@ Gated Area
 Gated HSI - Passed
     Search Ticket by ID
     Tap With Positions    ${TAP_DURATION}    ${{ (${PendingAccept_Dropdown_HEADER_X}, ${PendingAccept_Dropdown_HEADER_Y}) }}
-    Sleep    5
+    Sleep    10
     #Tap With Positions    ${TAP_DURATION}    ${{ (${CurrentTask_Dropdown_HEADER_X}, ${CurrentTask_Dropdown_HEADER_Y}) }}
     #Sleep    5
     #Task.Search by Source System UNIFI
@@ -311,83 +312,50 @@ Gated HSI - Passed
     Wait Until Element Is Visible     ${Cause_Category}     timeout=30s
     Click Element    ${Cause_Category}
     Sleep    5s
-    Click Element    xpath=//android.widget.Button[@content-desc="UE Consultancy"]
-    Sleep    5s
+    Wait Until Element Is Visible     ${BTU_Button}     timeout=30s
+    Click Element    ${BTU_Button}   
 
     Wait Until Element Is Visible     ${Cause_Code}     timeout=30s
-    Click Element    ${Cause_Code}
+    Click Element    ${Cause_Code}   
     Sleep    5s
-    Click Element    xpath=//android.widget.Button[@content-desc="Customer Cancel TT"]
-    Sleep    5s
-    
+    Wait Until Element Is Visible     ${BTU_Faulty_Button}     timeout=30s
+    Click Element    ${BTU_Faulty_Button}   
+
     Wait Until Element Is Visible     ${Resolution_Code}     timeout=30s
     Click Element    ${Resolution_Code}
     Sleep    5s
-    Click Element    xpath=//android.widget.Button[@content-desc="Advise UCC"]
-    Sleep    5s
-
-    Ticket.Scroll Down A Bit
-
-    Service Verification
-
-    Scroll until Submit button
-
-    Wait Until Element Is Visible     ${notes_input}     timeout=30s
-    Click Element    ${notes_input}
-    Input Text       ${notes_input}      Test  
-    Sleep    5s
-    Hide Keyboard    
-
-    Sleep    5
-    Tap With Positions    ${TAP_DURATION}    ${{ (975, 1182) }}
-    #Sleep    5
-    #Wait Until Element Is Visible    ${Add_Attachment_Button}    timeout=30s
-    #Click Element    ${Add_Attachment_Button}
-    Sleep    5s
-
-    #Click Element    ${newAttachments_button}
-    Wait Until Element Is Visible    ${uploadAttachment_list}    timeout=30s
-    Click Element    ${camera_button}
-    Sleep    5s
-
-    Wait Until Element Is Visible    ${cameraCapture_button}    timeout=30s
-    Click Element    ${cameraCapture_button}
-    Sleep    5s
-
-    Wait Until Element Is Visible    ${Yes_cameraCapture_button}    timeout=30s
-    Click Element    ${Yes_cameraCapture_button}
-    Sleep    10s
-    
-    Scroll until Submit button
-
-    Wait Until Element Is Visible     ${nameCaptured_input}     timeout=30s
-    Click Element    ${nameCaptured_input}
-    Clear Text       ${nameCaptured_input}
-    Input Text       ${nameCaptured_input}    testName
-    Sleep    1
-    Hide Keyboard
-    Sleep    1
-
-    Wait Until Element Is Visible     ${remarksCaptured_input}     timeout=30s
-    Click Element    ${remarksCaptured_input} 
-    Input Text       ${remarksCaptured_input}    Test Remarks
-    Sleep    1
-    Hide Keyboard
-    Sleep    1
+    Wait Until Element Is Visible     ${TMCPE_Replaced_Button}     timeout=30s
+    Click Element    ${TMCPE_Replaced_Button}
 
     Scroll until Submit button
 
     Click Element    ${Signature_Button}
     Sleep    2
     
-    Swipe By Percent   540    1200    540    800    500
+    Swipe By Percent    0.2    0.75    0.8    0.75    800
     Sleep    1
 
     Wait Until Element Is Visible     ${Submit_Button}     timeout=30s
     Click Element    ${Submit_Button}  
     Sleep    5s
 
+    RAF.Scroll to RAF Button
+
+    RAF.Fill in RAF - Section 1
+
+    RAF.Fill in RAF - Section 2 (Landed House Unifi FTTH Button)
+
+    RAF.Fill in RAF - Section 3 (RESTORATION CHARGES)
+
+    RAF.Fill in RAF - Section 4 (TNC)
+
+    Press Keycode    4
+
     Scroll until Submit button
+
+    Wait Until Element Is Visible     ${Submit_Button}     timeout=30s
+    Click Element    ${Submit_Button}  
+    Sleep    5s
 
 Gated HSI - Failed
     Search Ticket by ID
